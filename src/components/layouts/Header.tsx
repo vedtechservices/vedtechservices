@@ -14,7 +14,6 @@ import {
 import { cn } from '@/lib/utils';
 import { SearchCommand, SearchCommandTrigger } from '../common/SearchCommand';
 import { useTheme } from '@/contexts/ThemeContext';
-
 const navItems = [
   { name: 'Home', path: '/' },
   { name: 'About Us', path: '/about' },
@@ -61,7 +60,7 @@ const Header: React.FC = () => {
         <div className="flex items-center gap-2">
           <Link to="/" className="flex items-center space-x-3">
             <img
-              src="https://miaoda-conversation-file.s3cdn.medo.dev/user-8t7j0johoxds/conv-99gjdx4fbuv4/20260302/file-9znj7azzuakg.png"
+              src="/vedtech-logo.png"
               alt="VedTech Services Logo"
               className="h-12 w-12 rounded-full"
               data-editor-config="%7B%22defaultSrc%22%3A%22https%3A%2F%2Fmiaoda-conversation-file.s3cdn.medo.dev%2Fuser-8t7j0johoxds%2Fconv-99gjdx4fbuv4%2F20260302%2Ffile-9znj7azzuakg.png%22%7D" />
