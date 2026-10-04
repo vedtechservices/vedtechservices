@@ -21,10 +21,40 @@ function verifyPassword(stored: string, password: string) {
 }
 
 export async function POST(request: Request) {
+//   console.log("ADMIN ENV CHECK:", {
+//   supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL ? "SET" : "MISSING",
+//   serviceRoleKey: process.env.SUPABASE_SERVICE_ROLE_KEY ? "SET" : "MISSING",
+//   adminSecret: process.env.ADMIN_SESSION_SECRET ? "SET" : "MISSING",
+// });
   try {
+//     console.log("SERVICE KEY CHECK:", {
+//   length: process.env.SUPABASE_SERVICE_ROLE_KEY?.length,
+//   nonAscii: [...(process.env.SUPABASE_SERVICE_ROLE_KEY || "")]
+//     .filter((c) => c.charCodeAt(0) > 127)
+//     .length,
+// });
+    // console.log("SUPABASE PROJECT:", process.env.NEXT_PUBLIC_SUPABASE_URL);
     const { email, password, totp } = await request.json();
     if (typeof email !== 'string' || typeof password !== 'string') return NextResponse.json({ error: 'Invalid credentials.' }, { status: 400 });
     const { data: admin } = await reviewDb().from('admin_users').select('id,email,password_hash,full_name,role,is_active,totp_enabled,totp_secret').eq('email', email.trim()).maybeSingle();
+//     const { data: admin, error: adminError } = await reviewDb()
+//   .from('admin_users')
+//   .select('id,email,password_hash,full_name,role,is_active,totp_enabled,totp_secret')
+//   .eq('email', email.trim())
+//   .maybeSingle();
+
+// console.log("ADMIN DB RESULT:", {
+//   found: !!admin,
+//   error: adminError?.message,
+//   code: adminError?.code,
+// });
+//     console.log('ADMIN DB CHECK:', {
+//   found: !!admin,
+//   email: admin?.email,
+//   active: admin?.is_active,
+//   hasHash: !!admin?.password_hash,
+//   role: admin?.role,
+// });
     if (!admin?.is_active || !verifyPassword(admin.password_hash, password)) return NextResponse.json({ error: 'Invalid admin credentials or account disabled.' }, { status: 401 });
     if (admin.totp_enabled && (!totp || !verifySync({ token: String(totp), secret: admin.totp_secret }).valid)) {
       return NextResponse.json({ requiresTotp: true, error: totp ? 'The code you entered is incorrect.' : undefined }, { status: 200 });
@@ -32,9 +62,20 @@ export async function POST(request: Request) {
     const response = NextResponse.json({ success: true, admin: { id: admin.id, email: admin.email, full_name: admin.full_name, role: admin.role } });
     response.cookies.set(cookieName, createAdminToken({ id: admin.id, role: admin.role }), { httpOnly: true, secure: process.env.NODE_ENV === 'production', sameSite: 'strict', path: '/', maxAge: 8 * 60 * 60 });
     return response;
-  } catch {
-    return NextResponse.json({ error: 'Admin authentication is not configured.' }, { status: 503 });
-  }
+    } catch (error) {
+  console.error("ADMIN LOGIN ERROR:", error);
+
+  return NextResponse.json(
+    {
+      error: "Admin authentication failed.",
+      details: error instanceof Error ? error.message : String(error),
+    },
+    { status: 500 }
+  );
+}
+  // } catch {
+  //   return NextResponse.json({ error: 'Admin authentication is not configured.' }, { status: 503 });
+  // }
 }
 
 export async function DELETE() {

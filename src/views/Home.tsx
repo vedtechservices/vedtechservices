@@ -28,7 +28,7 @@ const Home: React.FC = () => {
             "@type": "Organization",
             "name": "VedTech Services",
             "url": "https://vedtechservices.in",
-            "logo": "https://vedtechservices.in/vedtech-logo.png",
+            "logo": "/vedtech-logo.png",
             "description": "VedTech Services is a trusted enterprise IT partner providing comprehensive technology solutions including hardware support, software development, networking, cloud, CCTV, and IT AMC services across India.",
             "foundingDate": "2020",
             "email": "info@vedtechservices.in",
