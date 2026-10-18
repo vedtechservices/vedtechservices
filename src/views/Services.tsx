@@ -264,7 +264,7 @@ const Services: React.FC = () => {
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div className="space-y-2">
-              <div className="text-4xl font-bold text-primary">500+</div>
+              <div className="text-4xl font-bold text-primary">50+</div>
               <div className="text-sm text-slate-400 uppercase tracking-widest">Happy Clients</div>
             </div>
             <div className="space-y-2">

@@ -35,7 +35,7 @@ Header Component (src/components/layouts/Header.tsx):
 
 <Link to="/" className="flex items-center space-x-3">
   <img 
-    src="https://miaoda-conversation-file.s3cdn.medo.dev/user-8t7j0johoxds/conv-99gjdx4fbuv4/20260131/file-9b2hbmac31ts.png" 
+    src="https://vedtechservices.in/vedtech-logo.png" 
     alt="VedTech Services Logo" 
     className="h-10 w-auto"
   />
@@ -47,7 +47,7 @@ Footer Component (src/components/layouts/Footer.tsx):
 
 <div className="flex items-center gap-3 mb-2">
   <img 
-    src="https://miaoda-conversation-file.s3cdn.medo.dev/user-8t7j0johoxds/conv-99gjdx4fbuv4/20260131/file-9b2hbmac31ts.png" 
+    src="https://vedtechservices.in/vedtech-logo.png" 
     alt="VedTech Services Logo" 
     className="h-12 w-auto"
   />

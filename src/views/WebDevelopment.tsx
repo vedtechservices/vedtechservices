@@ -206,10 +206,10 @@ const WebDevelopment: React.FC = () => {
   ];
 
   const metrics = [
-    { value: "100+", label: "Websites Delivered", icon: <Globe className="h-6 w-6" /> },
+    { value: "35+", label: "Websites Delivered", icon: <Globe className="h-6 w-6" /> },
     { value: "50+", label: "Happy Clients", icon: <Star className="h-6 w-6" /> },
-    { value: "5+", label: "Years in Bihar", icon: <Award className="h-6 w-6" /> },
-    { value: "99%", label: "Client Satisfaction", icon: <BarChart3 className="h-6 w-6" /> },
+    { value: "2+", label: "Years in Bihar", icon: <Award className="h-6 w-6" /> },
+    { value: "95%", label: "Client Satisfaction", icon: <BarChart3 className="h-6 w-6" /> },
   ];
 
   return (

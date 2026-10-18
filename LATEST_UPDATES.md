@@ -77,7 +77,7 @@ Opens in new tab
 Proper rel attributes for security
 4. Visual Enhancements
 Founder Image
-URL: https://miaoda-conversation-file.s3cdn.medo.dev/user-8t7j0johoxds/conv-99gjdx4fbuv4/20260131/file-9b54bmiwix34.png
+URL: https://vedtechservices.in/vedtech-logo.png
 Description: Professional photo of Chandan Kumar Yajee at desk with laptop
 Background: VedTech Services logo with "EST. 2026"
 Style: Corporate professional setting

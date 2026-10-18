@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import IntersectObserver from '@/components/common/IntersectObserver';
 import { PageLoader } from '@/components/common/Loader';
@@ -34,7 +34,9 @@ export default function RouterView() {
   return (
     <>
       <IntersectObserver />
-      <MainLayout>{route?.element ?? <PageLoader />}</MainLayout>
+      <MainLayout>
+        <Suspense fallback={<PageLoader />}>{route?.element ?? <PageLoader />}</Suspense>
+      </MainLayout>
       <Toaster />
     </>
   );

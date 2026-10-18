@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 import { Link, useLocation } from '@/lib/next-router';
 import { Menu, X, Phone, Mail, UserLock, ChevronDown, LayoutDashboard, Settings, LogOut, Search, Moon, Sun, Monitor } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -18,13 +19,13 @@ const navItems = [
   { name: 'Home', path: '/' },
   { name: 'About Us', path: '/about' },
   { name: 'Services', path: '/services' },
-  { name: 'Industries', path: '/industries' },
-  { name: 'AMC Plans', path: '/amc-plans' },
   { name: 'Portfolio', path: '/demo' },
   { name: 'Contact Us', path: '/contact' },
 ];
 
 const resourceItems = [
+  { name: 'Industries', path: '/industries' },
+  { name: 'AMC Plans', path: '/amc-plans' },
   { name: 'Demo Showcase', path: '/demo' },
   { name: 'Tech Blog', path: '/blog' },
   { name: 'Why Choose Us', path: '/why-us' },
@@ -59,9 +60,12 @@ const Header: React.FC = () => {
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
           <Link to="/" className="flex items-center space-x-3">
-            <img
+            <Image
               src="/vedtech-logo.png"
               alt="VedTech Services Logo"
+              width={48}
+              height={48}
+              sizes="48px"
               className="h-12 w-12 rounded-full"
               data-editor-config="%7B%22defaultSrc%22%3A%22https%3A%2F%2Fmiaoda-conversation-file.s3cdn.medo.dev%2Fuser-8t7j0johoxds%2Fconv-99gjdx4fbuv4%2F20260302%2Ffile-9znj7azzuakg.png%22%7D" />
             <span className="text-xl font-bold tracking-tight text-primary hidden sm:inline">VedTech <span className="text-foreground">Services</span></span>

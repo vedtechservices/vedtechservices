@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Loader2 } from 'lucide-react';
 
 interface LoadingSpinnerProps {
@@ -23,9 +24,12 @@ export const PageLoader: React.FC = () => {
           <div className="absolute inset-0 rounded-full border-4 border-primary/20"></div>
           <div className="absolute inset-0 rounded-full border-4 border-primary border-t-transparent animate-spin"></div>
           <div className="absolute inset-0 flex items-center justify-center">
-             <img 
-               src="https://miaoda-conversation-file.s3cdn.medo.dev/user-8t7j0johoxds/conv-99gjdx4fbuv4/20260302/file-9znj7azzuakg.png" 
+             <Image
+               src="/vedtech-logo.png"
                alt="VedTech Logo" 
+               width={32}
+               height={32}
+               sizes="32px"
                className="h-8 w-8 rounded-full"
              />
           </div>

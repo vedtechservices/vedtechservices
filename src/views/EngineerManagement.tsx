@@ -440,7 +440,7 @@ const EngineerManagement: React.FC = () => {
             <div>
               <label className="text-sm font-medium mb-2 block">Phone *</label>
               <Input
-                placeholder="+91 9876543210"
+                placeholder="+91 xxxxxxxxxx"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
               />
@@ -522,7 +522,7 @@ const EngineerManagement: React.FC = () => {
             <div>
               <label className="text-sm font-medium mb-2 block">Phone *</label>
               <Input
-                placeholder="+91 9876543210"
+                placeholder="+91 xxxxxxxxxx"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
               />

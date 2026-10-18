@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Link } from '@/lib/next-router';
 import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, MessageSquare } from 'lucide-react';
 
@@ -9,10 +10,13 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div className="space-y-4">
             <div className="flex items-center gap-3 mb-2">
-              <img
-                src="https://miaoda-conversation-file.s3cdn.medo.dev/user-8t7j0johoxds/conv-99gjdx4fbuv4/20260302/file-9znj7azzuakg.png"
+              <Image
+                src="/vedtech-logo.png"
                 alt="VedTech Services Logo"
-                className="h-12 w-auto"
+                width={43}
+                height={48}
+                sizes="43px"
+                className="h-12 w-auto rounded"
                 data-editor-config="%7B%22defaultSrc%22%3A%22https%3A%2F%2Fmiaoda-conversation-file.s3cdn.medo.dev%2Fuser-8t7j0johoxds%2Fconv-99gjdx4fbuv4%2F20260302%2Ffile-9znj7azzuakg.png%22%7D" />
             </div>
             <h3 className="text-xl font-bold text-white">VedTech Services</h3>

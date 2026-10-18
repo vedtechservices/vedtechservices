@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import Image from 'next/image';
 import { ArrowRight, Laptop, Globe, Shield, Zap, CheckCircle2, Award, Users, TrendingUp, Sparkles, Code, Server, Smartphone, Wrench, HeadphonesIcon, ExternalLink, MessageCircle, Calendar, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -9,12 +10,6 @@ import { blogPosts } from '@/data/blog';
 import ReviewsSection from '@/components/reviews/ReviewsSection';
 
 const Home: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
   return (
     <>
       <PageMeta 
@@ -135,14 +130,14 @@ const Home: React.FC = () => {
         <div className="container relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left: Text Content */}
-            <div className={`space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <div className="inline-flex items-center rounded-full border border-blue-400/30 bg-blue-500/10 px-4 py-2 text-sm font-medium text-blue-300 backdrop-blur-sm animate-fade-in">{"We help  startups & businesses grow with Website, App & Digital Solutions"}</div>
+            <div className="space-y-8">
+              <div className="inline-flex items-center rounded-full border border-blue-400/30 bg-blue-500/10 px-4 py-2 text-sm font-medium text-blue-300 backdrop-blur-sm">{"We help  startups & businesses grow with Website, App & Digital Solutions"}</div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight animate-slide-up">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">
                 Business <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 animate-gradient">IT Solutions</span> for Software, Web & Support
               </h1>
 
-              <p className="text-xl text-slate-300 leading-relaxed max-w-3xl animate-slide-up-delayed">
+              <p className="text-xl text-slate-300 leading-relaxed max-w-3xl">
                 VedTech Services is your trusted enterprise IT partner delivering comprehensive technology solutions.
                 From hardware infrastructure to custom software development, we provide fast, reliable, and professional services under one roof.
               </p>
@@ -165,7 +160,7 @@ const Home: React.FC = () => {
               <div className="flex flex-wrap gap-8 pt-8 text-slate-300 animate-fade-in-delayed">
                 {[
                   { icon: CheckCircle2, text: "24/7 Support" },
-                  { icon: Users, text: "100+ Happy Clients" },
+                  { icon: Users, text: "50+ Happy Clients" },
                   { icon: TrendingUp, text: "Pan-India Service" }
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-2 hover:text-white transition-colors duration-300 cursor-default group">
@@ -177,16 +172,19 @@ const Home: React.FC = () => {
             </div>
 
             {/* Right: Laptop + Phone Device Mockups */}
-            <div className={`relative hidden lg:flex items-center justify-center min-h-[380px] transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+            <div className="relative hidden lg:flex items-center justify-center min-h-[380px]">
               {/* Glow rings */}
               <div className="absolute w-72 h-72 bg-blue-500/25 rounded-full blur-3xl" />
               <div className="absolute w-56 h-56 bg-cyan-400/15 rounded-full blur-2xl" />
 
               {/* Laptop — main image */}
               <div className="relative z-10 animate-float">
-                <img
+                <Image
                   src="https://miaoda-site-img.s3cdn.medo.dev/images/KLing_e9f5af18-68fd-4e22-b65d-875b711fde66.jpg"
                   alt="IT professional working on laptop"
+                  width={1344}
+                  height={768}
+                  sizes="(min-width: 1024px) 288px, 0px"
                   className="w-72 h-52 rounded-2xl shadow-2xl border border-white/10 object-cover"
                 />
                 <div className="absolute -top-3 -left-3 bg-green-500 text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-lg flex items-center gap-1">
@@ -196,9 +194,12 @@ const Home: React.FC = () => {
 
               {/* Phone — overlapping bottom-right */}
               <div className="absolute bottom-2 right-8 z-20 animate-float-delayed">
-                <img
+                <Image
                   src="https://miaoda-site-img.s3cdn.medo.dev/images/KLing_81dcc0b5-19a6-42e2-bb4a-f892cbafaf8f.jpg"
                   alt="Mobile IT solutions on smartphone"
+                  width={1344}
+                  height={768}
+                  sizes="(min-width: 1024px) 128px, 0px"
                   className="w-32 h-48 rounded-2xl shadow-2xl border border-white/10 object-cover"
                 />
                 <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-lg whitespace-nowrap">
@@ -230,7 +231,7 @@ const Home: React.FC = () => {
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { value: "100+", label: "Satisfied Clients", icon: Users },
+              { value: "50+", label: "Satisfied Clients", icon: Users },
               { value: "100+", label: "Projects Completed", icon: CheckCircle2 },
               { value: "24/7", label: "Support Available", icon: HeadphonesIcon },
               { value: "98%", label: "Client Retention", icon: Award }
@@ -376,9 +377,11 @@ const Home: React.FC = () => {
             
             <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl group">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 group-hover:opacity-0 transition-opacity duration-500 z-10" />
-              <img 
+              <Image
                 src="https://miaoda-site-img.s3cdn.medo.dev/images/KLing_d19bfcb7-b08f-4153-8d6b-3a56b1c14bac.jpg" 
                 alt="IT Specialist at Work" 
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
                 className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700" 
               />
             </div>
@@ -447,9 +450,11 @@ const Home: React.FC = () => {
             ].map((project, i) => (
               <Card key={i} className="group hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 border-transparent hover:border-primary/30">
                 <div className="relative aspect-video overflow-hidden bg-slate-100">
-                  <img 
+                  <Image
                     src={project.image} 
                     alt={project.name}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -512,7 +517,7 @@ const Home: React.FC = () => {
               <Users className="h-5 w-5" />
               <span>Our Clients</span>
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Trusted by 100+ Happy Clients</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Trusted by 50+ Happy Clients</h2>
             <p className="text-slate-300 text-lg max-w-2xl mx-auto">
               From startups to established businesses, schools to corporate offices - we serve them all
             </p>
@@ -606,10 +611,12 @@ const Home: React.FC = () => {
             {blogPosts.slice(0, 3).map((post) => (
               <Link key={post.id} to={`/blog/${post.id}`} className="group block">
                 <Card className="h-full hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-primary/20 overflow-hidden">
-                  <div className="aspect-video overflow-hidden bg-slate-100">
-                    <img
+                  <div className="relative aspect-video overflow-hidden bg-slate-100">
+                    <Image
                       src={post.image}
                       alt={post.title}
+                      fill
+                      sizes="(min-width: 768px) 33vw, 100vw"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>

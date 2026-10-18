@@ -92,7 +92,7 @@ const PROJECTS = [
 
 const STATS = [
   { label: 'Projects Delivered', value: '100+', icon: CheckCircle2 },
-  { label: 'Happy Clients', value: '80+', icon: Users },
+  { label: 'Happy Clients', value: '50+', icon: Users },
   { label: 'Avg. Client Rating', value: '4.9★', icon: Star },
   { label: 'Revenue Impact', value: '₹2Cr+', icon: TrendingUp },
 ];

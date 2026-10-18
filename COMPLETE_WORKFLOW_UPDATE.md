@@ -126,7 +126,7 @@ Customer visits /support
 Fills form:
 Name: John Doe
 Email: john@example.com
-Phone: +91 9876543210
+Phone: +91 xxxxxxxxxx
 Service Type: Hardware
 Priority: High
 Subject: Laptop not starting
