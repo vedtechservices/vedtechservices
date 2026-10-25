@@ -36,11 +36,3 @@ node_modules/
 # Local verification logs and temporary tools
 .verification/
 
-
-# # Temporarily exclude chatbot
-# src/components/common/ChatBot.tsx
-# src/lib/supportIntent.ts
-# src/lib/supportAI.ts
-# src/lib/liveSupport.ts
-# app/api/chat/
-# supabase/migrations/00044_live_support.sql
