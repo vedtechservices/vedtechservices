@@ -83,6 +83,14 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
+  // Legacy endpoint: the website now uses the cookie-protected Next.js support API.
+  const serviceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
+  if (!serviceKey || req.headers.get('Authorization') !== `Bearer ${serviceKey}`) {
+    return new Response(JSON.stringify({ error: 'Use the website support chat.' }), {
+      status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    });
+  }
+
   try {
     const { message, conversationHistory } = await req.json();
 

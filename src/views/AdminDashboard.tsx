@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
@@ -57,6 +57,7 @@ interface Engineer {
 }
 
 const AdminDashboard: React.FC = () => {
+  const amcCheckStarted = useRef(false);
   const navigate = useNavigate();
   const { toast } = useToast();
   const [tickets, setTickets] = useState<SupportTicket[]>([]);
@@ -94,7 +95,9 @@ const AdminDashboard: React.FC = () => {
     fetchEngineers();
     fetchNotifications();
     fetchContactSubmissions();
-    checkAndNotifyExpiringAMCs();
+    if (['super_admin', 'billing_admin'].includes(localStorage.getItem('vts_admin_role') || '')) {
+      checkAndNotifyExpiringAMCs();
+    }
 
     // Set up Realtime for notifications
     const channel = supabase
@@ -145,6 +148,8 @@ const AdminDashboard: React.FC = () => {
   }, [navigate]);
 
   const checkAndNotifyExpiringAMCs = async () => {
+    if (amcCheckStarted.current) return;
+    amcCheckStarted.current = true;
     try {
       // Call the SQL function we created
       const { data: expiringAMCs, error } = await supabase.rpc('check_expiring_amcs');
@@ -177,6 +182,7 @@ const AdminDashboard: React.FC = () => {
       }
     } catch (err) {
       console.error('Error checking AMC expiration:', err);
+      toast({ title: 'AMC expiration check failed', description: (err as any)?.message || 'Please try again later.', variant: 'destructive' });
     }
   };
 
@@ -188,9 +194,11 @@ const AdminDashboard: React.FC = () => {
         .select('*')
         .order('created_at', { ascending: false })
         .limit(50);
-      if (!error) setContactSubmissions(data || []);
+      if (error) throw error;
+      setContactSubmissions(data || []);
     } catch (err) {
       console.error('Error fetching contact submissions:', err);
+      toast({ title: 'Unable to load inquiries', variant: 'destructive' });
     } finally {
       setContactLoading(false);
     }
@@ -531,13 +539,19 @@ const AdminDashboard: React.FC = () => {
               {canPerformAction(adminRole, 'super') && (
                 <Button variant="secondary" className="w-full justify-start" onClick={() => navigate('/admin/manage')}>
                   <ShieldAlert className="h-4 w-4 mr-2" />
-                  Admins
+                  Role Management
                 </Button>
               )}
               {canPerformAction(adminRole, 'super') && (
                 <Button variant="secondary" className="w-full justify-start" onClick={() => navigate('/admin/team')}>
                   <Users className="h-4 w-4 mr-2" />
                   Team
+                </Button>
+              )}
+              {canPerformAction(adminRole, 'support') && (
+                <Button variant="secondary" className="w-full justify-start" onClick={() => navigate('/admin/support-inbox')}>
+                  <Users className="h-4 w-4 mr-2" />
+                  Support Inbox
                 </Button>
               )}
               {canPerformAction(adminRole, 'support') && (

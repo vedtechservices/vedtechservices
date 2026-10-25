@@ -195,12 +195,12 @@ const CustomerDashboard: React.FC = () => {
   };
 
   const handleLogin = async () => {
-    if (!email) return;
+    if (!email || isLoading) return;
 
     setIsLoading(true);
     try {
       if (!otpSent) {
-        const { error } = await supabase.auth.signInWithOtp({ email: email.trim(), options: { shouldCreateUser: true } });
+        const { error } = await supabase.auth.signInWithOtp({ email: email.trim(), options: { shouldCreateUser: true, emailRedirectTo: 'https://vedtechservices.in/dashboard' } });
         if (error) throw error;
         setOtpSent(true);
         toast({ title: 'Check your email', description: 'We sent you a one-time sign-in code.' });
@@ -229,7 +229,7 @@ const CustomerDashboard: React.FC = () => {
       
     } catch (err) {
       console.error('Error:', err);
-      toast({ title: "Login Error", variant: "destructive" });
+      toast({ title: "Login Error", description: (err as any)?.message || "Please try again.", variant: "destructive" });
     } finally {
       setIsLoading(false);
     }
@@ -300,75 +300,12 @@ const CustomerDashboard: React.FC = () => {
     }
   };
 
-  const handleRenewPlan = async (amc: any) => {
-    setIsProcessingPayment(true);
-    const convertedAmount = getConvertedAmount(amc.amount, selectedCurrency);
-    try {
-      // 1. Create Payment Intent via Stripe Edge Function
-      const { data: intentData, error: intentError } = await (supabase as any).functions.invoke('create-stripe-payment-intent', {
-        body: { 
-          amount: Math.round(convertedAmount * 100), // Stripe expects amounts in cents
-          currency: selectedCurrency.toLowerCase(),
-          metadata: { amc_id: amc.id, customer_id: customerId }
-        }
-      });
-
-      if (intentError) throw intentError;
-      
-      console.log('Stripe Intent Created:', intentData?.clientSecret);
-
-      // 2. Simulate secure card verification delay
-      await new Promise(resolve => setTimeout(resolve, 2500));
-      
-      const newEndDate = new Date();
-      newEndDate.setFullYear(newEndDate.getFullYear() + 1); // Extend for 1 year
-      
-      // 3. Update subscription
-      const { error: amcError } = await (supabase
-        .from('amc_subscriptions') as any)
-        .update({ 
-          end_date: newEndDate.toISOString(),
-          status: 'active',
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', amc.id);
-
-      if (amcError) throw amcError;
-
-      // 4. Create Invoice
-      const invoiceNumber = `INV-AMC-${Date.now().toString().slice(-6)}`;
-      const currencySymbol = CURRENCIES.find(c => c.code === selectedCurrency)?.symbol || '₹';
-      await (supabase
-        .from('service_invoices') as any)
-        .insert({
-          customer_id: customerId,
-          invoice_number: invoiceNumber,
-          amount: convertedAmount,
-          currency: selectedCurrency,
-          status: 'paid',
-          paid_at: new Date().toISOString(),
-          items: [{ name: `AMC Renewal: ${amc.plan_name}`, amount: convertedAmount, currency: selectedCurrency }]
-        });
-
-      // 5. Notify Customer
-      await (supabase
-        .from('customer_notifications') as any)
-        .insert({
-          customer_id: customerId,
-          title: 'AMC Renewed Successfully',
-          message: `Your AMC plan ${amc.plan_name} has been renewed until ${newEndDate.toLocaleDateString()}. Payment of ${currencySymbol}${convertedAmount.toFixed(2)} received.`,
-          type: 'success',
-          link: '/dashboard'
-        });
-
-      setPaymentSuccess(true);
-      fetchDashboardData(customerId, email);
-    } catch (err) {
-      console.error('Renewal failed:', err);
-      toast({ title: "Renewal Failed", description: "Payment processing failed. Please try again or contact support.", variant: "destructive" });
-    } finally {
-      setIsProcessingPayment(false);
-    }
+  const handleRenewPlan = async (_amc: any) => {
+    toast({
+      title: "Contact billing to renew",
+      description: "Online renewal is not configured. Please contact support to arrange payment and renewal.",
+      variant: "destructive",
+    });
   };
 
   const setupRealtimeSubscriptions = (cId: string, cEmail: string) => {

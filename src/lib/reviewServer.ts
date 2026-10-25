@@ -36,7 +36,9 @@ export function createEngineerToken(engineer: { id: string }) {
 async function readSignedSession(name: string) {
   const token = (await cookies()).get(name)?.value;
   if (!token) return null;
-  const [payload, signature] = token.split('.');
+  const parts = token.split('.');
+  if (parts.length !== 2) return null;
+  const [payload, signature] = parts;
   if (!payload || !signature) return null;
   const expected = createHmac('sha256', sessionSecret()).update(payload).digest();
   let received: Buffer;
@@ -44,7 +46,8 @@ async function readSignedSession(name: string) {
   if (received.length !== expected.length || !timingSafeEqual(expected, received)) return null;
   try {
     const session = JSON.parse(Buffer.from(payload, 'base64url').toString()) as { id: string; exp: number };
-    return session.id && session.exp >= Date.now() ? session : null;
+    return typeof session?.id === 'string' && session.id.length > 0 &&
+      typeof session.exp === 'number' && Number.isFinite(session.exp) && session.exp >= Date.now() ? session : null;
   } catch { return null; }
 }
 

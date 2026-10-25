@@ -97,17 +97,23 @@ const AdminManagement: React.FC = () => {
   }>({ open: false, mode: 'deactivate', admin: null });
 
   useEffect(() => {
-    setCurrentUserRole(localStorage.getItem('vts_admin_role'));
-    setCurrentUserId(localStorage.getItem('vts_admin_id'));
-    setAuthLoaded(true);
+    let active = true;
+    fetch('/api/admin/session', { credentials: 'same-origin', cache: 'no-store' })
+      .then(async response => response.ok ? response.json() : null)
+      .then(session => {
+        if (!active) return;
+        setCurrentUserRole(session?.admin?.role ?? null);
+        setCurrentUserId(session?.admin?.id ?? null);
+        setAuthLoaded(true);
+      }).catch(() => { if (active) setAuthLoaded(true); });
+    return () => { active = false; };
   }, []);
 
   useEffect(() => {
     if (!authLoaded) return;
 
     // Auth check
-    const isAuth = localStorage.getItem('vts_admin_auth');
-    if (!isAuth) {
+    if (!currentUserId) {
       navigate('/admin/login');
       return;
     }
@@ -124,7 +130,7 @@ const AdminManagement: React.FC = () => {
     }
 
     fetchAdmins();
-  }, [navigate, currentUserRole, authLoaded]);
+  }, [navigate, currentUserRole, currentUserId, authLoaded]);
 
   const fetchAdmins = async () => {
     setIsLoading(true);
@@ -227,8 +233,8 @@ const AdminManagement: React.FC = () => {
       const updateData: any = {
         full_name: form.full_name,
         email: form.email,
-        role: form.role,
-        is_active: form.is_active,
+        ...(currentAdmin.id !== currentUserId ? { role: form.role } : {}),
+        ...(currentAdmin.id !== currentUserId ? { is_active: form.is_active } : {}),
         updated_at: new Date().toISOString()
       };
 
@@ -406,7 +412,7 @@ const AdminManagement: React.FC = () => {
                 <ShieldAlert className="h-8 w-8 text-blue-400" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold mb-1">Admin Management</h1>
+                <h1 className="text-3xl font-bold mb-1">Role Management</h1>
                 <p className="text-slate-300">Manage VedTech Services platform administrators</p>
               </div>
             </div>
@@ -637,6 +643,7 @@ const AdminManagement: React.FC = () => {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="admin">Administrator</SelectItem>
+                    <SelectItem value="full_access_admin">CRM Admin</SelectItem>
                     <SelectItem value="super_admin">Super Admin</SelectItem>
                     <SelectItem value="support_admin">Support Admin</SelectItem>
                     <SelectItem value="billing_admin">Billing Admin</SelectItem>
@@ -701,12 +708,13 @@ const AdminManagement: React.FC = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
                 <label className="text-sm font-medium">Role</label>
-                <Select value={form.role} onValueChange={(val) => setForm({ ...form, role: val })}>
+                <Select disabled={currentAdmin?.id === currentUserId} value={form.role} onValueChange={(val) => setForm({ ...form, role: val })}>
                   <SelectTrigger>
                     <SelectValue placeholder="Select role" />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="admin">Administrator</SelectItem>
+                    <SelectItem value="full_access_admin">CRM Admin</SelectItem>
                     <SelectItem value="super_admin">Super Admin</SelectItem>
                     <SelectItem value="support_admin">Support Admin</SelectItem>
                     <SelectItem value="billing_admin">Billing Admin</SelectItem>

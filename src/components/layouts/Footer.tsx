@@ -13,8 +13,8 @@ const Footer: React.FC = () => {
               <Image
                 src="/vedtech-logo.png"
                 alt="VedTech Services Logo"
-                width={43}
-                height={48}
+                width={905}
+                height={1012}
                 sizes="43px"
                 className="h-12 w-auto rounded"
                 data-editor-config="%7B%22defaultSrc%22%3A%22https%3A%2F%2Fmiaoda-conversation-file.s3cdn.medo.dev%2Fuser-8t7j0johoxds%2Fconv-99gjdx4fbuv4%2F20260302%2Ffile-9znj7azzuakg.png%22%7D" />
@@ -22,8 +22,8 @@ const Footer: React.FC = () => {
             <h3 className="text-xl font-bold text-white">VedTech Services</h3>
             <p className="text-sm leading-relaxed">{"Your one-stop solution for all IT hardware, software, and technical support needs. \"One Call – All IT Problems Solved\" "}</p>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-white transition-colors"><Facebook className="h-5 w-5" /></a>
-              <a href="#" className="hover:text-white transition-colors"><Twitter className="h-5 w-5" /></a>
+              <a href="#" aria-label="Facebook" className="hover:text-white transition-colors"><Facebook className="h-5 w-5" /></a>
+              <a href="#" aria-label="Twitter" className="hover:text-white transition-colors"><Twitter className="h-5 w-5" /></a>
               <a href="https://www.linkedin.com/in/ved-tech-services-0b04b03aa" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="LinkedIn Company Profile"><Linkedin className="h-5 w-5" /></a>
             </div>
           </div>

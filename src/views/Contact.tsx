@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Phone, Mail, MapPin, MessageSquare, Send, Sparkles, CheckCircle2, Building2, User, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -13,6 +13,9 @@ import { cn } from '@/lib/utils';
 import { toast } from 'sonner';
 
 const Contact: React.FC = () => {
+  const submitting = useRef(false);
+  const requestId = useRef<string | null>(null);
+  const requestPayload = useRef<string | null>(null);
   const [offices, setOffices] = useState<any[]>([]);
 
   useEffect(() => {
@@ -43,15 +46,22 @@ const Contact: React.FC = () => {
   });
 
   const onSubmit = async (data: any) => {
+    if (submitting.current) return;
+    submitting.current = true;
+    const payload = JSON.stringify(data);
+    if (requestPayload.current !== payload) {
+      requestId.current = crypto.randomUUID();
+      requestPayload.current = payload;
+    }
+    requestId.current ??= crypto.randomUUID();
     try {
-      const { error } = await (supabase.from('contact_submissions') as any).insert({
-        name: data.name,
-        email: data.email,
-        phone: data.phone || null,
-        service: data.service || null,
-        message: data.message,
+      const response = await fetch('/api/contact', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...data, requestId: requestId.current }),
       });
-      if (error) throw error;
+      const result = await response.json();
+      if (!response.ok || !result.success) throw new Error(result.error || 'Submission failed.');
+      requestId.current = null;
       toast.success('Message sent!', {
         description: 'We received your inquiry and will get back to you within 24 hours.',
       });
@@ -59,8 +69,10 @@ const Contact: React.FC = () => {
     } catch (err) {
       console.error('Contact form error:', err);
       toast.error('Failed to send message', {
-        description: 'Please try emailing us directly at info@vedtechservices.in',
+        description: (err as any)?.message || 'Please try emailing us directly at info@vedtechservices.in',
       });
+    } finally {
+      submitting.current = false;
     }
   };
 
@@ -308,7 +320,7 @@ const Contact: React.FC = () => {
                           </FormItem>
                         )}
                       />
-                      <Button type="submit" className="w-full md:w-auto px-8 py-6 text-lg">
+                      <Button type="submit" disabled={form.formState.isSubmitting} className="w-full md:w-auto px-8 py-6 text-lg">
                         <Send className="mr-2 h-5 w-5" /> Send Inquiry
                       </Button>
                     </form>

@@ -6,7 +6,7 @@ import {
   useRouter,
   useParams as useNextParams,
 } from "next/navigation";
-import type { ComponentProps, ReactNode } from "react";
+import { useCallback, type ComponentProps, type ReactNode } from "react";
 
 type NextLinkProps = ComponentProps<typeof NextLink>;
 
@@ -41,7 +41,7 @@ interface NavigateOptions {
 export function useNavigate() {
   const router = useRouter();
 
-  return (to: string | number, options?: NavigateOptions) => {
+  return useCallback((to: string | number, options?: NavigateOptions) => {
     if (typeof to === "number") {
       if (to === -1) {
         router.back();
@@ -56,7 +56,7 @@ export function useNavigate() {
     } else {
       router.push(to);
     }
-  };
+  }, [router]);
 }
 
 export function useLocation() {

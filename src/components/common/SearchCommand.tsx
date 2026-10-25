@@ -79,6 +79,7 @@ interface SearchCommandTriggerProps {
 export const SearchCommandTrigger: React.FC<SearchCommandTriggerProps> = ({ onClick }) => (
   <button
     type="button"
+    aria-label="Search website"
     onClick={onClick}
     className="relative inline-flex h-9 w-9 items-center justify-center rounded-md border border-input bg-background text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 md:h-10 md:w-40 md:justify-start md:px-3 lg:w-64"
   >

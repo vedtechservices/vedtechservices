@@ -129,7 +129,7 @@ const AdminLogin: React.FC = () => {
         </div>
       </section>
       <section className="flex-1 flex items-center justify-center py-20 md:py-32">
-        <Card className="w-full max-w-md mx-4">
+        <Card className="w-full max-w-md mx-4 shadow-xl border-gray-300 ">
           <CardHeader>
             <CardTitle className="text-center flex items-center justify-center gap-2">
               <Lock className="h-5 w-5" />
@@ -184,11 +184,11 @@ const AdminLogin: React.FC = () => {
               </Button>
             </div>
 
-            <div className="text-center text-sm text-slate-600 pt-4 border-t">
+            {/* <div className="text-center text-sm text-slate-600 pt-4 border-t">
               <p className="font-semibold mb-2">Demo Credentials:</p>
               <p>Email: admin@vedtechservices.in</p>
               <p>Password: Chandanyajee</p>
-            </div>
+            </div> */}
           </CardContent>
         </Card>
       </section>

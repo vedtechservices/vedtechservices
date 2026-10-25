@@ -15,7 +15,7 @@ const tables = new Set([
   'feedback_reminders', 'feedback_responses', 'notification_rules', 'notification_triggers', 'cron_execution_logs',
   'contact_submissions', 'chatbot_escalations', 'chatbot_ratings', 'knowledge_base_articles',
   'article_suggestion_metrics', 'offices', 'exchange_rates', 'amc_plans', 'amc_subscriptions',
-  'email_campaigns', 'customer_notifications', 'chat_sessions', 'sla_settings', 'tickets',
+  'email_campaigns', 'customer_notifications', 'sla_settings', 'tickets',
 ]);
 
 const adminOnlyTables = new Set(['admin_users']);
@@ -26,8 +26,11 @@ const engineerTables = new Set(['engineers', 'support_tickets', 'engineer_notifi
 const supportAdminTables = new Set(['customers', 'engineers', 'leads', 'support_tickets', 'tickets', 'customer_feedback', 'customer_interactions', 'customer_segments', 'email_campaigns', 'call_logs', 'meetings', 'tasks', 'part_requests', 'hardware_repairs']);
 const auditTables = new Set(['activity_logs', 'crm_audit_logs', 'login_audit_logs']);
 const crmTables = new Set(['leads', 'customer_segments', 'email_campaigns', 'call_logs', 'meetings', 'tasks', 'customer_interactions']);
+// 00018 can_manage_crm explicitly recognizes full_access_admin; it is not a super-admin alias.
+const crmAccessTables = new Set(['customers', 'customer_feedback', ...crmTables]);
 const privateRpcs = new Set(['check_expiring_amcs', 'update_ticket_admin', 'add_engineer', 'update_engineer', 'delete_engineer', 'get_office_stats', 'check_customer_amc_status', 'get_or_create_customer']);
 const hiddenFields = new Set(['password_hash', 'totp_secret', 'reset_code', 'reset_code_expires']);
+const literalEmail = (email: string) => email.replace(/[\\%_]/g, '\\$&');
 
 type Filter = { op: string; column?: string; value?: unknown; values?: unknown[]; expression?: string };
 
@@ -79,6 +82,10 @@ function engineerOwnScope(query: any, table: string, engineer: { id: string }) {
 
 export async function POST(request: Request) {
   try {
+    const origin = request.headers.get('origin');
+    if ((origin && origin !== new URL(request.url).origin) || request.headers.get('sec-fetch-site') === 'cross-site') {
+      return NextResponse.json({ data: null, error: { message: 'Invalid request origin.' } }, { status: 403 });
+    }
     const body = await request.json();
     const db = reviewDb();
     const admin = await currentAdmin();
@@ -90,7 +97,7 @@ export async function POST(request: Request) {
         const { data: authData } = await db.auth.getUser(bearer);
         const verifiedEmail = authData.user?.email_confirmed_at ? authData.user.email?.toLowerCase() : null;
         if (verifiedEmail) {
-          const { data } = await db.from('customers').select('id,email').ilike('email', verifiedEmail).maybeSingle();
+          const { data } = await db.from('customers').select('id,email').ilike('email', literalEmail(verifiedEmail)).maybeSingle();
           if (data) customer = { id: data.id, email: data.email };
         }
       }
@@ -111,11 +118,32 @@ export async function POST(request: Request) {
     if (typeof table !== 'string' || !tables.has(table) || !['select', 'insert', 'update', 'delete', 'upsert'].includes(action)) {
       return NextResponse.json({ data: null, error: { message: 'Unsupported data operation.' } }, { status: 400 });
     }
+    // Service-role relation expansion must not bypass the primary table's role guard.
+    if (typeof columns === 'string' && admin?.role !== 'super_admin') {
+      const related = [...columns.matchAll(/([a-zA-Z_][a-zA-Z0-9_]*)(?:![a-zA-Z0-9_]+)*\s*\(/g)].map(match => match[1]);
+      const allowedRelations = customer ? new Set(table === 'amc_subscriptions' ? ['amc_plans'] : [])
+        : engineer ? new Set(table === 'part_requests' ? ['inventory_items'] : [])
+        : new Set(admin?.role === 'billing_admin' ? ['customers', 'amc_plans', 'amc_subscriptions', 'service_invoices']
+          : admin?.role === 'support_admin' ? [...supportAdminTables, ...crmAccessTables]
+          : admin?.role === 'full_access_admin' ? [...crmAccessTables] : []);
+      if (related.some(name => !allowedRelations.has(name))) return NextResponse.json({ data: null, error: { message: 'Related data access is not permitted.' } }, { status: 403 });
+    }
     const selfAdminSettingsUpdate = table === 'admin_users' && action === 'update' && admin &&
       payload && typeof payload === 'object' && !Array.isArray(payload) &&
       Object.keys(payload).every(key => ['totp_secret', 'totp_enabled', 'updated_at'].includes(key));
     if (adminOnlyTables.has(table) && (!admin || (admin.role !== 'super_admin' && action !== 'select' && !selfAdminSettingsUpdate))) {
       return NextResponse.json({ data: null, error: { message: 'Super administrator access required.' } }, { status: 403 });
+    }
+    if (table === 'admin_users' && action === 'upsert') {
+      return NextResponse.json({ data: null, error: { message: 'Use explicit administrator creation or update.' } }, { status: 403 });
+    }
+    if (table === 'admin_users' && action === 'update' && payload && Object.hasOwn(payload, 'role')) {
+      const target = Array.isArray(filters) && filters.length === 1 && filters[0].op === 'eq' && filters[0].column === 'id' ? filters[0].value : null;
+      if (!target || target === admin?.id) return NextResponse.json({ data: null, error: { message: 'Role changes require a single other administrator.' } }, { status: 403 });
+      const { data, error } = await db.rpc('assign_admin_role' as any, {
+        p_actor_id: admin!.id, p_target_id: target, p_changes: hashCredentialFields(table, payload),
+      });
+      return NextResponse.json({ data: sanitize(data), error: error ? { message: error.message } : null }, { status: error ? 400 : 200 });
     }
     if (superAdminConfigTables.has(table) && admin?.role !== 'super_admin') {
       return NextResponse.json({ data: null, error: { message: 'Super administrator access required.' } }, { status: 403 });
@@ -123,13 +151,17 @@ export async function POST(request: Request) {
     if (supportConfigTables.has(table) && !['super_admin', 'support_admin'].includes(admin?.role || '')) {
       return NextResponse.json({ data: null, error: { message: 'Support administrator access required.' } }, { status: 403 });
     }
-    if (billingTables.has(table) && !['super_admin', 'billing_admin'].includes(admin?.role || '')) {
+    const customerBillingRead = customer && action === 'select' && ['service_invoices', 'amc_subscriptions'].includes(table);
+    if (billingTables.has(table) && !customerBillingRead && !['super_admin', 'billing_admin'].includes(admin?.role || '')) {
       return NextResponse.json({ data: null, error: { message: 'Billing administrator access required.' } }, { status: 403 });
     }
     if (admin && table === 'service_invoices' && !['super_admin', 'billing_admin'].includes(admin.role)) {
       return NextResponse.json({ data: null, error: { message: 'Billing administrator access required.' } }, { status: 403 });
     }
-    if (admin && supportAdminTables.has(table) && !['super_admin', 'support_admin'].includes(admin.role)) {
+    if (admin && crmAccessTables.has(table) && !['super_admin', 'full_access_admin', 'support_admin'].includes(admin.role)) {
+      return NextResponse.json({ data: null, error: { code: 'CRM_ROLE_REQUIRED', message: `CRM administrator access required. Current role: ${admin.role}. Ask a super-admin to assign CRM Admin (full_access_admin).`, details: `${table}.${action}` } }, { status: 403 });
+    }
+    if (admin && supportAdminTables.has(table) && !crmAccessTables.has(table) && !['super_admin', 'support_admin'].includes(admin.role)) {
       return NextResponse.json({ data: null, error: { message: 'Support administrator access required.' } }, { status: 403 });
     }
     if (admin && auditTables.has(table) && admin.role !== 'super_admin') {
@@ -138,9 +170,13 @@ export async function POST(request: Request) {
     if (engineer && (!engineerTables.has(table) || (table === 'engineers' && action !== 'select') || (table === 'inventory_items' && action !== 'select') || (table === 'customer_feedback' && action !== 'select'))) {
       return NextResponse.json({ data: null, error: { message: 'Not authorized for this operation.' } }, { status: 403 });
     }
+    if (engineer && action !== 'select' && !(action === 'insert' && table === 'part_requests') &&
+        !(action === 'update' && ['support_tickets', 'engineer_notifications', 'hardware_repairs'].includes(table))) {
+      return NextResponse.json({ data: null, error: { message: 'This employee operation is not permitted.' } }, { status: 403 });
+    }
     const customerTables = new Set(['customers', 'support_tickets', 'customer_notifications', 'service_invoices', 'hardware_repairs', 'amc_subscriptions', 'customer_feedback']);
     const customerFeedbackInsert = customer && table === 'customer_feedback' && action === 'insert';
-    if (customer && (!customerTables.has(table) || action === 'delete' || (action === 'insert' && !customerFeedbackInsert))) {
+    if (customer && (!customerTables.has(table) || !['select', 'update', 'insert'].includes(action) || (action === 'insert' && !customerFeedbackInsert))) {
       return NextResponse.json({ data: null, error: { message: 'Not authorized for this operation.' } }, { status: 403 });
     }
     if (customer && action === 'update' && (table !== 'customer_notifications' || !payload || typeof payload !== 'object' || Array.isArray(payload) || Object.keys(payload).some(key => key !== 'is_read'))) {
@@ -157,13 +193,23 @@ export async function POST(request: Request) {
       if (rows.length !== 1 || !rows[0] || typeof rows[0].ticket_id !== 'string' || !Number.isInteger(rows[0].rating) || rows[0].rating < 1 || rows[0].rating > 5) {
         return NextResponse.json({ data: null, error: { message: 'Invalid feedback.' } }, { status: 400 });
       }
-      const { data: ticket } = await db.from('support_tickets').select('id').eq('ticket_id', rows[0].ticket_id).ilike('email', customer!.email).maybeSingle();
+      const { data: ticket } = await db.from('support_tickets').select('id,engineer_id').eq('id', rows[0].ticket_id).ilike('email', literalEmail(customer!.email)).maybeSingle();
       if (!ticket) return NextResponse.json({ data: null, error: { message: 'Ticket not found for this account.' } }, { status: 403 });
-      safePayload = { ...rows[0], customer_id: customer!.id, employee_id: null };
+      if (rows[0].review_text != null && (typeof rows[0].review_text !== 'string' || rows[0].review_text.length > 4000)) {
+        return NextResponse.json({ data: null, error: { message: 'Invalid feedback text.' } }, { status: 400 });
+      }
+      safePayload = { ticket_id: ticket.id, rating: rows[0].rating, review_text: rows[0].review_text || null, customer_id: customer!.id, employee_id: ticket.engineer_id || null };
     }
     if (engineer && action === 'insert') {
-      const bindEngineer = (row: any) => ({ ...row, engineer_id: engineer.id });
-      safePayload = Array.isArray(safePayload) ? safePayload.map(bindEngineer) : bindEngineer(safePayload);
+      const rows = Array.isArray(safePayload) ? safePayload : [safePayload];
+      const row = rows[0];
+      if (rows.length !== 1 || !row || typeof row.repair_id !== 'string' || typeof row.item_id !== 'string' ||
+          !Number.isSafeInteger(row.quantity) || row.quantity < 1 || row.quantity > 1000) {
+        return NextResponse.json({ data: null, error: { message: 'Invalid part request.' } }, { status: 400 });
+      }
+      const { data: repair } = await db.from('hardware_repairs').select('id').eq('id', row.repair_id).eq('assigned_engineer_id', engineer.id).maybeSingle();
+      if (!repair) return NextResponse.json({ data: null, error: { message: 'Repair assignment required.' } }, { status: 403 });
+      safePayload = { engineer_id: engineer.id, repair_id: row.repair_id, item_id: row.item_id, quantity: row.quantity, status: 'pending' };
     }
     let query: any = (db.from(table as any) as any);
     if (action === 'select') query = query.select(typeof columns === 'string' ? columns.slice(0, 2000) : '*');
@@ -174,16 +220,19 @@ export async function POST(request: Request) {
 
     const safeFilters = Array.isArray(filters) ? filters.slice(0, 100) : [];
     if (table === 'admin_users' && admin?.role !== 'super_admin') safeFilters.push({ op: 'eq', column: 'id', value: admin?.id });
+    if (table === 'admin_users' && admin && (action === 'delete' || (action === 'update' && ['id', 'is_active'].some(key => Object.hasOwn(payload || {}, key))))) {
+      safeFilters.push({ op: 'neq', column: 'id', value: admin.id });
+    }
     query = applyFilters(query, safeFilters);
     if (engineer) query = engineerOwnScope(query, table, engineer);
     if (customer) {
       if (table === 'customers') query = query.eq('id', customer.id);
-      else if (table === 'support_tickets') query = query.ilike('email', customer.email);
+      else if (table === 'support_tickets') query = query.ilike('email', literalEmail(customer.email));
       else query = query.eq('customer_id', customer.id);
     }
     if (engineer && table === 'customer_feedback') {
-      const { data: assignments } = await db.from('support_tickets').select('ticket_id').eq('engineer_id', engineer.id).limit(500);
-      const assignedTicketIds = (assignments || []).map(ticket => ticket.ticket_id).filter(Boolean);
+      const { data: assignments } = await db.from('support_tickets').select('id').eq('engineer_id', engineer.id).limit(500);
+      const assignedTicketIds = (assignments || []).map(ticket => ticket.id).filter(Boolean);
       if (!assignedTicketIds.length) return NextResponse.json({ data: [], error: null });
       query = query.in('ticket_id', assignedTicketIds);
     }

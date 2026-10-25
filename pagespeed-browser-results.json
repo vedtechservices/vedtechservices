@@ -1,0 +1,8 @@
+{
+  "initialChatRequests": 0,
+  "requestsAfterOpening": 1,
+  "chatOpenCloseReopen": true,
+  "mobileThemeButtonsNamed": true,
+  "pageErrors": [],
+  "note": "Chat endpoint mocked with HTTP 503; no support records created. Real messaging not exercised."
+}

@@ -39,11 +39,6 @@ Context — SLA APPROACHING:
 - Time elapsed: ${Math.round(elapsedMin)} minutes (target: ${targetMin} minutes, ${Math.round(Math.max(0, targetMin - elapsedMin))} minutes remaining)
 Use amber/orange accents.`;
 
-  const serviceRoleKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
-  if (!serviceRoleKey || req.headers.get('Authorization') !== `Bearer ${serviceRoleKey}`) {
-    return new Response(JSON.stringify({ error: 'Unauthorized.' }), { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
-  }
-
   try {
     const endpoint = `https://app-99gjdx4fbuv5-api-VaOwP8E7dJqa.gateway.appmedo.com/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse`;
     const response = await fetch(endpoint, {
@@ -107,6 +102,10 @@ function buildFallback(
 }
 
 serve(async (req) => {
+  const serviceRoleKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
+  if (req.method !== 'OPTIONS' && (!serviceRoleKey || req.headers.get('Authorization') !== `Bearer ${serviceRoleKey}`)) {
+    return new Response(JSON.stringify({ error: 'Unauthorized.' }), { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+  }
   if (req.method === 'OPTIONS') return new Response(null, { headers: corsHeaders });
 
   try {

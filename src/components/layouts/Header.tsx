@@ -63,10 +63,10 @@ const Header: React.FC = () => {
             <Image
               src="/vedtech-logo.png"
               alt="VedTech Services Logo"
-              width={48}
-              height={48}
+              width={905}
+              height={1012}
               sizes="48px"
-              className="h-12 w-12 rounded-full"
+              className="h-12 w-12 rounded-full object-contain"
               data-editor-config="%7B%22defaultSrc%22%3A%22https%3A%2F%2Fmiaoda-conversation-file.s3cdn.medo.dev%2Fuser-8t7j0johoxds%2Fconv-99gjdx4fbuv4%2F20260302%2Ffile-9znj7azzuakg.png%22%7D" />
             <span className="text-xl font-bold tracking-tight text-primary hidden sm:inline">VedTech <span className="text-foreground">Services</span></span>
           </Link>
@@ -211,13 +211,13 @@ const Header: React.FC = () => {
                     </Link>
                   ))}
                   <div className="flex items-center gap-4 mt-4">
-                    <Button variant="outline" size="icon" onClick={() => setTheme('light')} className={cn(theme === 'light' && "border-primary")}>
+                    <Button variant="outline" size="icon" aria-label="Use light theme" onClick={() => setTheme('light')} className={cn(theme === 'light' && "border-primary")}>
                       <Sun className="h-5 w-5" />
                     </Button>
-                    <Button variant="outline" size="icon" onClick={() => setTheme('dark')} className={cn(theme === 'dark' && "border-primary")}>
+                    <Button variant="outline" size="icon" aria-label="Use dark theme" onClick={() => setTheme('dark')} className={cn(theme === 'dark' && "border-primary")}>
                       <Moon className="h-5 w-5" />
                     </Button>
-                    <Button variant="outline" size="icon" onClick={() => setTheme('system')} className={cn(theme === 'system' && "border-primary")}>
+                    <Button variant="outline" size="icon" aria-label="Use system theme" onClick={() => setTheme('system')} className={cn(theme === 'system' && "border-primary")}>
                       <Monitor className="h-5 w-5" />
                     </Button>
                   </div>

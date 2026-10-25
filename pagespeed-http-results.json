@@ -1,0 +1,52 @@
+[
+  {
+    "path": "/",
+    "status": 200,
+    "csp": "frame-ancestors 'self'",
+    "coop": "same-origin-allow-popups",
+    "frame": "SAMEORIGIN",
+    "heroInHTML": true,
+    "searchName": true,
+    "chatLauncher": true,
+    "canonical": "<link rel=\"canonical\" href=\"https://vedtechservices.in\"/>",
+    "title": "IT Services for Businesses | Software, Web, Hardware &amp; Support | VedTech",
+    "chatDialogInHTML": false
+  },
+  {
+    "path": "/contact",
+    "status": 200,
+    "csp": "frame-ancestors 'self'",
+    "coop": "same-origin-allow-popups",
+    "frame": "SAMEORIGIN"
+  },
+  {
+    "path": "/services/web-development",
+    "status": 200,
+    "csp": "frame-ancestors 'self'",
+    "coop": "same-origin-allow-popups",
+    "frame": "SAMEORIGIN"
+  },
+  {
+    "path": "/robots.txt",
+    "status": 200,
+    "csp": "frame-ancestors 'self'",
+    "coop": "same-origin-allow-popups",
+    "frame": "SAMEORIGIN",
+    "content": "User-Agent: *\nAllow: /\nDisallow: /admin\nDisallow: /dashboard\nDisallow: /employee\nDisallow: /engineer\nDisallow: /settings\n\nSitemap: https://vedtechservices.in/sitemap.xml\n"
+  },
+  {
+    "path": "/sitemap.xml",
+    "status": 200,
+    "csp": "frame-ancestors 'self'",
+    "coop": "same-origin-allow-popups",
+    "frame": "SAMEORIGIN",
+    "urls": 45
+  },
+  {
+    "path": "/locations/delhi",
+    "status": 200,
+    "csp": "frame-ancestors 'self'",
+    "coop": "same-origin-allow-popups",
+    "frame": "SAMEORIGIN"
+  }
+]

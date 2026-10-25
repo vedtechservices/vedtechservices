@@ -88,7 +88,7 @@ export default function CRMDashboard() {
 
     } catch (error) {
       console.error('Error fetching CRM data:', error);
-      toast.error('Failed to load CRM data');
+      toast.error((error as { message?: string })?.message || 'Failed to load CRM data');
     } finally {
       setLoading(false);
     }

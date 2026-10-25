@@ -195,7 +195,7 @@ const Home: React.FC = () => {
               {/* Phone — overlapping bottom-right */}
               <div className="absolute bottom-2 right-8 z-20 animate-float-delayed">
                 <Image
-                  src="https://miaoda-site-img.s3cdn.medo.dev/images/KLing_81dcc0b5-19a6-42e2-bb4a-f892cbafaf8f.jpg"
+                  src="/images/Desktop_img.jpg"
                   alt="Mobile IT solutions on smartphone"
                   width={1344}
                   height={768}

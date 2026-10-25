@@ -1,5 +1,6 @@
 import { createClient } from 'jsr:@supabase/supabase-js@2';
-import { createHmac } from 'node:crypto';
+import { createPublicKey, verify } from 'node:crypto';
+import { Buffer } from 'node:buffer';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -29,18 +30,29 @@ Deno.serve(async (req) => {
   }
 
   try {
+    if (req.method !== 'POST') return new Response(null, { status: 405 });
+    const signature = req.headers.get('x-twilio-email-event-webhook-signature');
+    const timestamp = req.headers.get('x-twilio-email-event-webhook-timestamp');
+    const publicKey = Deno.env.get('SENDGRID_WEBHOOK_PUBLIC_KEY');
+    if (!publicKey) return new Response(JSON.stringify({ error: 'Webhook signature verification is not configured.' }), { status: 503 });
+    if (!signature || !timestamp || !/^\d{1,12}$/.test(timestamp)) return new Response(null, { status: 401 });
+    // Verify timestamp + original bytes before parsing, as required by SendGrid.
+    const raw = Buffer.from(await req.arrayBuffer());
+    if (raw.length > 1024 * 1024) return new Response(null, { status: 413 });
+    let valid = false;
+    try {
+      const key = createPublicKey({ key: Buffer.from(publicKey, 'base64'), format: 'der', type: 'spki' });
+      valid = verify('sha256', Buffer.concat([Buffer.from(timestamp), raw]), key, Buffer.from(signature, 'base64'));
+    } catch { /* Invalid configuration or signature must fail closed. */ }
+    if (!valid) return new Response(null, { status: 401 });
+    const events: SendGridEvent[] = JSON.parse(raw.toString('utf8'));
+    if (!Array.isArray(events) || events.length > 1000 || events.some(event => !event || typeof event.email !== 'string' || typeof event.event !== 'string' || !Number.isFinite(event.timestamp))) {
+      return new Response(JSON.stringify({ error: 'Invalid event batch.' }), { status: 400 });
+    }
     const supabaseClient = createClient(
       Deno.env.get('SUPABASE_URL') ?? '',
       Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
     );
-
-    // Verify SendGrid signature (optional but recommended for production)
-    const signature = req.headers.get('x-twilio-email-event-webhook-signature');
-    const timestamp = req.headers.get('x-twilio-email-event-webhook-timestamp');
-    const publicKey = Deno.env.get('SENDGRID_WEBHOOK_PUBLIC_KEY');
-
-    // Parse webhook payload
-    const events: SendGridEvent[] = await req.json();
     
     console.log(`Received ${events.length} SendGrid webhook events`);
 
@@ -115,7 +127,7 @@ Deno.serve(async (req) => {
     console.error('SendGrid webhook error:', error);
     
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ error: 'Webhook processing failed.' }),
       {
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         status: 500,

@@ -33,6 +33,7 @@ const AMCPlans = lazy(() => import('./views/AMCPlans'));
 const CustomerDashboard = lazy(() => import('./views/CustomerDashboard'));
 const EngineerDashboard = lazy(() => import('./views/EngineerDashboard'));
 const AdminManagement = lazy(() => import('./views/AdminManagement'));
+const SupportInbox = lazy(() => import('./views/SupportInbox'));
 const EmployeeManagement = lazy(() => import('./views/EmployeeManagement'));
 const EmployeeLogin = lazy(() => import('./views/EmployeeLogin'));
 const EmployeeSignup = lazy(() => import('./views/EmployeeSignup'));
@@ -334,6 +335,12 @@ const routes: RouteConfig[] = [
     name: 'Chatbot Escalations',
     path: '/admin/chatbot-escalations',
     element: <AdminChatEscalations />,
+    visible: false
+  },
+  {
+    name: 'Support Inbox',
+    path: '/admin/support-inbox',
+    element: <SupportInbox />,
     visible: false
   },
   {

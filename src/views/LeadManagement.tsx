@@ -89,7 +89,7 @@ export default function LeadManagement() {
       console.error('Error fetching leads:', error);
       toast({
         title: 'Error',
-        description: 'Failed to load leads',
+        description: (error as { message?: string })?.message || 'Failed to load leads',
         variant: 'destructive'
       });
     } finally {
