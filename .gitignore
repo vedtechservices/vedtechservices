@@ -37,10 +37,10 @@ node_modules/
 .verification/
 
 
-# Temporarily exclude chatbot
-src/components/common/ChatBot.tsx
-src/lib/supportIntent.ts
-src/lib/supportAI.ts
-src/lib/liveSupport.ts
-app/api/chat/
-supabase/migrations/00044_live_support.sql
+# # Temporarily exclude chatbot
+# src/components/common/ChatBot.tsx
+# src/lib/supportIntent.ts
+# src/lib/supportAI.ts
+# src/lib/liveSupport.ts
+# app/api/chat/
+# supabase/migrations/00044_live_support.sql

@@ -1,0 +1,1 @@
+export const wantsHuman = (text: string) => /\b(human support|connect (?:me )?to (?:a )?human|talk to (?:an? )?(?:agent|human|person)|speak (?:with|to) (?:an? )?(?:agent|human|person)|live (?:agent|support)|real person)\b/i.test(text);
