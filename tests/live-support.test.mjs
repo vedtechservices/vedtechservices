@@ -1,15 +1,15 @@
-import {test} from 'node:test';
+﻿import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
 import ts from 'typescript';
 import * as crypto from 'node:crypto';
 function compile(path,dependencies={},globals={}) {
- const exports={};vm.runInNewContext(ts.transpileModule(fs.readFileSync(path,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText,
- {exports,require:name=>dependencies[name],Buffer,AbortSignal,URL,Headers,setTimeout,...globals});return exports;
+ const exports={};vm.runInNewContext(ts.transpileModule(fs.readFileSync(path,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,esModuleInterop:true}}).outputText,
+ {exports,require:name=>dependencies[name]||(name==='./businessKnowledge'?compile('src/lib/businessKnowledge.ts'):name==='../data/portfolio-seed.json'?JSON.parse(fs.readFileSync('src/data/portfolio-seed.json','utf8')):undefined),Buffer,AbortSignal,URL,Headers,setTimeout,...globals});return exports;
 }
 const intent=compile('src/lib/supportIntent.ts');
-const ai=(key='test-key')=>compile('src/lib/supportAI.ts',{'server-only':{},'./supportIntent':intent},{process:{env:{INTEGRATIONS_API_KEY:key}},fetch:async()=>{throw Error('not configured')}});
+const ai=(key='test-key')=>compile('src/lib/supportAI.ts',{'server-only':{},'./supportIntent':intent,'./localFaq':compile('src/lib/localFaq.ts')},{process:{env:{INTEGRATIONS_API_KEY:key}},fetch:async()=>{throw Error('not configured')}});
 for(const text of ['connect to human','talk to an agent','human support','speak with a person','live agent'])test(`handoff intent: ${text}`,()=>assert.equal(intent.wantsHuman(text),true));
 test('AI provider disabled fails safely without making network request',async()=>{
  const m=ai('');assert.equal(await m.answerSupport([],m.companyFacts,()=>{throw Error('must not fetch')}),m.aiFallback);
@@ -17,15 +17,7 @@ test('AI provider disabled fails safely without making network request',async()=
 test('unconfigured AI still answers known services from approved local facts',async()=>{
  const m=ai('');assert.equal(await m.answerSupport([{sender:'user',body:'What hardware repair do you offer?'}],m.companyFacts),m.companyFacts.find(f=>f.id==='hardware').text);
 });
-test('AI uses persisted history, validates sources, never renders generated claims',async()=>{
- const m=ai();let sent;
- const output=await m.answerSupport([{sender:'user',body:'Hardware?'},{sender:'user',body:'What about upgrades?'}],m.companyFacts,async(url,options)=>{
-  sent=JSON.parse(options.body);assert.ok(!url.includes('test-key'));return {ok:true,json:async()=>({candidates:[{content:{parts:[{text:JSON.stringify({sources:['hardware'],answer:'Invented price 99'})}]}}]})};
- });
- assert.equal(output,m.companyFacts.find(f=>f.id==='hardware').text);
- assert.match(sent.contents[0].parts[0].text,/What about upgrades/);
- assert.doesNotMatch(output,/Invented/);
-});
+test('local adapter ignores provider configuration and cannot make a provider request',async()=>{const m=ai();let calls=0;const answer=await m.answerSupport([{sender:'user',body:'hardware upgrades'}],m.companyFacts,async()=>{calls++;throw Error('must not fetch')});assert.equal(calls,0);assert.equal(answer,m.companyFacts.find(f=>f.id==='hardware').text);});
 for(const result of [{ok:false}, {ok:true,json:async()=>({})}, {ok:true,json:async()=>({candidates:[{content:{parts:[{text:'{"sources":["invented-price"]}'}]}}]})}])test('AI invalid/provider failure returns safe fallback',async()=>{
  const m=ai();assert.equal(await m.answerSupport([],m.companyFacts,async()=>result),m.aiFallback);
 });
@@ -52,28 +44,8 @@ test('visitor ownership uses a hash, malformed and missing cookies rejected',asy
  const f=liveFixture();assert.equal(await f.exports.owner(),crypto.createHash('sha256').update('a'.repeat(64)).digest('hex'));
  f.setCookie('fake');assert.equal(await f.exports.owner(),null);f.setCookie(null);assert.equal(await f.exports.owner(),null);
 });
-for(const ok of [true,false])test(`handoff email ${ok?'acceptance':'failure'} recorded truthfully`,async()=>{
- const f=liveFixture({mailOk:ok});await f.exports.notifySupport(f.db,'conversation-id');
- assert.equal(f.mailCalls(),1);assert.equal(f.calls.at(-1).args.p_result,ok?'sent':'failed');
- const sent=f.calls.find(c=>c.url);assert.equal(sent.options.headers['Idempotency-Key'],'support-handoff-conversation-id');
- assert.equal(sent.options.body,JSON.stringify({text:'Frozen safe text'}));
- assert.doesNotMatch(f.calls[0].args.p_payload.text,/vts_support_owner/);
- assert.match(f.calls[0].args.p_payload.text,/admin\/support-inbox/);
-});
-test('missing email configuration persists failure without claiming delivery',async()=>{
- const f=liveFixture({mailKey:''});await f.exports.notifySupport(f.db,'conversation-id');assert.equal(f.mailCalls(),0);assert.equal(f.calls.at(-1).args.p_result,'failed');
-});
-test('already-notified handoff does not send again',async()=>{
- const f=liveFixture({notification:'sent'});await f.exports.notifySupport(f.db,'conversation-id');assert.equal(f.calls.length,0);assert.equal(f.mailCalls(),0);
-});
-test('notification claim held by another worker prevents concurrent email send',async()=>{
- const f=liveFixture();f.db.rpc=async()=>({data:null,error:null});await f.exports.notifySupport(f.db,'conversation-id');assert.equal(f.mailCalls(),0);
-});
-test('notification status save failure is reported as uncertain',async()=>{
- const f=liveFixture();const original=f.db.rpc;
- f.db.rpc=async(name,args)=>args.p_result?{error:{message:'database unavailable'}}:original(name,args);
- await assert.rejects(f.exports.notifySupport(f.db,'conversation-id'),e=>e.status===503);
-});
+test('human handoff never invokes an email provider or notification RPC',async()=>{for(const mailKey of ['', 'configured-key']){const f=liveFixture({mailKey});await f.exports.notifySupport(f.db,'conversation-id');assert.equal(f.mailCalls(),0);assert.equal(f.calls.length,0);}});
+
 test('cross-origin and oversized writes are rejected before parsing',async()=>{
  const m=liveFixture().exports;
  await assert.rejects(m.input(new Request('https://site.invalid/api/chat/session',{method:'POST',headers:{origin:'https://evil.invalid'},body:'{}'})),e=>e.status===403);
@@ -99,3 +71,4 @@ test('visitor cannot invoke agent or internal AI actions',async()=>{
 test('missing visitor session never reads protected history',async()=>{
  const f=routeFixture({hash:null});const response=await f.visitor.GET(new Request('https://site.invalid?token=forged'));assert.equal(response.status,401);assert.equal(f.calls.length,0);
 });
+

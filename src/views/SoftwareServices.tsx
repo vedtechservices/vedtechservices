@@ -1,3 +1,4 @@
+import { useProjects } from '@/hooks/use-projects';
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -94,92 +95,7 @@ const SoftwareServices: React.FC = () => {
     }
   ];
 
-  const portfolioProjects = [
-    {
-      title: "VedTech Services Official",
-      category: "Corporate Website",
-      description: "Official professional services website for VedTech Services.",
-      image: "https://miaoda-site-img.s3cdn.medo.dev/images/KLing_4d281b68-bc1c-4c3d-b384-1e78f72970ff.jpg",
-      link: "https://vedtechservices.in/"
-    },
-    {
-      title: "VedArambh Online Gurukul",
-      category: "Educational Portal",
-      description: "A Sanatan initiative for traditional and modern education.",
-      image: "https://miaoda-site-img.s3cdn.medo.dev/images/KLing_0866568b-b656-45f5-a62b-84c47abc3c46.jpg",
-      link: "https://vedarambhin.vercel.app/"
-    },
-    {
-      title: "VedArambh Mart",
-      category: "E-commerce",
-      description: "Comprehensive online marketplace for retail products.",
-      image: "https://miaoda-site-img.s3cdn.medo.dev/images/KLing_64a9d5c7-85a8-48da-bff0-f792374f4496.jpg",
-      link: "https://app-9gbc95t8hhq9.appmedo.com"
-    },
-    {
-      title: "Guru Shishya Public School",
-      category: "School ERP",
-      description: "Complete school management system for administration and academics.",
-      image: "https://miaoda-site-img.s3cdn.medo.dev/images/KLing_1b9c9dd5-69e5-4c33-8235-44894fa55d56.jpg",
-      link: "https://app-9d204bkggf0h.appmedo.com"
-    },
-    {
-      title: "College Management System",
-      category: "Enterprise Software",
-      description: "Unified platform for college administrative and educational management.",
-      image: "https://miaoda-site-img.s3cdn.medo.dev/images/KLing_b0783a9d-a234-4fcb-9370-d9032da3bd7d.jpg",
-      link: "https://app-8t84np01ksu9.appmedo.com"
-    },
-    {
-      title: "VedArambh Learning Language",
-      category: "Learning Platform",
-      description: "Digital platform for language acquisition and coaching.",
-      image: "https://miaoda-site-img.s3cdn.medo.dev/images/KLing_eed35a87-07ee-4769-b38d-44d408a43d33.jpg",
-      link: "https://app-99gy8ue2nwu9.appmedo.com"
-    },
-    {
-      title: "IT Management System",
-      category: "SaaS Application",
-      description: "Operational dashboard for managing IT infrastructure and services.",
-      image: "https://miaoda-site-img.s3cdn.medo.dev/images/KLing_3e2a7f1b-93a6-442c-a38f-651e2821decc.jpg",
-      link: "https://app-9d1ic5zguu4h.appmedo.com"
-    },
-    {
-      title: "Beauty Parlor Management",
-      category: "Business Software",
-      description: "Appointment and management solution for salon and parlor businesses.",
-      image: "https://miaoda-site-img.s3cdn.medo.dev/images/KLing_4c7a61c9-cf39-4d97-bc60-16e846c470c6.jpg",
-      link: "https://app-9grz3x2dsf0h.appmedo.com"
-    },
-    {
-      title: "VedArambh Group",
-      category: "Corporate Site",
-      description: "Corporate portfolio website for the VedArambh Group of companies.",
-      image: "https://miaoda-site-img.s3cdn.medo.dev/images/KLing_4d281b68-bc1c-4c3d-b384-1e78f72970ff.jpg",
-      link: "https://app-82srpbr0v9xd.appmedo.com/"
-    },
-    {
-      title: "VedArambh Learning Platform",
-      category: "EdTech Solution",
-      description: "Full-featured online learning and course management platform.",
-      image: "https://miaoda-site-img.s3cdn.medo.dev/images/KLing_0866568b-b656-45f5-a62b-84c47abc3c46.jpg",
-      link: "https://app-7vh9c6jdo3cz.appmedo.com"
-    },
-    {
-      title: "VED FITNESS",
-      category: "Gym & Health",
-      description: "Member management and workout tracking site for fitness centers.",
-      image: "https://miaoda-site-img.s3cdn.medo.dev/images/KLing_e55de5fe-91aa-4df5-b863-632b849406bc.jpg",
-      link: "https://app-9j7xgqljr6dd.appmedo.com"
-    },
-    {
-      title: "VedArambh Coaching Center",
-      category: "Educational Site",
-      description: "Dedicated website for local coaching centers and institutes.",
-      image: "https://miaoda-site-img.s3cdn.medo.dev/images/KLing_6aa5fb4a-c845-4519-ad4a-d373f845b288.jpg",
-      link: "https://app-9j7w69fc8nb5.appmedo.com"
-    }
-  ];
+  const {projects: portfolioProjects, error} = useProjects('software');
 
   const process = [
     { step: "1", title: "Discovery", description: "Understanding your requirements and goals" },
@@ -322,7 +238,7 @@ const SoftwareServices: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {portfolioProjects.map((project, index) => (
+              {error&&<p role="status">{error}</p>}{portfolioProjects.map((project, index) => (
                 <Card key={index} className="overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full border-muted/50 group">
                   <div className="relative aspect-video overflow-hidden">
                     <img
@@ -342,11 +258,11 @@ const SoftwareServices: React.FC = () => {
                   <CardContent className="flex-1 space-y-4">
                     <p className="text-slate-600 text-sm leading-relaxed">{project.description}</p>
                     <div className="pt-4 mt-auto border-t">
-                      <Button asChild variant="outline" size="sm" className="w-full hover:bg-primary hover:text-white transition-colors">
+                      {project.link&&<Button asChild variant="outline" size="sm" className="w-full hover:bg-primary hover:text-white transition-colors">
                         <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
                           Visit Project <ExternalLink className="h-4 w-4" />
                         </a>
-                      </Button>
+                      </Button>}
                     </div>
                   </CardContent>
                 </Card>

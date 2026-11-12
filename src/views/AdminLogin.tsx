@@ -5,7 +5,6 @@ import { Input } from '@/components/ui/input';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@/components/ui/dialog';
 import { Shield, Lock, Key } from 'lucide-react';
 import { useNavigate } from '@/lib/next-router';
-import { supabase } from '@/db/supabase';
 import { LoadingSpinner } from '@/components/common/Loader';
 import { useToast } from '@/hooks/use-toast';
 
@@ -88,20 +87,17 @@ const AdminLogin: React.FC = () => {
     if (!resetEmail) return;
     setIsResetting(true);
     try {
-      // For demo purposes, we skip the Edge Function if it's tricky to deploy
-      // but the prompt asked for "email-based verification codes".
-      // We'll simulate a fetch to the edge function.
-      const { data, error } = await supabase.functions.invoke('send-reset-code', {
-        body: { email: resetEmail, user_type: 'admin' }
+      const response = await fetch('/api/admin/password-reset', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'request', email: resetEmail }),
       });
-
-      if (error) throw error;
-      else {
-        toast({ title: "Success", description: data.message });
-        setStep('verify');
-      }
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error || 'Could not send the verification code.');
+      toast({ title: "Check Your Email", description: result.message });
+      setStep('verify');
     } catch (err) {
-      toast({ title: "Error", description: "Failed to send reset code", variant: "destructive" });
+      toast({ title: "Error", description: err instanceof Error ? err.message : "Failed to send reset code", variant: "destructive" });
     } finally {
       setIsResetting(false);
     }
@@ -111,9 +107,20 @@ const AdminLogin: React.FC = () => {
     if (!resetCode || !newPassword) return;
     setIsResetting(true);
     try {
-      throw new Error('Secure admin password reset endpoint is not configured.');
+      const response = await fetch('/api/admin/password-reset', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'reset', email: resetEmail, code: resetCode, newPassword }),
+      });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error || 'Could not update the password.');
+      toast({ title: "Password Updated", description: result.message });
+      setShowForgotDialog(false);
+      setStep('request');
+      setResetCode('');
+      setNewPassword('');
     } catch (err) {
-      toast({ title: "Update Failed", description: "Secure password reset is unavailable. Contact the system administrator.", variant: "destructive" });
+      toast({ title: "Update Failed", description: err instanceof Error ? err.message : "Could not update the password.", variant: "destructive" });
     } finally {
       setIsResetting(false);
     }
@@ -129,7 +136,7 @@ const AdminLogin: React.FC = () => {
         </div>
       </section>
       <section className="flex-1 flex items-center justify-center py-20 md:py-32">
-        <Card className="w-full max-w-md mx-4 shadow-xl border-gray-300 ">
+        <Card className="w-full max-w-md mx-4">
           <CardHeader>
             <CardTitle className="text-center flex items-center justify-center gap-2">
               <Lock className="h-5 w-5" />
@@ -184,11 +191,6 @@ const AdminLogin: React.FC = () => {
               </Button>
             </div>
 
-            {/* <div className="text-center text-sm text-slate-600 pt-4 border-t">
-              <p className="font-semibold mb-2">Demo Credentials:</p>
-              <p>Email: admin@vedtechservices.in</p>
-              <p>Password: Chandanyajee</p>
-            </div> */}
           </CardContent>
         </Card>
       </section>
@@ -225,18 +227,22 @@ const AdminLogin: React.FC = () => {
             ) : (
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">Verification Code</label>
+                  <label className="text-sm font-medium">6-Digit Verification Code</label>
                   <Input 
-                    placeholder="Enter 6-digit code" 
+                    placeholder="Enter 6-digit code"
+                    inputMode="numeric"
+                    maxLength={6}
                     value={resetCode}
-                    onChange={(e) => setResetCode(e.target.value)}
+                    onChange={(e) => setResetCode(e.target.value.replace(/\D/g, '').slice(0, 6))}
                   />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium">New Password</label>
                   <Input 
-                    type="password" 
-                    placeholder="Enter your new password" 
+                    type="password"
+                    placeholder="Use at least 12 characters"
+                    minLength={12}
+                    maxLength={128}
                     value={newPassword}
                     onChange={(e) => setNewPassword(e.target.value)}
                   />

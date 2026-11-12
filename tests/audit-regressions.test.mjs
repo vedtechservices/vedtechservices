@@ -102,9 +102,48 @@ test('SendGrid webhook verifies original bytes and rejects unsigned/tampered inp
  assert.equal((await handler(req(raw,headers))).status,200);assert.equal(dbCalls,1);
  assert.equal((await edge('supabase/functions/sendgrid-webhook/index.ts')(req(raw))).status,503);
 });
-test('AMC UI cannot manufacture a paid renewal or log a payment client secret',()=>{
+test('AMC renewal keeps billing navigation without simulated payment UI or writes',()=>{
  const source=fs.readFileSync('src/views/CustomerDashboard.tsx','utf8');
- const handler=source.slice(source.indexOf('const handleRenewPlan'),source.indexOf('const setupRealtimeSubscriptions'));
- assert.ok(handler.includes('Online renewal is not configured'));
- assert.doesNotMatch(handler,/\.update\(|\.insert\(|functions\.invoke|clientSecret|setPaymentSuccess\(true\)/);
+ assert.ok(source.includes('Online renewal is not configured'));
+ assert.ok(source.includes("navigate('/contact')"));
+ assert.doesNotMatch(source,/clientSecret|setPaymentSuccess|Card Number|CVV|Secured by Stripe|create-stripe-payment-intent/);
+ assert.ok(fs.readFileSync('src/routes.tsx','utf8').includes("path: '/admin/billing'"));
+});
+
+test('quoted relation selectors cannot bypass data guards',async()=>{
+ const f=dataFixture({role:'full_access_admin'});
+ assert.equal((await f.post({table:'customers',action:'select',columns:'*,"service_invoices"(*)'})).status,403);
+ assert.equal(f.calls.length,0);
+});
+test('customer upserts are denied for all owned tables',async()=>{
+ for(const table of ['customers','support_tickets','customer_notifications','hardware_repairs','customer_feedback']) {
+  const f=dataFixture({customer:true});
+  assert.equal((await f.post({table,action:'upsert',payload:{id:'other-id'}})).status,403);
+  assert.ok(!f.calls.some(([op])=>op==='upsert'));
+ }
+});
+test('ticket feedback uses the UUID foreign key, strips forged fields and checks ownership',async()=>{
+ const body={table:'customer_feedback',action:'insert',payload:{ticket_id:'ticket-uuid',rating:5,review_text:'Helpful service',customer_id:'other',employee_id:'forged',sentiment_score:1}};
+ const denied=dataFixture({customer:true,assigned:false});assert.equal((await denied.post(body)).status,403);
+ const f=dataFixture({customer:true});assert.equal((await f.post(body)).status,200);
+ assert.ok(f.calls.some(([op,column,value])=>op==='eq'&&column==='id'&&value==='ticket-uuid'));
+ const row=f.calls.find(([op])=>op==='insert')[1];assert.equal(row.customer_id,'customer-id');assert.equal(row.employee_id,null);assert.equal(row.sentiment_score,undefined);
+ assert.equal((await f.post({...body,payload:{...body.payload,review_text:'x'.repeat(4001)}})).status,400);
+});
+
+test('signed SendGrid batches report database failures instead of acknowledging success',async()=>{
+ const {privateKey,publicKey}=crypto.generateKeyPairSync('ec',{namedCurve:'prime256v1'});
+ const env={SENDGRID_WEBHOOK_PUBLIC_KEY:publicKey.export({type:'spki',format:'der'}).toString('base64')};
+ const raw=JSON.stringify([{email:'test@example.invalid',event:'delivered',timestamp:1792520000,sg_event_id:'event-test',sg_message_id:'message-test'}]);
+ const timestamp='1792520000';const signature=crypto.sign('sha256',Buffer.from(timestamp+raw),privateKey).toString('base64');
+ const handler=edge('supabase/functions/sendgrid-webhook/index.ts',env,()=>({from:()=>({insert:async()=>({error:{code:'database-unavailable'}})})}));
+ const response=await handler(new Request('https://example.invalid',{method:'POST',headers:{'x-twilio-email-event-webhook-signature':signature,'x-twilio-email-event-webhook-timestamp':timestamp},body:raw}));
+ assert.equal(response.status,503);const body=await response.json();assert.equal(body.success,false);assert.equal(body.processed,0);assert.equal(body.failed,1);
+});
+
+test('credential fields cannot be exposed through selector aliases, including super-admin requests',async()=>{
+ for(const role of ['support_admin','super_admin'])for(const field of ['password_hash','totp_secret','reset_code','reset_code_expires','auth_version']) {
+  const f=dataFixture({role});const r=await f.post({table:'engineers',action:'select',columns:'id,public_value:'+field});
+  assert.equal(r.status,403);assert.equal(f.calls.length,0);
+ }
 });

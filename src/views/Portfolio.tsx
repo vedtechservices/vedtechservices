@@ -1,3 +1,4 @@
+import { useProjects } from '@/hooks/use-projects';
 import React, { useState } from 'react';
 import { ExternalLink, CheckCircle2, TrendingUp, Users, Star, Filter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -7,88 +8,9 @@ import { Link } from '@/lib/next-router';
 import PageMeta from '@/components/common/PageMeta';
 import { motion, AnimatePresence } from 'motion/react';
 
-const CATEGORIES = ['All', 'Web Development', 'Networking', 'Cloud & IT', 'Security', 'Mobile App', 'ERP & Software'];
+const LEGACY_CATEGORIES = ['All', 'Web Development', 'Networking', 'Cloud & IT', 'Security', 'Mobile App', 'ERP & Software'];
 
-const PROJECTS = [
-  {
-    id: 1,
-    title: 'Enterprise Web Portal — Retail Chain',
-    client: 'RetailBridge India Pvt. Ltd.',
-    category: 'Web Development',
-    image: 'https://miaoda-site-img.s3cdn.medo.dev/images/KLing_04db9fe8-9d29-4ba3-b91b-cc4439856c4e.jpg',
-    description: 'Built a full-featured B2B retail management portal with real-time inventory, order tracking, and multi-branch reporting dashboard.',
-    results: ['40% faster order processing', '3 branch locations integrated', 'Zero downtime since launch'],
-    tags: ['React', 'Node.js', 'PostgreSQL'],
-    duration: '3 months',
-    year: '2024',
-    rating: 5,
-  },
-  {
-    id: 2,
-    title: 'Campus-Wide Network Infrastructure',
-    client: 'Sunrise Academy, Patna',
-    category: 'Networking',
-    image: 'https://miaoda-site-img.s3cdn.medo.dev/images/KLing_466a41fc-9963-4ec7-83bc-6cd17e13d1b7.jpg',
-    description: 'Designed and deployed structured LAN/WiFi infrastructure across a 3-building campus with centralised firewall and bandwidth management.',
-    results: ['500+ concurrent users supported', '99.9% uptime achieved', 'Costs reduced by 35%'],
-    tags: ['Cisco', 'MikroTik', 'Structured Cabling'],
-    duration: '6 weeks',
-    year: '2024',
-    rating: 5,
-  },
-  {
-    id: 3,
-    title: 'AWS Cloud Migration',
-    client: 'FinServe Solutions, Gurugram',
-    category: 'Cloud & IT',
-    image: 'https://miaoda-site-img.s3cdn.medo.dev/images/KLing_d05fe2d4-11da-4b1b-bce2-96000f3ceef6.jpg',
-    description: 'Migrated on-premise servers to AWS EC2 + RDS, implemented auto-scaling and backup policies reducing monthly infrastructure cost significantly.',
-    results: ['60% infrastructure cost reduction', 'Auto-scaling handles 5× traffic spikes', 'RPO < 1 hour'],
-    tags: ['AWS EC2', 'RDS', 'CloudWatch'],
-    duration: '2 months',
-    year: '2023',
-    rating: 5,
-  },
-  {
-    id: 4,
-    title: 'CCTV & Security Overhaul',
-    client: 'MedPlus Hospital, Bhopal',
-    category: 'Security',
-    image: 'https://miaoda-site-img.s3cdn.medo.dev/images/KLing_d8557efe-6852-4e85-a810-dd9c26b30a10.jpg',
-    description: 'Installed 64-channel HD CCTV system with remote monitoring, access control, and 30-day cloud recording across 4 floors of a hospital complex.',
-    results: ['64 HD cameras installed', 'Remote 24/7 monitoring enabled', 'Compliance with hospital security norms'],
-    tags: ['Hikvision', 'NVR', 'Access Control'],
-    duration: '4 weeks',
-    year: '2024',
-    rating: 5,
-  },
-  {
-    id: 5,
-    title: 'Custom Inventory Mobile App',
-    client: 'SwiftStore Distributors',
-    category: 'Mobile App',
-    image: 'https://miaoda-site-img.s3cdn.medo.dev/images/KLing_fa9e9024-4a70-4c41-b3d6-b304bd4988ca.jpg',
-    description: 'Developed a cross-platform mobile app for real-time inventory tracking, barcode scanning, and sales reporting for a distribution company.',
-    results: ['30% reduction in stock errors', 'Live sync across 5 warehouses', '4.8 ★ user rating'],
-    tags: ['React Native', 'Expo', 'Supabase'],
-    duration: '10 weeks',
-    year: '2024',
-    rating: 5,
-  },
-  {
-    id: 6,
-    title: 'ERP & Business Management System',
-    client: 'Prakash Manufacturing Co.',
-    category: 'ERP & Software',
-    image: 'https://miaoda-site-img.s3cdn.medo.dev/images/KLing_99ec85fc-4b41-4e85-b182-0a270982ae4b.jpg',
-    description: 'Implemented a comprehensive ERP covering purchase orders, production tracking, employee payroll, and client invoicing for a mid-size manufacturer.',
-    results: ['Paperwork reduced by 80%', 'Invoice cycle: 5 days → same day', 'Full audit trail & compliance'],
-    tags: ['Custom ERP', 'PostgreSQL', 'REST API'],
-    duration: '5 months',
-    year: '2023',
-    rating: 5,
-  },
-];
+
 
 const STATS = [
   { label: 'Projects Delivered', value: '100+', icon: CheckCircle2 },
@@ -98,8 +20,10 @@ const STATS = [
 ];
 
 const Portfolio: React.FC = () => {
+  const {projects: PROJECTS, error} = useProjects('portfolio');
   const [activeCategory, setActiveCategory] = useState('All');
 
+  const CATEGORIES = [...new Set([...LEGACY_CATEGORIES,...PROJECTS.map(p=>p.category)])];
   const filtered = activeCategory === 'All'
     ? PROJECTS
     : PROJECTS.filter(p => p.category === activeCategory);
@@ -176,6 +100,7 @@ const Portfolio: React.FC = () => {
         </div>
       </section>
 
+      {error&&<p role="status" className="container py-3 text-sm">{error}</p>}
       {/* Filter + Grid */}
       <section className="py-16 md:py-24 bg-slate-50">
         <div className="container">
@@ -239,7 +164,7 @@ const Portfolio: React.FC = () => {
 
                       {/* Results */}
                       <ul className="space-y-1.5">
-                        {project.results.map((r, i) => (
+                        {project.results.map((r: string, i: number) => (
                           <li key={i} className="flex items-start gap-2 text-sm text-slate-700">
                             <CheckCircle2 className="h-4 w-4 text-green-500 shrink-0 mt-0.5" />
                             {r}
@@ -250,12 +175,13 @@ const Portfolio: React.FC = () => {
                       {/* Tags + Duration */}
                       <div className="flex items-center justify-between pt-2 border-t border-slate-100">
                         <div className="flex flex-wrap gap-1.5">
-                          {project.tags.map(tag => (
+                          {project.tags.map((tag: string) => (
                             <Badge key={tag} variant="outline" className="text-[10px] px-2 py-0.5">{tag}</Badge>
                           ))}
                         </div>
                         <span className="text-xs text-slate-400 shrink-0 ml-2">{project.duration}</span>
                       </div>
+                      <div className="flex flex-wrap gap-3 text-sm text-primary">{project.link&&<a href={project.link} target="_blank" rel="noopener noreferrer">View project</a>}{project.github_url&&<a href={project.github_url} target="_blank" rel="noopener noreferrer">GitHub</a>}</div>
                     </CardContent>
                   </Card>
                 </motion.div>

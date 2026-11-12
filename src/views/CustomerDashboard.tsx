@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Ticket, Clock, CheckCircle2, Shield, FileText, Plus, Search, Activity, Package, Monitor, PenTool as Tool, Download, Bell, AlertCircle, History, CreditCard, ShoppingCart, ArrowRight, Check, X, Wallet, Loader2, Lock, Globe } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogFooter, DialogDescription } from '@/components/ui/dialog';
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
 import { supabase } from '@/db/supabase';
 import { supabasePublic } from '@/db/publicSupabase';
@@ -79,10 +78,7 @@ const CustomerDashboard: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   
   // Renewal States
-  const [showRenewalModal, setShowRenewalModal] = useState(false);
   const [selectedRenewalPlan, setSelectedRenewalPlan] = useState<any>(null);
-  const [isProcessingPayment, setIsProcessingPayment] = useState(false);
-  const [paymentSuccess, setPaymentSuccess] = useState(false);
   const [selectedCurrency, setSelectedCurrency] = useState('INR');
   const [exchangeRates, setExchangeRates] = useState<Record<string, number>>({});
 
@@ -298,14 +294,6 @@ const CustomerDashboard: React.FC = () => {
       }));
       setAmcSubscriptions(formattedAMC);
     }
-  };
-
-  const handleRenewPlan = async (_amc: any) => {
-    toast({
-      title: "Contact billing to renew",
-      description: "Online renewal is not configured. Please contact support to arrange payment and renewal.",
-      variant: "destructive",
-    });
   };
 
   const setupRealtimeSubscriptions = (cId: string, cEmail: string) => {
@@ -815,7 +803,6 @@ const CustomerDashboard: React.FC = () => {
                               <Dialog open={selectedRenewalPlan?.id === sub.id} onOpenChange={(open) => {
                                 if (!open) {
                                   setSelectedRenewalPlan(null);
-                                  setPaymentSuccess(false);
                                 } else {
                                   setSelectedRenewalPlan(sub);
                                 }
@@ -828,7 +815,7 @@ const CustomerDashboard: React.FC = () => {
                                 <DialogContent className="sm:max-w-md">
                                   <DialogHeader>
                                     <DialogTitle>Renew Subscription</DialogTitle>
-                                    <DialogDescription>Extend your AMC coverage for another year.</DialogDescription>
+                                    <DialogDescription>Contact billing to arrange your AMC renewal.</DialogDescription>
                                   </DialogHeader>
                                   
                                   <div className="space-y-6 py-4">
@@ -861,68 +848,13 @@ const CustomerDashboard: React.FC = () => {
                                       </div>
                                     </div>
 
-                                    {!paymentSuccess ? (
-                                      <div className="space-y-4">
-                                        <Label>Select Payment Method</Label>
-                                        <RadioGroup defaultValue="card">
-                                          <div className="flex items-center space-x-2 p-3 border rounded-lg hover:bg-slate-50 transition-all cursor-pointer">
-                                            <RadioGroupItem value="card" id="card" />
-                                            <Label htmlFor="card" className="flex flex-1 items-center gap-2 cursor-pointer">
-                                              <CreditCard className="h-4 w-4 text-blue-600" /> Credit/Debit Card
-                                            </Label>
-                                          </div>
-                                          <div className="flex items-center space-x-2 p-3 border rounded-lg hover:bg-slate-50 transition-all cursor-pointer">
-                                            <RadioGroupItem value="upi" id="upi" />
-                                            <Label htmlFor="upi" className="flex flex-1 items-center gap-2 cursor-pointer">
-                                              <Wallet className="h-4 w-4 text-green-600" /> UPI (GPay/PhonePe)
-                                            </Label>
-                                          </div>
-                                        </RadioGroup>
-
-                                        <div className="grid grid-cols-1 gap-3">
-                                          <Input placeholder="Cardholder Name" />
-                                          <Input placeholder="Card Number" maxLength={16} />
-                                          <div className="grid grid-cols-2 gap-2">
-                                            <Input placeholder="MM/YY" maxLength={5} />
-                                            <Input placeholder="CVV" type="password" maxLength={3} />
-                                          </div>
-                                        </div>
-                                        
-                                        <div className="flex items-center justify-center gap-1.5 py-2 border-t mt-4 border-slate-100">
-                                          <Lock className="h-3 w-3 text-slate-400" />
-                                          <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Secured by Stripe</p>
-                                        </div>
-                                      </div>
-                                    ) : (
-                                      <div className="text-center py-8 space-y-4">
-                                        <div className="h-16 w-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                          <Check className="h-10 w-10 text-green-600" />
-                                        </div>
-                                        <h4 className="text-2xl font-bold text-slate-900">Payment Successful!</h4>
-                                        <p className="text-slate-500">Your AMC plan has been renewed. You can download the invoice from the history tab.</p>
-                                      </div>
-                                    )}
+                                    <p className="text-sm text-slate-600">
+                                      Online renewal is not configured. Contact billing through support to arrange payment and renewal.
+                                    </p>
                                   </div>
 
                                   <DialogFooter>
-                                    {!paymentSuccess ? (
-                                      <Button 
-                                        className="w-full h-12 text-lg font-bold gap-2" 
-                                        onClick={() => handleRenewPlan(sub)}
-                                        disabled={isProcessingPayment}
-                                      >
-                                        {isProcessingPayment ? (
-                                          <Loader2 className="h-5 w-5 animate-spin" />
-                                        ) : (
-                                          <ShoppingCart className="h-5 w-5" />
-                                        )}
-                                        {isProcessingPayment ? 'Processing...' : `Pay ${CURRENCIES.find(c => c.code === selectedCurrency)?.symbol}${getConvertedAmount(sub.amount, selectedCurrency).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`}
-                                      </Button>
-                                    ) : (
-                                      <Button className="w-full" onClick={() => window.location.reload()}>
-                                        Done
-                                      </Button>
-                                    )}
+                                    <Button className="w-full" onClick={() => navigate('/contact')}>Contact billing</Button>
                                   </DialogFooter>
                                 </DialogContent>
                               </Dialog>

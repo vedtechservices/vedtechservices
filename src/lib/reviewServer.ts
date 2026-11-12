@@ -25,7 +25,7 @@ function tokenFor(payloadData: Record<string, unknown>, durationMs: number) {
   return `${payload}.${signature}`;
 }
 
-export function createAdminToken(admin: { id: string; role: string }) {
+export function createAdminToken(admin: { id: string; role: string; authVersion?: string | null }) {
   return tokenFor(admin, 8 * 60 * 60 * 1000);
 }
 
@@ -45,7 +45,11 @@ async function readSignedSession(name: string) {
   try { received = Buffer.from(signature, 'base64url'); } catch { return null; }
   if (received.length !== expected.length || !timingSafeEqual(expected, received)) return null;
   try {
-    const session = JSON.parse(Buffer.from(payload, 'base64url').toString()) as { id: string; exp: number };
+    const session = JSON.parse(Buffer.from(payload, 'base64url').toString()) as {
+      id: string;
+      exp: number;
+      authVersion?: string | null;
+    };
     return typeof session?.id === 'string' && session.id.length > 0 &&
       typeof session.exp === 'number' && Number.isFinite(session.exp) && session.exp >= Date.now() ? session : null;
   } catch { return null; }
@@ -55,7 +59,8 @@ export async function currentAdmin() {
   try {
     const session = await readSignedSession(cookieName);
     if (!session) return null;
-    const { data } = await reviewDb().from('admin_users').select('id,email,full_name,role,is_active').eq('id', session.id).maybeSingle();
+    const { data } = await reviewDb().from('admin_users').select('id,email,full_name,role,is_active,auth_version').eq('id', session.id).maybeSingle();
+    if ((session.authVersion ?? null) !== (data?.auth_version ?? null)) return null;
     return data?.is_active ? { id: data.id, email: data.email, full_name: data.full_name, role: data.role } : null;
   } catch { return null; }
 }

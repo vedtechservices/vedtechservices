@@ -10,7 +10,9 @@ export async function POST(request: Request) {
   const engineer = admin ? null : await currentEngineer();
   if (!admin && !engineer) return NextResponse.json({ error: 'Authentication required.' }, { status: 401 });
   try {
-    const form = await request.formData();
+    const reader=request.body?.getReader();if(!reader)return NextResponse.json({error:'Upload body required.'},{status:400});let size=0;const chunks:Uint8Array[]=[];for(;;){const part=await reader.read();if(part.done)break;size+=part.value.length;if(size>10*1024*1024){await reader.cancel();return NextResponse.json({error:'Upload request is too large.'},{status:413});}chunks.push(part.value);}
+    const form = await new Request(request.url,{method:'POST',headers:request.headers,body:Buffer.concat(chunks)}).formData();
+    if(form.get('bucketName')==='blog-media'){const {uploadBlogMedia}=await import('@/lib/blogMedia');return await uploadBlogMedia(request,form);}
     const file = form.get('file');
     if (form.get('bucketName') !== 'uploads') return NextResponse.json({ error: 'Unsupported storage bucket.' }, { status: 400 });
     const requestedPath = typeof form.get('path') === 'string' ? String(form.get('path')) : '';
@@ -49,7 +51,8 @@ export async function POST(request: Request) {
       }
     }
     return NextResponse.json({ path, publicUrl: publicData.publicUrl }, { status: 201 });
-  } catch {
+  } catch (error) {
+    if(error instanceof Error && 'status' in error && typeof error.status==='number' && [400,401,403,429,503].includes(error.status))return NextResponse.json({error:error.message},{status:error.status});
     return NextResponse.json({ error: 'Image upload failed.' }, { status: 400 });
   }
 }

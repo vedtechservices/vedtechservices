@@ -1,3 +1,6 @@
+const AdminBlog = lazy(() => import('./views/AdminBlog'));
+const AdminPortfolio = lazy(() => import('./views/AdminPortfolio'));
+const Portfolio = lazy(() => import('./views/Portfolio'));
 import { lazy, type ReactNode } from 'react';
 
 const Home = lazy(() => import('./views/Home'));
@@ -78,6 +81,9 @@ interface RouteConfig {
 }
 
 const routes: RouteConfig[] = [
+  {name:'Blog Management',path:'/admin/blog',element:<AdminBlog />,visible:false},
+  {name:'Portfolio',path:'/portfolio',element:<Portfolio />},
+  {name:'Manage Portfolio',path:'/admin/portfolio',element:<AdminPortfolio />,visible:false},
   {
     name: 'Home',
     path: '/',

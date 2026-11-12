@@ -467,6 +467,8 @@ const AdminDashboard: React.FC = () => {
               <h1 className="text-3xl font-bold mb-2">Admin Dashboard</h1>
               <p className="text-slate-300">VedTech Services - Support Management</p>
               <Button className="mt-4" variant="secondary" onClick={() => navigate('/admin/reviews')}>Manage Client Reviews</Button>
+              <Button className="mt-4 ml-2" variant="secondary" onClick={() => navigate('/admin/portfolio')}>Manage Portfolio</Button>
+              {adminRole === 'super_admin' && <Button className="mt-4 ml-2" variant="secondary" onClick={() => navigate('/admin/blog')}>Blog Management</Button>}
             </div>
 
             {/* Nav column */}

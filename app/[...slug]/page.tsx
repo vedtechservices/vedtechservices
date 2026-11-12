@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import RouterView from '../RouterView';
 import SeoStructuredData from '../SeoStructuredData';
-import { getSeoMetadata } from '@/lib/seo';
+import { notFound } from 'next/navigation';
+import { getSeoMetadata, isPublicSeoPath, isPrivateSeoPath } from '@/lib/seo';
 
 interface PageProps {
     params: Promise<{ slug: string[] }>;
@@ -18,6 +19,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function Page({ params }: PageProps) {
     const pathname = await pathnameFromParams(params);
+    if (!isPublicSeoPath(pathname) && !isPrivateSeoPath(pathname)) notFound();
 
     return (
         <>

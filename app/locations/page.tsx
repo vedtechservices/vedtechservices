@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import LocationSiteShell from './LocationSiteShell';
 import { citySeoEntries, isCityReadyForIndexing } from '@/lib/citySeo';
-import { SITE_URL } from '@/lib/seo';
+import { PublishedLocations } from '@/components/seo/LocationGuidance';
+import { SITE_URL, getOrganizationSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Software & Website Projects by City | VedTech Services',
@@ -27,6 +28,7 @@ export const metadata: Metadata = {
 export default function LocationsPage() {
     const publishedCities = citySeoEntries.filter(isCityReadyForIndexing);
     const jsonLd = [
+        getOrganizationSchema(),
         { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Business Software & Website Development by City', url: `${SITE_URL}/locations` },
         { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
             { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
@@ -46,6 +48,7 @@ export default function LocationsPage() {
                         <p className="text-slate-300 max-w-3xl text-lg leading-relaxed">Explore city-specific business needs, software demand, website requirements, and related service information for the initial target markets.</p>
                     </div>
                 </section>
+                <PublishedLocations />
                 <section className="container py-14 md:py-20">
                     <h2 className="text-2xl md:text-3xl font-bold mb-3">Current city pages</h2>
                     <p className="text-slate-600 mb-8">Each page outlines local business audiences, digital needs, software requirements, and related service options.</p>

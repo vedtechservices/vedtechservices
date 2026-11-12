@@ -10,7 +10,7 @@ function compile(path,dependencies={},globals={}){
 }
 function fixture({schemaError=null,rateError=null}={}){
  let stored=null,cookie=null;const calls=[],logs=[];let schema=schemaError,rateFailure=rateError;
- const query={select(){return this},eq(){return this},limit:async()=>({error:schema}),maybeSingle:async()=>({data:stored,error:null}),
+ const query={select(){return this},eq(){return this},order(){return this},limit(){return this},then(resolve){return Promise.resolve({error:schema}).then(resolve)},maybeSingle:async()=>({data:stored,error:null}),
   insert(row){calls.push('insert');stored={id:'stored-conversation',...row};return this},single:async()=>({data:stored,error:null})};
  const db={from:()=>query,rpc:async()=>{calls.push('rate');return {data:!rateFailure,error:rateFailure}}};
  const live=compile('src/lib/liveSupport.ts',{'server-only':{},'node:crypto':crypto,'next/headers':{cookies:async()=>({get:()=>cookie?{value:cookie}:null})},
@@ -67,4 +67,17 @@ test('successful session API persists ownership and issues only an HttpOnly cook
  assert.equal(response.status,200);assert.equal(response.body.id,f.getStored().id);
  assert.equal(Object.hasOwn(response.body,'secret'),false);assert.equal(f.getStored().owner_hash,f.live.digest(issued.value));
  assert.equal(issued.options.httpOnly,true);assert.equal(issued.options.secure,true);assert.equal(issued.options.sameSite,'strict');assert.equal(issued.options.path,'/api/chat');
+});
+
+test('permission, authentication and connection failures are never classified as missing setup schema',async()=>{
+ for(const code of ['42501','28000','PGRST301','PGRST302','XX000',undefined]) {
+  const f=fixture({schemaError:{code,message:'private backend diagnostic'}});
+  await assert.rejects(f.live.start(f.db,new Request('http://localhost/api/chat/session')),e=>e.status===503&&e.code==='SUPPORT_DATABASE_UNAVAILABLE'&&!e.message.includes('setup is incomplete'));
+  assert.equal(f.calls.length,0);assert.doesNotMatch(f.logs.join(' '),/private backend/);
+ }
+});
+test('rate limiting is reported as 429, never setup-incomplete, and creates no session',async()=>{
+ const f=fixture();f.db.rpc=async()=>({data:false,error:null});
+ await assert.rejects(f.live.start(f.db,new Request('http://localhost/api/chat/session')),e=>e.status===429&&!e.message.includes('setup is incomplete'));
+ assert.equal(f.getStored(),null);
 });

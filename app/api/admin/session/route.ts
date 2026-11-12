@@ -36,7 +36,7 @@ export async function POST(request: Request) {
     // console.log("SUPABASE PROJECT:", process.env.NEXT_PUBLIC_SUPABASE_URL);
     const { email, password, totp } = await request.json();
     if (typeof email !== 'string' || email.length > 254 || typeof password !== 'string' || password.length > 256) return NextResponse.json({ error: 'Invalid credentials.' }, { status: 400 });
-    const { data: admin } = await reviewDb().from('admin_users').select('id,email,password_hash,full_name,role,is_active,totp_enabled,totp_secret').eq('email', email.trim()).maybeSingle();
+    const { data: admin } = await reviewDb().from('admin_users').select('id,email,password_hash,full_name,role,is_active,totp_enabled,totp_secret,auth_version').eq('email', email.trim()).maybeSingle();
 //     const { data: admin, error: adminError } = await reviewDb()
 //   .from('admin_users')
 //   .select('id,email,password_hash,full_name,role,is_active,totp_enabled,totp_secret')
@@ -60,7 +60,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ requiresTotp: true, error: totp ? 'The code you entered is incorrect.' : undefined }, { status: 200 });
     }
     const response = NextResponse.json({ success: true, admin: { id: admin.id, email: admin.email, full_name: admin.full_name, role: admin.role } });
-    response.cookies.set(cookieName, createAdminToken({ id: admin.id, role: admin.role }), { httpOnly: true, secure: process.env.NODE_ENV === 'production', sameSite: 'strict', path: '/', maxAge: 8 * 60 * 60 });
+    response.cookies.set(cookieName, createAdminToken({ id: admin.id, role: admin.role, authVersion: admin.auth_version }), { httpOnly: true, secure: process.env.NODE_ENV === 'production', sameSite: 'strict', path: '/', maxAge: 8 * 60 * 60 });
     return response;
     } catch {
       return NextResponse.json({ error: 'Admin authentication is temporarily unavailable.' }, { status: 503 });

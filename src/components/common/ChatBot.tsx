@@ -1,71 +1,232 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { X, Send, Bot, WifiOff } from 'lucide-react';
+'use client';
+import Link from 'next/link';
+import SupportTicketForm from './SupportTicketForm';
+import { useProjects } from '@/hooks/use-projects';
+import { suggestionsFor } from '@/lib/localFaq';
+import React, { useEffect, useRef, useState } from 'react';
+import { X, Send, Bot } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { SupportMessages, supportRequest, initializeSupport, useSupportConversation } from './SupportConversation';
-import { wantsHuman } from '@/lib/supportIntent';
-import { supabasePublic } from '@/db/publicSupabase';
-const endpoint='/api/chat/session';
+import { initialConversation, initialState, projectSummary, respond } from '@/lib/localFaq';
+const routes = new Set(['/contact', '/support', '/portfolio', '/demo', '/services/software', '/amc-plans']);
+function SafeText({ text }: { text: string }) {
+  return (
+    <>
+      {text.split(/(\/[a-z][a-z/-]*)/g).map((part, i) =>
+        routes.has(part) ? (
+          <Link key={i} href={part} className="underline">
+            {part}
+          </Link>
+        ) : (
+          part
+        ),
+      )}
+    </>
+  );
+}
 export default function ChatBot({ initiallyOpen = false }: { initiallyOpen?: boolean }) {
- const [open,setOpen]=useState(initiallyOpen);const [ready,setReady]=useState(false);const [starting,setStarting]=useState(false);
- const [text,setText]=useState('');const [busy,setBusy]=useState(false);const [offline,setOffline]=useState(false);
- const [handoff,setHandoff]=useState(false);const [contact,setContact]=useState({name:'',email:'',issue:''});
- const initializing=useRef(false);
- const retry=useRef<{text:string,id:string}|null>(null);const lock=useRef(false);
- const {messages,conversation:c,available,error,refresh,setError}=useSupportConversation(open&&ready?endpoint:null);
- useEffect(()=>{const update=()=>setOffline(!navigator.onLine);update();window.addEventListener('online',update);window.addEventListener('offline',update);return()=>{window.removeEventListener('online',update);window.removeEventListener('offline',update);};},[]);
- const start=useCallback(async()=>{
-  if(initializing.current)return;
-  initializing.current=true;setStarting(true);setReady(false);setError('');
-  try{
-   await initializeSupport(endpoint);
-   setReady(true);
-  }catch(err){setError(err instanceof Error?err.message:'Could not connect.');}
-  finally{initializing.current=false;setStarting(false);}
- },[setError]);
- useEffect(()=>{if(open)void start();},[open,start]);
- useEffect(()=>{
-  if(!handoff)return;
-  let active=true;
-  void supabasePublic.auth.getSession().then(({data})=>{
-   if(!active||!data.session?.user)return;
-   const user=data.session.user;
-   setContact(old=>({...old,name:old.name||String(user.user_metadata?.full_name||'').slice(0,100),email:old.email||(user.email||'').slice(0,254)}));
-  }).catch(()=>{});
-  return()=>{active=false;};
- },[handoff]);
- useEffect(()=>{if(open&&ready&&messages.length)void supportRequest(endpoint,{action:'seen',seen:messages.at(-1)?.seq}).catch(()=>{});},[open,ready,messages.length]);
- const send=async(event:React.FormEvent)=>{
-  event.preventDefault();if(!text.trim()||lock.current||!usable)return;lock.current=true;setBusy(true);setError('');
-  const message=text.trim();if(!retry.current||retry.current.text!==message)retry.current={text:message,id:crypto.randomUUID()};
-  if(wantsHuman(message)){setHandoff(true);setContact(old=>({...old,issue:old.issue||message}));}
-  try{await supportRequest(endpoint,{action:'message',request_id:retry.current.id,text:message});setText('');retry.current=null;await refresh();}
-  catch(err){setError(err instanceof Error?err.message:'Message not sent. Retry.');}finally{lock.current=false;setBusy(false);}
- };
- const requestHuman=async(event:React.FormEvent)=>{
-  event.preventDefault();if(lock.current||!usable)return;lock.current=true;setBusy(true);setError('');
-  try{await supportRequest(endpoint,{action:'handoff',...contact});setHandoff(false);await refresh();}
-  catch(err){setError(err instanceof Error?err.message:'Request failed. Retry.');await refresh();}finally{lock.current=false;setBusy(false);}
- };
- const pending=c&&['pending','active'].includes(c.status);
- const usable=ready&&!!c&&!error&&!starting&&!offline;
- return <>
-  {!open&&<Button onClick={()=>setOpen(true)} className="fixed bottom-6 right-6 rounded-full h-14 w-14 shadow-xl z-50" aria-label="Open support chat"><Bot/></Button>}
-  {open&&<section role="dialog" aria-label="VedTech AI and human support" className="fixed bottom-2 right-2 sm:bottom-6 sm:right-6 z-50 w-[calc(100vw-1rem)] sm:w-96 max-w-md h-[min(650px,90dvh)] bg-background border rounded-xl shadow-2xl flex flex-col overflow-hidden">
-   <header className="bg-primary text-primary-foreground p-3 flex items-center justify-between"><div><strong>VedTech Support</strong><p className="text-xs">{c?.status==='active'?(available?'Human agent connected':'Human conversation - Agent offline'):c?.status==='pending'?'Waiting for a human agent':c?.status==='resolved'?'Conversation resolved':'VedBot - AI assistant'}</p></div><Button size="icon" variant="ghost" aria-label="Close support chat" onClick={()=>setOpen(false)}><X/></Button></header>
-   <div className="text-xs p-2 border-b" role="status">{offline?<><WifiOff className="inline h-3 w-3"/> Offline - reconnect to send</>:pending?available?'Support agents are online. Replies appear here.':c?.status==='active'?'Your agent is offline. Your messages are saved.':'No agent is currently online. Your conversation is pending.':c?.status==='resolved'?'Your history is saved. Choose Connect to Human to request support again.':'Ask about our services or connect to a human. Avoid sharing sensitive information.'}</div>
-   <div className="flex-1 overflow-y-auto min-h-0">{messages.length===0&&<p className="p-4 text-sm">Hello! I can help with VedTech services and support. What do you need help with?</p>}<SupportMessages messages={messages}/></div>
-   {starting&&<p role="status" className="px-3 text-xs">Connecting...</p>}{(busy||c?.generating)&&<p role="status" className="px-3 text-xs text-muted-foreground">{c?.status==='ai'?'AI response loading...':'Saving...'}</p>}
-   {error&&<div role="alert" className="p-2 text-sm text-red-700">{error} <button className="underline" disabled={starting||offline} onClick={()=>void start()}>Retry connection</button></div>}
-   {pending&&<div className="p-2 text-xs border-t" role="status">{c.notification_status==='sent'?'Support email accepted by the email provider; delivery is not guaranteed.':c.notification_status==='failed'?'Your request is saved. Support email failed.':c.notification_status==='unknown'?'Your request is saved; email delivery is uncertain.':'Your request is saved; support email is pending.'}{['pending','failed','sending'].includes(c.notification_status)&&<button className="underline ml-2" onClick={async()=>{try{await supportRequest(endpoint,{action:'retry_notification'});await refresh();}catch(err){setError(err instanceof Error?err.message:'Retry failed.');}}}>Retry email notification</button>}</div>}
-   {handoff&&!pending&&<form onSubmit={requestHuman} className="p-3 space-y-2 border-t">
-    <label className="block text-xs">Name<Input required maxLength={100} value={contact.name} onChange={e=>setContact({...contact,name:e.target.value})} autoComplete="name"/></label>
-    <label className="block text-xs">Email<Input required type="email" maxLength={254} value={contact.email} onChange={e=>setContact({...contact,email:e.target.value})} autoComplete="email"/></label>
-    <label className="block text-xs">Issue<textarea required maxLength={2000} className="w-full border rounded p-2 bg-background" rows={2} value={contact.issue} onChange={e=>setContact({...contact,issue:e.target.value})}/></label>
-    <p className="text-xs">Your contact details and recent messages will be shared with support to handle this request.</p><Button disabled={busy||!usable} type="submit">Request human support</Button><Button type="button" variant="ghost" onClick={()=>setHandoff(false)}>Cancel</Button>
-   </form>}
-   {!pending&&!handoff&&<Button variant="outline" className="mx-3 mb-2" disabled={!usable||busy} onClick={()=>{setContact(old=>({...old,name:old.name||c?.customer_name||'',email:old.email||c?.customer_email||'',issue:old.issue||text||messages.filter(m=>m.sender==='user').at(-1)?.body||''}));setHandoff(true);}}>Connect to Human</Button>}
-   <form onSubmit={send} className="p-3 border-t flex gap-2"><Input aria-label="Your message" placeholder="Type your message..." maxLength={4000} value={text} onChange={e=>setText(e.target.value)} disabled={!usable||busy||c?.status==='resolved'}/><Button type="submit" size="icon" aria-label="Send message" disabled={busy||!usable||!text.trim()||c?.status==='resolved'||c?.generating}><Send className="h-4 w-4"/></Button></form>
-  </section>}
- </>;
+  const [open, setOpen] = useState(initiallyOpen),
+    [text, setText] = useState(''),
+    [messages, setMessages] = useState(initialConversation),
+    [state, setState] = useState(initialState),
+    [resetting, setResetting] = useState(false),
+    [brief, setBrief] = useState<string | null>(null),
+    [status, setStatus] = useState('');
+  const { rawProjects } = useProjects('portfolio');
+  const [ticketOpen, setTicketOpen] = useState(false);
+  const end = useRef<HTMLDivElement>(null),
+    input = useRef<HTMLInputElement>(null),
+    launcher = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    if (open) input.current?.focus();
+  }, [open]);
+  useEffect(() => {
+    end.current?.scrollIntoView?.({ block: 'nearest' });
+  }, [messages]);
+  const close = () => {
+    setOpen(false);
+    launcher.current?.focus();
+  };
+  const send = (value: string) => {
+    if (!value.trim()) return;
+    const answer = respond(value.trim(), state, rawProjects);
+    setState(answer.state);
+    if (answer.intent === 'reset') setBrief(null);
+    setMessages((old) =>
+      answer.intent === 'reset'
+        ? initialConversation()
+        : [
+            ...old.slice(-98),
+            {
+              sender: 'user',
+              body: answer.intent === 'privacy' ? '[Personal details omitted]' : value.trim().slice(0, 4000),
+            },
+            { sender: 'faq', body: answer.text },
+          ],
+    );
+    setText('');
+    setStatus('');
+    input.current?.focus();
+  };
+  return (
+    <>
+      <SupportTicketForm
+        visible={open && ticketOpen}
+        onClose={() => {
+          setTicketOpen(false);
+          input.current?.focus();
+        }}
+      />
+      {!open && (
+        <Button
+          ref={launcher}
+          onClick={() => setOpen(true)}
+          className="fixed bottom-6 right-6 rounded-full h-14 w-14 shadow-xl z-50"
+          aria-label="Open support chat"
+        >
+          <Bot />
+        </Button>
+      )}
+      {open && (
+        <section
+          role="dialog"
+          aria-label="VedTech local business assistant"
+          onKeyDown={(e) => {
+            if (e.key === 'Escape') close();
+          }}
+          className="fixed bottom-2 right-2 sm:bottom-6 sm:right-6 z-50 w-[calc(100vw-1rem)] sm:w-96 max-w-md h-[min(700px,90dvh)] bg-background border rounded-xl shadow-2xl flex flex-col overflow-hidden"
+        >
+          <header className="bg-primary text-primary-foreground p-3 flex justify-between items-center">
+            <div>
+              <strong>VedTech Support</strong>
+              <p className="text-xs">VedBot · Local business assistant</p>
+            </div>
+            <Button variant="ghost" size="icon" aria-label="Close support chat" onClick={close}>
+              <X />
+            </Button>
+          </header>
+          <p className="text-xs p-3 border-b">
+            Local rules and website knowledge. No human agent or generative AI. FAQ chat clears on reload. Use
+            the support form to explicitly submit details.
+          </p>
+          <div
+            role="log"
+            aria-live="polite"
+            aria-label="FAQ conversation"
+            className="flex-1 overflow-y-auto min-h-0 p-3 space-y-3"
+          >
+            {messages.map((m, i) => (
+              <div
+                key={i}
+                className={
+                  'p-3 rounded-lg text-sm whitespace-pre-wrap break-words ' +
+                  (m.sender === 'user' ? 'bg-primary/10 ml-5' : 'bg-muted mr-5')
+                }
+              >
+                <strong>{m.sender === 'user' ? 'You' : 'VedBot'}</strong>
+                <p>
+                  <SafeText text={m.body} />
+                </p>
+              </div>
+            ))}
+            <div ref={end} />
+          </div>
+          {brief !== null && (
+            <div className="p-2 border-t">
+              <label className="text-xs" htmlFor="vedbot-brief">
+                Editable project brief
+              </label>
+              <textarea
+                id="vedbot-brief"
+                className="w-full h-28 text-sm bg-background border rounded p-2"
+                value={brief}
+                onChange={(e) => setBrief(e.target.value)}
+              />
+              <button
+                className="text-xs underline"
+                onClick={async () => {
+                  try {
+                    await navigator.clipboard.writeText(brief);
+                    setStatus('Brief copied.');
+                  } catch {
+                    setStatus('Copy unavailable. Select the brief text and copy it manually.');
+                  }
+                }}
+              >
+                Copy brief
+              </button>{' '}
+              <button className="text-xs underline" onClick={() => setBrief(null)}>
+                Close brief
+              </button>
+            </div>
+          )}
+          <div className="p-2 flex flex-wrap gap-2">
+            {suggestionsFor(state).map((q) => (
+              <button key={q} className="border rounded px-2 py-1 text-xs" onClick={() => send(q)}>
+                {q}
+              </button>
+            ))}
+          </div>
+          <div className="px-3 flex flex-wrap gap-3 text-xs">
+            <button className="underline" onClick={() => setResetting(true)}>
+              Reset chat
+            </button>
+            <button className="underline" onClick={() => setBrief(projectSummary(state))}>
+              Edit/copy brief
+            </button>
+            <button className="underline font-semibold" onClick={() => setTicketOpen(true)}>
+              Create/check support request
+            </button>
+          </div>
+          {resetting && (
+            <div className="p-2 text-xs">
+              Clear local FAQ chat and project brief? Saved tickets and the support form are kept.{' '}
+              <button
+                className="underline mr-3"
+                onClick={() => {
+                  setMessages(initialConversation());
+                  setState(initialState());
+                  setText('');
+                  setBrief(null);
+                  setStatus('Chat cleared.');
+                  setResetting(false);
+                }}
+              >
+                Clear
+              </button>
+              <button className="underline" onClick={() => setResetting(false)}>
+                Cancel
+              </button>
+            </div>
+          )}
+          <p role="status" className="px-3 text-xs">
+            {status}
+          </p>
+          <p className="px-3 pt-2 text-xs text-muted-foreground">
+            FAQ replies submit nothing. Support requests are saved only after confirmation in the support
+            form.
+          </p>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              send(text);
+            }}
+            className="p-3 border-t flex gap-2"
+          >
+            <Input
+              ref={input}
+              aria-label="Your message"
+              placeholder="Ask about our services..."
+              maxLength={4000}
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+            />
+            <Button type="submit" size="icon" aria-label="Send message" disabled={!text.trim()}>
+              <Send className="h-4 w-4" />
+            </Button>
+          </form>
+        </section>
+      )}
+    </>
+  );
 }

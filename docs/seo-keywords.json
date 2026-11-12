@@ -1,0 +1,1272 @@
+[
+  {
+    "keyword": "VedTech Services",
+    "intent": "Navigational",
+    "targetUrl": "/",
+    "designation": "Primary",
+    "cluster": "Brand",
+    "contentRequirement": "Keep the existing company introduction and links to distinct service pages.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "Ved Tech Services",
+    "intent": "Navigational",
+    "targetUrl": "/",
+    "designation": "Secondary",
+    "cluster": "Brand",
+    "contentRequirement": "Keep the existing company introduction and links to distinct service pages.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "VedTech IT services",
+    "intent": "Navigational",
+    "targetUrl": "/",
+    "designation": "Secondary",
+    "cluster": "Brand",
+    "contentRequirement": "Keep the existing company introduction and links to distinct service pages.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "VedTech software and hardware services",
+    "intent": "Navigational",
+    "targetUrl": "/",
+    "designation": "Secondary",
+    "cluster": "Brand",
+    "contentRequirement": "Keep the existing company introduction and links to distinct service pages.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "VedTech Services India",
+    "intent": "Navigational",
+    "targetUrl": "/",
+    "designation": "Secondary",
+    "cluster": "Brand",
+    "contentRequirement": "Keep the existing company introduction and links to distinct service pages.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "VedTech company website",
+    "intent": "Navigational",
+    "targetUrl": "/",
+    "designation": "Secondary",
+    "cluster": "Brand",
+    "contentRequirement": "Keep the existing company introduction and links to distinct service pages.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "IT services for businesses in India",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services",
+    "designation": "Primary",
+    "cluster": "IT services overview",
+    "contentRequirement": "Retain the overview; route specific website, repair and networking needs to their dedicated pages.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "business IT solutions provider",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services",
+    "designation": "Secondary",
+    "cluster": "IT services overview",
+    "contentRequirement": "Retain the overview; route specific website, repair and networking needs to their dedicated pages.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "software and hardware services company",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services",
+    "designation": "Secondary",
+    "cluster": "IT services overview",
+    "contentRequirement": "Retain the overview; route specific website, repair and networking needs to their dedicated pages.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "IT infrastructure and software services",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services",
+    "designation": "Secondary",
+    "cluster": "IT services overview",
+    "contentRequirement": "Retain the overview; route specific website, repair and networking needs to their dedicated pages.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "IT services for small businesses",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services",
+    "designation": "Secondary",
+    "cluster": "IT services overview",
+    "contentRequirement": "Retain the overview; route specific website, repair and networking needs to their dedicated pages.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "business technology services India",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services",
+    "designation": "Secondary",
+    "cluster": "IT services overview",
+    "contentRequirement": "Retain the overview; route specific website, repair and networking needs to their dedicated pages.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "custom software development India",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/software",
+    "designation": "Primary",
+    "cluster": "Custom software",
+    "contentRequirement": "Added workflow brief, process explanation and quote requirements. Keep generic website intent on /services/web-development.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "business software development company",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/software",
+    "designation": "Secondary",
+    "cluster": "Custom software",
+    "contentRequirement": "Added workflow brief, process explanation and quote requirements. Keep generic website intent on /services/web-development.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "CRM software development services",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/software",
+    "designation": "Secondary",
+    "cluster": "Custom software",
+    "contentRequirement": "Added workflow brief, process explanation and quote requirements. Keep generic website intent on /services/web-development.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "ERP software development services",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/software",
+    "designation": "Secondary",
+    "cluster": "Custom software",
+    "contentRequirement": "Added workflow brief, process explanation and quote requirements. Keep generic website intent on /services/web-development.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "custom web application development",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/software",
+    "designation": "Secondary",
+    "cluster": "Custom software",
+    "contentRequirement": "Added workflow brief, process explanation and quote requirements. Keep generic website intent on /services/web-development.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "business workflow software development",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/software",
+    "designation": "Secondary",
+    "cluster": "Custom software",
+    "contentRequirement": "Added workflow brief, process explanation and quote requirements. Keep generic website intent on /services/web-development.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "how to scope a custom software project",
+    "intent": "Informational / Commercial investigation",
+    "targetUrl": "/services/software",
+    "designation": "Secondary",
+    "cluster": "Custom software",
+    "contentRequirement": "Added workflow brief, process explanation and quote requirements. Keep generic website intent on /services/web-development.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "what is needed for a software development quote",
+    "intent": "Informational / Commercial investigation",
+    "targetUrl": "/services/software",
+    "designation": "Secondary",
+    "cluster": "Custom software",
+    "contentRequirement": "Added workflow brief, process explanation and quote requirements. Keep generic website intent on /services/web-development.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "business website development India",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/web-development",
+    "designation": "Primary",
+    "cluster": "Website development",
+    "contentRequirement": "Added visitor-goal checklist, redesign URL-preservation guidance and e-commerce scope questions.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "website development company India",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/web-development",
+    "designation": "Secondary",
+    "cluster": "Website development",
+    "contentRequirement": "Added visitor-goal checklist, redesign URL-preservation guidance and e-commerce scope questions.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "web design and development services",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/web-development",
+    "designation": "Secondary",
+    "cluster": "Website development",
+    "contentRequirement": "Added visitor-goal checklist, redesign URL-preservation guidance and e-commerce scope questions.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "responsive website development",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/web-development",
+    "designation": "Secondary",
+    "cluster": "Website development",
+    "contentRequirement": "Added visitor-goal checklist, redesign URL-preservation guidance and e-commerce scope questions.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "ecommerce website development services",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/web-development",
+    "designation": "Secondary",
+    "cluster": "Website development",
+    "contentRequirement": "Added visitor-goal checklist, redesign URL-preservation guidance and e-commerce scope questions.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "business website redesign services",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/web-development",
+    "designation": "Secondary",
+    "cluster": "Website development",
+    "contentRequirement": "Added visitor-goal checklist, redesign URL-preservation guidance and e-commerce scope questions.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "what information is needed for a website quote",
+    "intent": "Informational / Commercial investigation",
+    "targetUrl": "/services/web-development",
+    "designation": "Secondary",
+    "cluster": "Website development",
+    "contentRequirement": "Added visitor-goal checklist, redesign URL-preservation guidance and e-commerce scope questions.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "how to prepare a website development brief",
+    "intent": "Informational / Commercial investigation",
+    "targetUrl": "/services/web-development",
+    "designation": "Secondary",
+    "cluster": "Website development",
+    "contentRequirement": "Added visitor-goal checklist, redesign URL-preservation guidance and e-commerce scope questions.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "mobile app development services India",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/mobile-app-development",
+    "designation": "Primary",
+    "cluster": "Mobile apps",
+    "contentRequirement": "Added platform and user-journey brief. Confirm stack and scope; do not publish a fixed cost.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "Android app development company",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/mobile-app-development",
+    "designation": "Secondary",
+    "cluster": "Mobile apps",
+    "contentRequirement": "Added platform and user-journey brief. Confirm stack and scope; do not publish a fixed cost.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "iOS app development services",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/mobile-app-development",
+    "designation": "Secondary",
+    "cluster": "Mobile apps",
+    "contentRequirement": "Added platform and user-journey brief. Confirm stack and scope; do not publish a fixed cost.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "cross platform app development company",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/mobile-app-development",
+    "designation": "Secondary",
+    "cluster": "Mobile apps",
+    "contentRequirement": "Added platform and user-journey brief. Confirm stack and scope; do not publish a fixed cost.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "React Native app development services",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/mobile-app-development",
+    "designation": "Secondary",
+    "cluster": "Mobile apps",
+    "contentRequirement": "Added platform and user-journey brief. Confirm stack and scope; do not publish a fixed cost.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "Flutter app development services",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/mobile-app-development",
+    "designation": "Secondary",
+    "cluster": "Mobile apps",
+    "contentRequirement": "Added platform and user-journey brief. Confirm stack and scope; do not publish a fixed cost.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "mobile app or responsive website",
+    "intent": "Informational / Commercial investigation",
+    "targetUrl": "/services/mobile-app-development",
+    "designation": "Secondary",
+    "cluster": "Mobile apps",
+    "contentRequirement": "Added platform and user-journey brief. Confirm stack and scope; do not publish a fixed cost.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "what affects mobile app development cost",
+    "intent": "Informational / Commercial investigation",
+    "targetUrl": "/services/mobile-app-development",
+    "designation": "Secondary",
+    "cluster": "Mobile apps",
+    "contentRequirement": "Added platform and user-journey brief. Confirm stack and scope; do not publish a fixed cost.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "office IT infrastructure services",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/hardware",
+    "designation": "Primary",
+    "cluster": "Office infrastructure",
+    "contentRequirement": "Added multi-device infrastructure checklist; send single-device fault intent to /services/hardware-repair.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "office computer setup services",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/hardware",
+    "designation": "Secondary",
+    "cluster": "Office infrastructure",
+    "contentRequirement": "Added multi-device infrastructure checklist; send single-device fault intent to /services/hardware-repair.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "business hardware upgrade services",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/hardware",
+    "designation": "Secondary",
+    "cluster": "Office infrastructure",
+    "contentRequirement": "Added multi-device infrastructure checklist; send single-device fault intent to /services/hardware-repair.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "office printer setup support",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/hardware",
+    "designation": "Secondary",
+    "cluster": "Office infrastructure",
+    "contentRequirement": "Added multi-device infrastructure checklist; send single-device fault intent to /services/hardware-repair.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "IT hardware installation for offices",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/hardware",
+    "designation": "Secondary",
+    "cluster": "Office infrastructure",
+    "contentRequirement": "Added multi-device infrastructure checklist; send single-device fault intent to /services/hardware-repair.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "planning IT infrastructure for a small office",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/hardware",
+    "designation": "Secondary",
+    "cluster": "Office infrastructure",
+    "contentRequirement": "Added multi-device infrastructure checklist; send single-device fault intent to /services/hardware-repair.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "computer and laptop repair services",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/hardware-repair",
+    "designation": "Primary",
+    "cluster": "Device repair",
+    "contentRequirement": "Added safe fault-description guidance, diagnosis questions and contact arrangements. No city availability or price promises.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "business laptop repair enquiry",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/hardware-repair",
+    "designation": "Secondary",
+    "cluster": "Device repair",
+    "contentRequirement": "Added safe fault-description guidance, diagnosis questions and contact arrangements. No city availability or price promises.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "desktop repair services India",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/hardware-repair",
+    "designation": "Secondary",
+    "cluster": "Device repair",
+    "contentRequirement": "Added safe fault-description guidance, diagnosis questions and contact arrangements. No city availability or price promises.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "computer hardware diagnosis",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/hardware-repair",
+    "designation": "Secondary",
+    "cluster": "Device repair",
+    "contentRequirement": "Added safe fault-description guidance, diagnosis questions and contact arrangements. No city availability or price promises.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "what to include in a laptop repair enquiry",
+    "intent": "Informational / Commercial investigation",
+    "targetUrl": "/services/hardware-repair",
+    "designation": "Secondary",
+    "cluster": "Device repair",
+    "contentRequirement": "Added safe fault-description guidance, diagnosis questions and contact arrangements. No city availability or price promises.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "can laptop repair cost be quoted before diagnosis",
+    "intent": "Informational / Commercial investigation",
+    "targetUrl": "/services/hardware-repair",
+    "designation": "Secondary",
+    "cluster": "Device repair",
+    "contentRequirement": "Added safe fault-description guidance, diagnosis questions and contact arrangements. No city availability or price promises.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "office networking solutions",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/networking-solutions",
+    "designation": "Primary",
+    "cluster": "Office networks",
+    "contentRequirement": "Added network-fault versus new-installation brief and safe information-sharing guidance.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "business WiFi setup services",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/networking-solutions",
+    "designation": "Secondary",
+    "cluster": "Office networks",
+    "contentRequirement": "Added network-fault versus new-installation brief and safe information-sharing guidance.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "LAN WAN network installation",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/networking-solutions",
+    "designation": "Secondary",
+    "cluster": "Office networks",
+    "contentRequirement": "Added network-fault versus new-installation brief and safe information-sharing guidance.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "office router configuration services",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/networking-solutions",
+    "designation": "Secondary",
+    "cluster": "Office networks",
+    "contentRequirement": "Added network-fault versus new-installation brief and safe information-sharing guidance.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "office firewall setup services",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/networking-solutions",
+    "designation": "Secondary",
+    "cluster": "Office networks",
+    "contentRequirement": "Added network-fault versus new-installation brief and safe information-sharing guidance.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "what information is needed for an office WiFi enquiry",
+    "intent": "Informational / Commercial investigation",
+    "targetUrl": "/services/networking-solutions",
+    "designation": "Secondary",
+    "cluster": "Office networks",
+    "contentRequirement": "Added network-fault versus new-installation brief and safe information-sharing guidance.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "business IT support services India",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/it-support",
+    "designation": "Primary",
+    "cluster": "IT support",
+    "contentRequirement": "Added support request guidance and the distinction between local FAQ replies and confirmed submissions.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "IT helpdesk for small businesses",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/it-support",
+    "designation": "Secondary",
+    "cluster": "IT support",
+    "contentRequirement": "Added support request guidance and the distinction between local FAQ replies and confirmed submissions.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "ongoing IT maintenance services",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/it-support",
+    "designation": "Secondary",
+    "cluster": "IT support",
+    "contentRequirement": "Added support request guidance and the distinction between local FAQ replies and confirmed submissions.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "technical support request VedTech",
+    "intent": "Commercial investigation",
+    "targetUrl": "/services/it-support",
+    "designation": "Secondary",
+    "cluster": "IT support",
+    "contentRequirement": "Added support request guidance and the distinction between local FAQ replies and confirmed submissions.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "how to raise an IT support request",
+    "intent": "Informational / Commercial investigation",
+    "targetUrl": "/services/it-support",
+    "designation": "Secondary",
+    "cluster": "IT support",
+    "contentRequirement": "Added support request guidance and the distinction between local FAQ replies and confirmed submissions.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "does VedBot connect a human agent",
+    "intent": "Informational / Commercial investigation",
+    "targetUrl": "/services/it-support",
+    "designation": "Secondary",
+    "cluster": "IT support",
+    "contentRequirement": "Added support request guidance and the distinction between local FAQ replies and confirmed submissions.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "annual maintenance contract plans for IT",
+    "intent": "Commercial investigation",
+    "targetUrl": "/amc-plans",
+    "designation": "Primary",
+    "cluster": "Maintenance plans",
+    "contentRequirement": "Use the existing published plans; confirm current eligibility, exclusions and terms. No invented prices.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "computer AMC plans for businesses",
+    "intent": "Commercial investigation",
+    "targetUrl": "/amc-plans",
+    "designation": "Secondary",
+    "cluster": "Maintenance plans",
+    "contentRequirement": "Use the existing published plans; confirm current eligibility, exclusions and terms. No invented prices.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "IT AMC service pricing",
+    "intent": "Commercial investigation",
+    "targetUrl": "/amc-plans",
+    "designation": "Secondary",
+    "cluster": "Maintenance plans",
+    "contentRequirement": "Use the existing published plans; confirm current eligibility, exclusions and terms. No invented prices.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "compare IT maintenance plans",
+    "intent": "Commercial investigation",
+    "targetUrl": "/amc-plans",
+    "designation": "Secondary",
+    "cluster": "Maintenance plans",
+    "contentRequirement": "Use the existing published plans; confirm current eligibility, exclusions and terms. No invented prices.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "what is covered in an IT AMC plan",
+    "intent": "Informational / Commercial investigation",
+    "targetUrl": "/amc-plans",
+    "designation": "Secondary",
+    "cluster": "Maintenance plans",
+    "contentRequirement": "Use the existing published plans; confirm current eligibility, exclusions and terms. No invented prices.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "how to choose an annual maintenance contract",
+    "intent": "Informational / Commercial investigation",
+    "targetUrl": "/amc-plans",
+    "designation": "Secondary",
+    "cluster": "Maintenance plans",
+    "contentRequirement": "Use the existing published plans; confirm current eligibility, exclusions and terms. No invented prices.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "VedTech IT project case studies",
+    "intent": "Commercial investigation",
+    "targetUrl": "/portfolio",
+    "designation": "Primary",
+    "cluster": "Case studies",
+    "contentRequirement": "Fixed the existing URL metadata and CollectionPage schema; preserve the shared project source.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "VedTech software development portfolio",
+    "intent": "Commercial investigation",
+    "targetUrl": "/portfolio",
+    "designation": "Secondary",
+    "cluster": "Case studies",
+    "contentRequirement": "Fixed the existing URL metadata and CollectionPage schema; preserve the shared project source.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "business application project examples",
+    "intent": "Commercial investigation",
+    "targetUrl": "/portfolio",
+    "designation": "Secondary",
+    "cluster": "Case studies",
+    "contentRequirement": "Fixed the existing URL metadata and CollectionPage schema; preserve the shared project source.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "IT infrastructure project case studies",
+    "intent": "Commercial investigation",
+    "targetUrl": "/portfolio",
+    "designation": "Secondary",
+    "cluster": "Case studies",
+    "contentRequirement": "Fixed the existing URL metadata and CollectionPage schema; preserve the shared project source.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "VedTech website project case studies",
+    "intent": "Commercial investigation",
+    "targetUrl": "/portfolio",
+    "designation": "Secondary",
+    "cluster": "Case studies",
+    "contentRequirement": "Fixed the existing URL metadata and CollectionPage schema; preserve the shared project source.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "custom software implementation examples",
+    "intent": "Commercial investigation",
+    "targetUrl": "/portfolio",
+    "designation": "Secondary",
+    "cluster": "Case studies",
+    "contentRequirement": "Fixed the existing URL metadata and CollectionPage schema; preserve the shared project source.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "VedTech live website demos",
+    "intent": "Commercial investigation",
+    "targetUrl": "/demo",
+    "designation": "Primary",
+    "cluster": "Live demos",
+    "contentRequirement": "Keep demo exploration distinct from detailed case studies. Do not create a second portfolio URL.",
+    "page": "Existing",
+    "priority": "P2"
+  },
+  {
+    "keyword": "VedTech application demos",
+    "intent": "Commercial investigation",
+    "targetUrl": "/demo",
+    "designation": "Secondary",
+    "cluster": "Live demos",
+    "contentRequirement": "Keep demo exploration distinct from detailed case studies. Do not create a second portfolio URL.",
+    "page": "Existing",
+    "priority": "P2"
+  },
+  {
+    "keyword": "business website demo examples",
+    "intent": "Commercial investigation",
+    "targetUrl": "/demo",
+    "designation": "Secondary",
+    "cluster": "Live demos",
+    "contentRequirement": "Keep demo exploration distinct from detailed case studies. Do not create a second portfolio URL.",
+    "page": "Existing",
+    "priority": "P2"
+  },
+  {
+    "keyword": "school management application demo",
+    "intent": "Commercial investigation",
+    "targetUrl": "/demo",
+    "designation": "Secondary",
+    "cluster": "Live demos",
+    "contentRequirement": "Keep demo exploration distinct from detailed case studies. Do not create a second portfolio URL.",
+    "page": "Existing",
+    "priority": "P2"
+  },
+  {
+    "keyword": "ecommerce platform demo VedTech",
+    "intent": "Commercial investigation",
+    "targetUrl": "/demo",
+    "designation": "Secondary",
+    "cluster": "Live demos",
+    "contentRequirement": "Keep demo exploration distinct from detailed case studies. Do not create a second portfolio URL.",
+    "page": "Existing",
+    "priority": "P2"
+  },
+  {
+    "keyword": "mobile and web project demos VedTech",
+    "intent": "Commercial investigation",
+    "targetUrl": "/demo",
+    "designation": "Secondary",
+    "cluster": "Live demos",
+    "contentRequirement": "Keep demo exploration distinct from detailed case studies. Do not create a second portfolio URL.",
+    "page": "Existing",
+    "priority": "P2"
+  },
+  {
+    "keyword": "software development company in Gurugram",
+    "intent": "Commercial investigation",
+    "targetUrl": "/locations/gurugram",
+    "designation": "Primary",
+    "cluster": "Gurugram project enquiries",
+    "contentRequirement": "Added verified head-office context, corporate project brief and location-specific enquiry FAQ. Confirm meetings and service arrangements.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "website development company in Gurugram",
+    "intent": "Commercial investigation",
+    "targetUrl": "/locations/gurugram",
+    "designation": "Secondary",
+    "cluster": "Gurugram project enquiries",
+    "contentRequirement": "Added verified head-office context, corporate project brief and location-specific enquiry FAQ. Confirm meetings and service arrangements.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "VedTech Gurugram head office",
+    "intent": "Commercial investigation",
+    "targetUrl": "/locations/gurugram",
+    "designation": "Secondary",
+    "cluster": "Gurugram project enquiries",
+    "contentRequirement": "Added verified head-office context, corporate project brief and location-specific enquiry FAQ. Confirm meetings and service arrangements.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "VedTech Services Sector 17A",
+    "intent": "Commercial investigation",
+    "targetUrl": "/locations/gurugram",
+    "designation": "Secondary",
+    "cluster": "Gurugram project enquiries",
+    "contentRequirement": "Added verified head-office context, corporate project brief and location-specific enquiry FAQ. Confirm meetings and service arrangements.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "corporate website project enquiry Gurugram",
+    "intent": "Commercial investigation",
+    "targetUrl": "/locations/gurugram",
+    "designation": "Secondary",
+    "cluster": "Gurugram project enquiries",
+    "contentRequirement": "Added verified head-office context, corporate project brief and location-specific enquiry FAQ. Confirm meetings and service arrangements.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "custom software project planning Gurugram",
+    "intent": "Commercial investigation",
+    "targetUrl": "/locations/gurugram",
+    "designation": "Secondary",
+    "cluster": "Gurugram project enquiries",
+    "contentRequirement": "Added verified head-office context, corporate project brief and location-specific enquiry FAQ. Confirm meetings and service arrangements.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "contact VedTech Services",
+    "intent": "Navigational / Transactional",
+    "targetUrl": "/contact",
+    "designation": "Primary",
+    "cluster": "Official contact and published locations",
+    "contentRequirement": "Added published-location cards and safe enquiry instructions. Samastipur has no existing city URL; use this page instead of creating a duplicate. Bhopal city URL remains noindex under its existing rule.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "VedTech Services phone number",
+    "intent": "Navigational / Transactional",
+    "targetUrl": "/contact",
+    "designation": "Secondary",
+    "cluster": "Official contact and published locations",
+    "contentRequirement": "Added published-location cards and safe enquiry instructions. Samastipur has no existing city URL; use this page instead of creating a duplicate. Bhopal city URL remains noindex under its existing rule.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "VedTech Services email address",
+    "intent": "Navigational / Transactional",
+    "targetUrl": "/contact",
+    "designation": "Secondary",
+    "cluster": "Official contact and published locations",
+    "contentRequirement": "Added published-location cards and safe enquiry instructions. Samastipur has no existing city URL; use this page instead of creating a duplicate. Bhopal city URL remains noindex under its existing rule.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "VedTech office locations",
+    "intent": "Navigational / Transactional",
+    "targetUrl": "/contact",
+    "designation": "Secondary",
+    "cluster": "Official contact and published locations",
+    "contentRequirement": "Added published-location cards and safe enquiry instructions. Samastipur has no existing city URL; use this page instead of creating a duplicate. Bhopal city URL remains noindex under its existing rule.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "VedTech Services Samastipur",
+    "intent": "Navigational / Transactional",
+    "targetUrl": "/contact",
+    "designation": "Secondary",
+    "cluster": "Official contact and published locations",
+    "contentRequirement": "Added published-location cards and safe enquiry instructions. Samastipur has no existing city URL; use this page instead of creating a duplicate. Bhopal city URL remains noindex under its existing rule.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "VedTech Samastipur Bihar 848101",
+    "intent": "Navigational / Transactional",
+    "targetUrl": "/contact",
+    "designation": "Secondary",
+    "cluster": "Official contact and published locations",
+    "contentRequirement": "Added published-location cards and safe enquiry instructions. Samastipur has no existing city URL; use this page instead of creating a duplicate. Bhopal city URL remains noindex under its existing rule.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "VedTech Services Bhopal",
+    "intent": "Navigational / Transactional",
+    "targetUrl": "/contact",
+    "designation": "Secondary",
+    "cluster": "Official contact and published locations",
+    "contentRequirement": "Added published-location cards and safe enquiry instructions. Samastipur has no existing city URL; use this page instead of creating a duplicate. Bhopal city URL remains noindex under its existing rule.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "VedTech Bhopal contact enquiry",
+    "intent": "Navigational / Transactional",
+    "targetUrl": "/contact",
+    "designation": "Secondary",
+    "cluster": "Official contact and published locations",
+    "contentRequirement": "Added published-location cards and safe enquiry instructions. Samastipur has no existing city URL; use this page instead of creating a duplicate. Bhopal city URL remains noindex under its existing rule.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "VedTech Samastipur repair enquiry details",
+    "intent": "Navigational / Transactional",
+    "targetUrl": "/contact",
+    "designation": "Secondary",
+    "cluster": "Official contact and published locations",
+    "contentRequirement": "Added published-location cards and safe enquiry instructions. Samastipur has no existing city URL; use this page instead of creating a duplicate. Bhopal city URL remains noindex under its existing rule.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "VedTech Gurugram appointment enquiry",
+    "intent": "Navigational / Transactional",
+    "targetUrl": "/contact",
+    "designation": "Secondary",
+    "cluster": "Official contact and published locations",
+    "contentRequirement": "Added published-location cards and safe enquiry instructions. Samastipur has no existing city URL; use this page instead of creating a duplicate. Bhopal city URL remains noindex under its existing rule.",
+    "page": "Existing",
+    "priority": "P1"
+  },
+  {
+    "keyword": "IT solutions for educational institutions",
+    "intent": "Commercial investigation",
+    "targetUrl": "/industries/educational-institutions",
+    "designation": "Primary",
+    "cluster": "Education IT",
+    "contentRequirement": "Retain the education service content; collect actual institution requirements and link to the relevant service.",
+    "page": "Existing",
+    "priority": "P2"
+  },
+  {
+    "keyword": "school computer lab setup services",
+    "intent": "Commercial investigation",
+    "targetUrl": "/industries/educational-institutions",
+    "designation": "Secondary",
+    "cluster": "Education IT",
+    "contentRequirement": "Retain the education service content; collect actual institution requirements and link to the relevant service.",
+    "page": "Existing",
+    "priority": "P2"
+  },
+  {
+    "keyword": "technology support for coaching institutes",
+    "intent": "Commercial investigation",
+    "targetUrl": "/industries/educational-institutions",
+    "designation": "Secondary",
+    "cluster": "Education IT",
+    "contentRequirement": "Retain the education service content; collect actual institution requirements and link to the relevant service.",
+    "page": "Existing",
+    "priority": "P2"
+  },
+  {
+    "keyword": "school website and IT requirements",
+    "intent": "Commercial investigation",
+    "targetUrl": "/industries/educational-institutions",
+    "designation": "Secondary",
+    "cluster": "Education IT",
+    "contentRequirement": "Retain the education service content; collect actual institution requirements and link to the relevant service.",
+    "page": "Existing",
+    "priority": "P2"
+  },
+  {
+    "keyword": "IT solutions for corporate offices",
+    "intent": "Commercial investigation",
+    "targetUrl": "/industries/corporate-offices",
+    "designation": "Primary",
+    "cluster": "Corporate IT",
+    "contentRequirement": "Use existing office workflow and infrastructure content; avoid duplicating the networking service page.",
+    "page": "Existing",
+    "priority": "P2"
+  },
+  {
+    "keyword": "corporate office network planning",
+    "intent": "Commercial investigation",
+    "targetUrl": "/industries/corporate-offices",
+    "designation": "Secondary",
+    "cluster": "Corporate IT",
+    "contentRequirement": "Use existing office workflow and infrastructure content; avoid duplicating the networking service page.",
+    "page": "Existing",
+    "priority": "P2"
+  },
+  {
+    "keyword": "corporate cloud and server services",
+    "intent": "Commercial investigation",
+    "targetUrl": "/industries/corporate-offices",
+    "designation": "Secondary",
+    "cluster": "Corporate IT",
+    "contentRequirement": "Use existing office workflow and infrastructure content; avoid duplicating the networking service page.",
+    "page": "Existing",
+    "priority": "P2"
+  },
+  {
+    "keyword": "corporate office IT support requirements",
+    "intent": "Commercial investigation",
+    "targetUrl": "/industries/corporate-offices",
+    "designation": "Secondary",
+    "cluster": "Corporate IT",
+    "contentRequirement": "Use existing office workflow and infrastructure content; avoid duplicating the networking service page.",
+    "page": "Existing",
+    "priority": "P2"
+  },
+  {
+    "keyword": "IT solutions for retail businesses",
+    "intent": "Commercial investigation",
+    "targetUrl": "/industries/retail-shops",
+    "designation": "Primary",
+    "cluster": "Retail IT",
+    "contentRequirement": "Retain actual retail services; distinguish an industry workflow from a generic software quote.",
+    "page": "Existing",
+    "priority": "P2"
+  },
+  {
+    "keyword": "retail billing software requirements",
+    "intent": "Commercial investigation",
+    "targetUrl": "/industries/retail-shops",
+    "designation": "Secondary",
+    "cluster": "Retail IT",
+    "contentRequirement": "Retain actual retail services; distinguish an industry workflow from a generic software quote.",
+    "page": "Existing",
+    "priority": "P2"
+  },
+  {
+    "keyword": "POS and inventory system planning",
+    "intent": "Commercial investigation",
+    "targetUrl": "/industries/retail-shops",
+    "designation": "Secondary",
+    "cluster": "Retail IT",
+    "contentRequirement": "Retain actual retail services; distinguish an industry workflow from a generic software quote.",
+    "page": "Existing",
+    "priority": "P2"
+  },
+  {
+    "keyword": "retail shop network and CCTV services",
+    "intent": "Commercial investigation",
+    "targetUrl": "/industries/retail-shops",
+    "designation": "Secondary",
+    "cluster": "Retail IT",
+    "contentRequirement": "Retain actual retail services; distinguish an industry workflow from a generic software quote.",
+    "page": "Existing",
+    "priority": "P2"
+  },
+  {
+    "keyword": "IT solutions for startups and SMEs",
+    "intent": "Commercial investigation",
+    "targetUrl": "/industries/startups-smes",
+    "designation": "Primary",
+    "cluster": "Startup and SME IT",
+    "contentRequirement": "Use the existing startup guide and links to website, software and support services.",
+    "page": "Existing",
+    "priority": "P2"
+  },
+  {
+    "keyword": "startup business website planning",
+    "intent": "Commercial investigation",
+    "targetUrl": "/industries/startups-smes",
+    "designation": "Secondary",
+    "cluster": "Startup and SME IT",
+    "contentRequirement": "Use the existing startup guide and links to website, software and support services.",
+    "page": "Existing",
+    "priority": "P2"
+  },
+  {
+    "keyword": "small business custom software requirements",
+    "intent": "Commercial investigation",
+    "targetUrl": "/industries/startups-smes",
+    "designation": "Secondary",
+    "cluster": "Startup and SME IT",
+    "contentRequirement": "Use the existing startup guide and links to website, software and support services.",
+    "page": "Existing",
+    "priority": "P2"
+  },
+  {
+    "keyword": "cloud setup for a startup",
+    "intent": "Commercial investigation",
+    "targetUrl": "/industries/startups-smes",
+    "designation": "Secondary",
+    "cluster": "Startup and SME IT",
+    "contentRequirement": "Use the existing startup guide and links to website, software and support services.",
+    "page": "Existing",
+    "priority": "P2"
+  },
+  {
+    "keyword": "IT solutions for healthcare providers",
+    "intent": "Commercial investigation",
+    "targetUrl": "/industries/healthcare",
+    "designation": "Primary",
+    "cluster": "Healthcare IT",
+    "contentRequirement": "Use the existing healthcare page; confirm scope and avoid unsupported compliance guarantees.",
+    "page": "Existing",
+    "priority": "P2"
+  },
+  {
+    "keyword": "clinic appointment software requirements",
+    "intent": "Commercial investigation",
+    "targetUrl": "/industries/healthcare",
+    "designation": "Secondary",
+    "cluster": "Healthcare IT",
+    "contentRequirement": "Use the existing healthcare page; confirm scope and avoid unsupported compliance guarantees.",
+    "page": "Existing",
+    "priority": "P2"
+  },
+  {
+    "keyword": "healthcare data backup planning",
+    "intent": "Commercial investigation",
+    "targetUrl": "/industries/healthcare",
+    "designation": "Secondary",
+    "cluster": "Healthcare IT",
+    "contentRequirement": "Use the existing healthcare page; confirm scope and avoid unsupported compliance guarantees.",
+    "page": "Existing",
+    "priority": "P2"
+  },
+  {
+    "keyword": "clinic device integration requirements",
+    "intent": "Commercial investigation",
+    "targetUrl": "/industries/healthcare",
+    "designation": "Secondary",
+    "cluster": "Healthcare IT",
+    "contentRequirement": "Use the existing healthcare page; confirm scope and avoid unsupported compliance guarantees.",
+    "page": "Existing",
+    "priority": "P2"
+  },
+  {
+    "keyword": "IT solutions for manufacturing businesses",
+    "intent": "Commercial investigation",
+    "targetUrl": "/industries/manufacturing",
+    "designation": "Primary",
+    "cluster": "Manufacturing IT",
+    "contentRequirement": "Use the existing manufacturing page and link to relevant software/networking enquiry routes.",
+    "page": "Existing",
+    "priority": "P2"
+  },
+  {
+    "keyword": "manufacturing ERP integration requirements",
+    "intent": "Commercial investigation",
+    "targetUrl": "/industries/manufacturing",
+    "designation": "Secondary",
+    "cluster": "Manufacturing IT",
+    "contentRequirement": "Use the existing manufacturing page and link to relevant software/networking enquiry routes.",
+    "page": "Existing",
+    "priority": "P2"
+  },
+  {
+    "keyword": "industrial network planning services",
+    "intent": "Commercial investigation",
+    "targetUrl": "/industries/manufacturing",
+    "designation": "Secondary",
+    "cluster": "Manufacturing IT",
+    "contentRequirement": "Use the existing manufacturing page and link to relevant software/networking enquiry routes.",
+    "page": "Existing",
+    "priority": "P2"
+  },
+  {
+    "keyword": "warehouse inventory software requirements",
+    "intent": "Commercial investigation",
+    "targetUrl": "/industries/manufacturing",
+    "designation": "Secondary",
+    "cluster": "Manufacturing IT",
+    "contentRequirement": "Use the existing manufacturing page and link to relevant software/networking enquiry routes.",
+    "page": "Existing",
+    "priority": "P2"
+  },
+  {
+    "keyword": "IT security tips for small businesses",
+    "intent": "Informational",
+    "targetUrl": "/blog/1",
+    "designation": "Primary",
+    "cluster": "Existing security article",
+    "contentRequirement": "Retain the existing article; editorial freshness review is separate from Blog CMS work.",
+    "page": "Existing",
+    "priority": "P3"
+  },
+  {
+    "keyword": "small business data backup checklist",
+    "intent": "Informational",
+    "targetUrl": "/blog/1",
+    "designation": "Secondary",
+    "cluster": "Existing security article",
+    "contentRequirement": "Retain the existing article; editorial freshness review is separate from Blog CMS work.",
+    "page": "Existing",
+    "priority": "P3"
+  },
+  {
+    "keyword": "multi factor authentication for small businesses",
+    "intent": "Informational",
+    "targetUrl": "/blog/1",
+    "designation": "Secondary",
+    "cluster": "Existing security article",
+    "contentRequirement": "Retain the existing article; editorial freshness review is separate from Blog CMS work.",
+    "page": "Existing",
+    "priority": "P3"
+  },
+  {
+    "keyword": "why a business needs a professional website",
+    "intent": "Informational",
+    "targetUrl": "/blog/2",
+    "designation": "Primary",
+    "cluster": "Existing website article",
+    "contentRequirement": "Retain the existing article and link to the website service for commercial intent.",
+    "page": "Existing",
+    "priority": "P3"
+  },
+  {
+    "keyword": "business website benefits for small companies",
+    "intent": "Informational",
+    "targetUrl": "/blog/2",
+    "designation": "Secondary",
+    "cluster": "Existing website article",
+    "contentRequirement": "Retain the existing article and link to the website service for commercial intent.",
+    "page": "Existing",
+    "priority": "P3"
+  },
+  {
+    "keyword": "how a website supports customer enquiries",
+    "intent": "Informational / Commercial investigation",
+    "targetUrl": "/blog/2",
+    "designation": "Secondary",
+    "cluster": "Existing website article",
+    "contentRequirement": "Retain the existing article and link to the website service for commercial intent.",
+    "page": "Existing",
+    "priority": "P3"
+  },
+  {
+    "keyword": "what is an IT annual maintenance contract",
+    "intent": "Informational / Commercial investigation",
+    "targetUrl": "/blog/3",
+    "designation": "Primary",
+    "cluster": "Existing AMC article",
+    "contentRequirement": "Retain the existing article; published plan comparison belongs on /amc-plans.",
+    "page": "Existing",
+    "priority": "P3"
+  },
+  {
+    "keyword": "how an IT AMC works",
+    "intent": "Informational / Commercial investigation",
+    "targetUrl": "/blog/3",
+    "designation": "Secondary",
+    "cluster": "Existing AMC article",
+    "contentRequirement": "Retain the existing article; published plan comparison belongs on /amc-plans.",
+    "page": "Existing",
+    "priority": "P3"
+  },
+  {
+    "keyword": "questions before selecting an AMC provider",
+    "intent": "Informational",
+    "targetUrl": "/blog/3",
+    "designation": "Secondary",
+    "cluster": "Existing AMC article",
+    "contentRequirement": "Retain the existing article; published plan comparison belongs on /amc-plans.",
+    "page": "Existing",
+    "priority": "P3"
+  }
+]

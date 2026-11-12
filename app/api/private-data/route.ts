@@ -29,7 +29,7 @@ const crmTables = new Set(['leads', 'customer_segments', 'email_campaigns', 'cal
 // 00018 can_manage_crm explicitly recognizes full_access_admin; it is not a super-admin alias.
 const crmAccessTables = new Set(['customers', 'customer_feedback', ...crmTables]);
 const privateRpcs = new Set(['check_expiring_amcs', 'update_ticket_admin', 'add_engineer', 'update_engineer', 'delete_engineer', 'get_office_stats', 'check_customer_amc_status', 'get_or_create_customer']);
-const hiddenFields = new Set(['password_hash', 'totp_secret', 'reset_code', 'reset_code_expires']);
+const hiddenFields = new Set(['password_hash', 'totp_secret', 'reset_code', 'reset_code_expires', 'auth_version']);
 const literalEmail = (email: string) => email.replace(/[\\%_]/g, '\\$&');
 
 type Filter = { op: string; column?: string; value?: unknown; values?: unknown[]; expression?: string };
@@ -111,15 +111,19 @@ export async function POST(request: Request) {
       if (supportRpc.has(body.name) && !['super_admin', 'support_admin'].includes(admin.role)) return NextResponse.json({ data: null, error: { message: 'Support administrator access required.' } }, { status: 403 });
       if (billingRpc.has(body.name) && !['super_admin', 'billing_admin'].includes(admin.role)) return NextResponse.json({ data: null, error: { message: 'Billing administrator access required.' } }, { status: 403 });
       const { data, error } = await db.rpc(body.name as any, body.args || {});
-      return NextResponse.json({ data, error: error ? { message: error.message } : null });
+      return NextResponse.json({ data: sanitize(data), error: error ? { message: error.message } : null });
     }
 
     const { table, action, columns, payload, filters = [], orders = [], limit, single } = body;
     if (typeof table !== 'string' || !tables.has(table) || !['select', 'insert', 'update', 'delete', 'upsert'].includes(action)) {
       return NextResponse.json({ data: null, error: { message: 'Unsupported data operation.' } }, { status: 400 });
     }
+    if (typeof columns === 'string' && (columns.match(/[A-Za-z_][A-Za-z0-9_]*/g) || []).some(field => hiddenFields.has(field.toLowerCase()))) {
+      return NextResponse.json({ data: null, error: { message: 'Credential fields cannot be selected.' } }, { status: 403 });
+    }
     // Service-role relation expansion must not bypass the primary table's role guard.
     if (typeof columns === 'string' && admin?.role !== 'super_admin') {
+      if (columns.includes('"')) return NextResponse.json({ data: null, error: { message: 'Quoted data selectors are not permitted.' } }, { status: 403 });
       const related = [...columns.matchAll(/([a-zA-Z_][a-zA-Z0-9_]*)(?:![a-zA-Z0-9_]+)*\s*\(/g)].map(match => match[1]);
       const allowedRelations = customer ? new Set(table === 'amc_subscriptions' ? ['amc_plans'] : [])
         : engineer ? new Set(table === 'part_requests' ? ['inventory_items'] : [])

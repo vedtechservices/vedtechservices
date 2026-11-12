@@ -1,0 +1,2 @@
+﻿'use client';
+export default function BlogError({reset}:{reset:()=>void}){return <main className="container py-16"><h1 className="text-3xl font-bold">Articles are temporarily unavailable</h1><p className="mt-4">The article could not be checked safely. No unpublished content is shown. Please retry.</p><button className="mt-5 rounded bg-primary px-5 py-3 text-white" onClick={reset}>Retry loading</button></main>;}

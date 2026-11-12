@@ -1,3 +1,4 @@
+import { verifiedLocations } from '@/data/verified-locations';
 import type { Metadata } from 'next';
 import { blogPosts } from '@/data/blog';
 
@@ -105,6 +106,10 @@ const seoPages: Record<string, SeoPage> = {
         title: 'VedTech Services Blog — IT Tips, Guides & Technology Insights',
         description: 'Read expert articles on IT services, web development, cybersecurity, and business technology. Get practical tips and insights from VedTech Services professionals.',
     },
+    '/portfolio': {
+        title: 'Portfolio & Case Studies - VedTech Services',
+        description: 'Explore VedTech Services project case studies across websites, business software, mobile apps, networking and IT infrastructure. Discuss a similar requirement.',
+    },
     '/demo': {
         title: 'Live Project Portfolio — VedTech Services | 17 Projects',
         description: 'Explore 17 live projects built by VedTech Services — from e-commerce platforms and school management systems to hospital software and food delivery apps.',
@@ -133,7 +138,7 @@ const industryNames: Record<string, string> = {
     '/industries/manufacturing': 'Manufacturing IT Solutions',
 };
 
-const privatePath = (pathname: string) =>
+export const isPrivateSeoPath = (pathname: string) =>
     /^\/(?:admin|employee|engineer)(?:\/|$)/.test(pathname) ||
     /^\/(?:dashboard|settings)(?:\/|$)/.test(pathname);
 
@@ -147,10 +152,28 @@ const blogPostForPath = (pathname: string) => {
     return match ? blogPosts.find((post) => post.id === Number(match[1])) : undefined;
 };
 
+export const isPublicSeoPath = (pathname:string) => {
+    const path=normalizePath(pathname);
+    return Boolean(seoPages[path] || blogPostForPath(path));
+};
+
+export function getOrganizationSchema() {
+    return {
+        '@context':'https://schema.org', '@type':'Organization', '@id':SITE_URL+'/#organization',
+        name:'VedTech Services', url:SITE_URL, telephone:'+91 7858971869', email:'info@vedtechservices.in',
+        contactPoint:{'@type':'ContactPoint',telephone:'+91 7858971869',email:'info@vedtechservices.in',contactType:'customer enquiries'},
+        address:verifiedLocations.map(location=>({
+            '@type':'PostalAddress', addressLocality:location.city,addressRegion:location.state,addressCountry:'IN',
+            ...(location.slug==='gurugram'?{streetAddress:'Sector 17A'}:{}),
+            ...(location.slug==='samastipur'?{postalCode:'848101'}:{}),
+        })),
+    };
+}
+
 export function getSeoMetadata(pathname: string): Metadata {
     const path = normalizePath(pathname);
 
-    if (privatePath(path)) {
+    if (isPrivateSeoPath(path)) {
         return {
             title: 'Private Area | VedTech Services',
             robots: { index: false, follow: false },
@@ -200,19 +223,13 @@ export function getJsonLd(pathname: string) {
         ? { title: `${post.title} - VedTech Blog`, description: post.excerpt }
         : seoPages[path];
 
-    if (!page || privatePath(path)) return [];
+    if (!page || isPrivateSeoPath(path)) return [];
 
     const canonical = new URL(path, SITE_URL).toString();
     const organizationId = `${SITE_URL}/#organization`;
     const websiteId = `${SITE_URL}/#website`;
     const schemas: Record<string, unknown>[] = [
-        {
-            '@context': 'https://schema.org',
-            '@type': 'Organization',
-            '@id': organizationId,
-            name: 'VedTech Services',
-            url: SITE_URL,
-        },
+        getOrganizationSchema(),
         {
             '@context': 'https://schema.org',
             '@type': 'WebSite',
@@ -223,7 +240,7 @@ export function getJsonLd(pathname: string) {
         },
         {
             '@context': 'https://schema.org',
-            '@type': 'WebPage',
+            '@type': path === '/portfolio' ? 'CollectionPage' : 'WebPage',
             '@id': `${canonical}#webpage`,
             url: canonical,
             name: page.title,

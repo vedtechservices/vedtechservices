@@ -265,9 +265,9 @@ This ticket has been saved to the VedTech Services support system.
                       <div className="bg-slate-900 text-white p-6 md:p-8 rounded-xl space-y-4">
                         <div className="flex items-center gap-3">
                           <Bot className="h-6 w-6 text-primary" />
-                          <h3 className="text-lg font-bold">Instant AI Help</h3>
+                          <h3 className="text-lg font-bold">Local FAQ Help</h3>
                         </div>
-                        <p className="text-slate-300 text-sm leading-relaxed">Our VedBot AI is ready to answer questions about services and AMC plans 24/7.</p>
+                        <p className="text-slate-300 text-sm leading-relaxed">VedBot matches questions to website FAQs locally. Open the FAQ button; no human agent is connected.</p>
                         <Button variant="outline" className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20" onClick={() => document.dispatchEvent(new CustomEvent('open-chatbot'))}>
                           Open Chatbot
                         </Button>

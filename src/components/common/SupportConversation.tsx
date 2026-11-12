@@ -51,7 +51,7 @@ export function SupportMessages({messages}:{messages:LiveMessage[]}) {
   useEffect(()=>{end.current?.scrollIntoView({block:'nearest'});},[messages.length]);
   return <div role="log" aria-label="Conversation messages" aria-live="polite" className="space-y-3 p-3">
     {messages.map(message=><div key={message.id} className={`rounded-lg p-3 text-sm whitespace-pre-wrap break-words ${message.sender==='user'?'bg-primary/10 ml-5':'bg-muted mr-5'}`}>
-      <div className="text-xs font-semibold mb-1">{({user:'Customer',ai:'VedBot · AI',agent:'Support agent · Human',system:'Support update'} as Record<string,string>)[message.sender]} <time className="font-normal text-muted-foreground" dateTime={message.created_at}>{new Date(message.created_at).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})}</time></div>
+      <div className="text-xs font-semibold mb-1">{({user:'Customer',ai:'VedBot · FAQ',agent:'Support agent · Human',system:'Support update'} as Record<string,string>)[message.sender]} <time className="font-normal text-muted-foreground" dateTime={message.created_at}>{new Date(message.created_at).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})}</time></div>
       {message.body}
     </div>)}<div ref={end}/>
   </div>;

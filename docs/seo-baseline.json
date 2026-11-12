@@ -1,0 +1,4048 @@
+{
+  "captured": "2026-11-05",
+  "canonicalHost": "https://vedtechservices.in",
+  "routePaths": [
+    "/portfolio",
+    "/admin/portfolio",
+    "/",
+    "/about",
+    "/services",
+    "/services/software",
+    "/services/hardware",
+    "/services/it-support",
+    "/services/web-development",
+    "/services/mobile-app-development",
+    "/services/hardware-repair",
+    "/services/networking-solutions",
+    "/industries",
+    "/industries/educational-institutions",
+    "/industries/corporate-offices",
+    "/industries/retail-shops",
+    "/industries/startups-smes",
+    "/industries/healthcare",
+    "/industries/manufacturing",
+    "/why-us",
+    "/amc-plans",
+    "/support",
+    "/contact",
+    "/privacy",
+    "/terms",
+    "/blog",
+    "/blog/:id",
+    "/demo",
+    "/dashboard",
+    "/admin/login",
+    "/admin/dashboard",
+    "/admin/tickets",
+    "/admin/reviews",
+    "/admin/settings",
+    "/admin/manage",
+    "/admin/team",
+    "/employee/signup",
+    "/admin/engineers",
+    "/employee/login",
+    "/engineer/dashboard",
+    "/settings",
+    "/admin/logs",
+    "/admin/audit-logs",
+    "/admin/performance",
+    "/admin/inventory",
+    "/admin/billing",
+    "/admin/chatbot-escalations",
+    "/admin/support-inbox",
+    "/admin/knowledge-base",
+    "/admin/cron-monitor",
+    "/admin/offices",
+    "/admin/email-template-settings",
+    "/admin/employee-performance",
+    "/admin/email-analytics",
+    "/admin/customer-feedback",
+    "/admin/notifications",
+    "/admin/crm",
+    "/admin/crm/leads",
+    "/admin/crm/leads/:id",
+    "/admin/crm/pipeline",
+    "/admin/crm/customers/:id",
+    "/admin/crm/campaigns",
+    "/admin/crm/calls",
+    "/admin/crm/meetings",
+    "/admin/crm/tasks",
+    "/admin/crm/reports",
+    "/admin/crm/analytics",
+    "/admin/crm/segments",
+    "/admin/crm/feedback",
+    "/admin/crm/customer-reports",
+    "/admin/crm/audit-logs"
+  ],
+  "publicPages": [
+    {
+      "path": "/portfolio",
+      "metadata": {
+        "title": "Page Not Found | VedTech Services",
+        "robots": {
+          "index": false,
+          "follow": false
+        }
+      },
+      "schemaTypes": []
+    },
+    {
+      "path": "/",
+      "metadata": {
+        "title": "IT Services for Businesses | Software, Web, Hardware & Support | VedTech",
+        "description": "Explore business software development, websites, mobile apps, computer repair, networking, and ongoing IT support from VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "openGraph": {
+          "type": "website",
+          "url": "https://vedtechservices.in/",
+          "title": "IT Services for Businesses | Software, Web, Hardware & Support | VedTech",
+          "description": "Explore business software development, websites, mobile apps, computer repair, networking, and ongoing IT support from VedTech Services.",
+          "siteName": "VedTech Services",
+          "locale": "en_IN"
+        },
+        "twitter": {
+          "card": "summary",
+          "title": "IT Services for Businesses | Software, Web, Hardware & Support | VedTech",
+          "description": "Explore business software development, websites, mobile apps, computer repair, networking, and ongoing IT support from VedTech Services."
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage"
+      ]
+    },
+    {
+      "path": "/about",
+      "metadata": {
+        "title": "About VedTech Services — Expert IT Partner in Bihar, India",
+        "description": "VedTech Services is Bihar's trusted enterprise IT partner. Learn about our mission, values, team, and commitment to delivering fast, reliable technology solutions.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/about"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "openGraph": {
+          "type": "website",
+          "url": "https://vedtechservices.in/about",
+          "title": "About VedTech Services — Expert IT Partner in Bihar, India",
+          "description": "VedTech Services is Bihar's trusted enterprise IT partner. Learn about our mission, values, team, and commitment to delivering fast, reliable technology solutions.",
+          "siteName": "VedTech Services",
+          "locale": "en_IN"
+        },
+        "twitter": {
+          "card": "summary",
+          "title": "About VedTech Services — Expert IT Partner in Bihar, India",
+          "description": "VedTech Services is Bihar's trusted enterprise IT partner. Learn about our mission, values, team, and commitment to delivering fast, reliable technology solutions."
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/services",
+      "metadata": {
+        "title": "Business IT Services | Software, Hardware & Support | VedTech",
+        "description": "Explore VedTech Services for custom software and website development, mobile apps, computer repair, networking, and ongoing IT support for businesses.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/services"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "openGraph": {
+          "type": "website",
+          "url": "https://vedtechservices.in/services",
+          "title": "Business IT Services | Software, Hardware & Support | VedTech",
+          "description": "Explore VedTech Services for custom software and website development, mobile apps, computer repair, networking, and ongoing IT support for businesses.",
+          "siteName": "VedTech Services",
+          "locale": "en_IN"
+        },
+        "twitter": {
+          "card": "summary",
+          "title": "Business IT Services | Software, Hardware & Support | VedTech",
+          "description": "Explore VedTech Services for custom software and website development, mobile apps, computer repair, networking, and ongoing IT support for businesses."
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "ItemList",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/services/software",
+      "metadata": {
+        "title": "Software Development Services | Custom Software & Apps | VedTech",
+        "description": "Plan custom software, CRM and ERP solutions, business websites, mobile apps, and cloud services with VedTech Services. Discuss your project requirements.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/services/software"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "openGraph": {
+          "type": "website",
+          "url": "https://vedtechservices.in/services/software",
+          "title": "Software Development Services | Custom Software & Apps | VedTech",
+          "description": "Plan custom software, CRM and ERP solutions, business websites, mobile apps, and cloud services with VedTech Services. Discuss your project requirements.",
+          "siteName": "VedTech Services",
+          "locale": "en_IN"
+        },
+        "twitter": {
+          "card": "summary",
+          "title": "Software Development Services | Custom Software & Apps | VedTech",
+          "description": "Plan custom software, CRM and ERP solutions, business websites, mobile apps, and cloud services with VedTech Services. Discuss your project requirements."
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ]
+    },
+    {
+      "path": "/services/hardware",
+      "metadata": {
+        "title": "Computer Repair & IT Infrastructure Services | VedTech",
+        "description": "Get computer and laptop repair, printer support, hardware upgrades, server setup, networking, and CCTV installation for your business IT infrastructure.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/services/hardware"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "openGraph": {
+          "type": "website",
+          "url": "https://vedtechservices.in/services/hardware",
+          "title": "Computer Repair & IT Infrastructure Services | VedTech",
+          "description": "Get computer and laptop repair, printer support, hardware upgrades, server setup, networking, and CCTV installation for your business IT infrastructure.",
+          "siteName": "VedTech Services",
+          "locale": "en_IN"
+        },
+        "twitter": {
+          "card": "summary",
+          "title": "Computer Repair & IT Infrastructure Services | VedTech",
+          "description": "Get computer and laptop repair, printer support, hardware upgrades, server setup, networking, and CCTV installation for your business IT infrastructure."
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ]
+    },
+    {
+      "path": "/services/it-support",
+      "metadata": {
+        "title": "Business IT Support & AMC Plans | Helpdesk | VedTech",
+        "description": "Explore business IT support, annual maintenance contracts (AMC), helpdesk assistance, and on-site or remote technical support from VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/services/it-support"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "openGraph": {
+          "type": "website",
+          "url": "https://vedtechservices.in/services/it-support",
+          "title": "Business IT Support & AMC Plans | Helpdesk | VedTech",
+          "description": "Explore business IT support, annual maintenance contracts (AMC), helpdesk assistance, and on-site or remote technical support from VedTech Services.",
+          "siteName": "VedTech Services",
+          "locale": "en_IN"
+        },
+        "twitter": {
+          "card": "summary",
+          "title": "Business IT Support & AMC Plans | Helpdesk | VedTech",
+          "description": "Explore business IT support, annual maintenance contracts (AMC), helpdesk assistance, and on-site or remote technical support from VedTech Services."
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ]
+    },
+    {
+      "path": "/services/web-development",
+      "metadata": {
+        "title": "Website Development Company | Business Websites & Web Apps",
+        "description": "Plan a business website, e-commerce site, or custom web application with VedTech Services. Explore website design, development, integrations, and support.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/services/web-development"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "openGraph": {
+          "type": "website",
+          "url": "https://vedtechservices.in/services/web-development",
+          "title": "Website Development Company | Business Websites & Web Apps",
+          "description": "Plan a business website, e-commerce site, or custom web application with VedTech Services. Explore website design, development, integrations, and support.",
+          "siteName": "VedTech Services",
+          "locale": "en_IN"
+        },
+        "twitter": {
+          "card": "summary",
+          "title": "Website Development Company | Business Websites & Web Apps",
+          "description": "Plan a business website, e-commerce site, or custom web application with VedTech Services. Explore website design, development, integrations, and support."
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ]
+    },
+    {
+      "path": "/services/mobile-app-development",
+      "metadata": {
+        "title": "Mobile App Development | Android, iOS & Cross-Platform Apps",
+        "description": "Discuss Android, iOS, or cross-platform mobile app development with VedTech Services, from app planning and design through deployment and maintenance.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/services/mobile-app-development"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "openGraph": {
+          "type": "website",
+          "url": "https://vedtechservices.in/services/mobile-app-development",
+          "title": "Mobile App Development | Android, iOS & Cross-Platform Apps",
+          "description": "Discuss Android, iOS, or cross-platform mobile app development with VedTech Services, from app planning and design through deployment and maintenance.",
+          "siteName": "VedTech Services",
+          "locale": "en_IN"
+        },
+        "twitter": {
+          "card": "summary",
+          "title": "Mobile App Development | Android, iOS & Cross-Platform Apps",
+          "description": "Discuss Android, iOS, or cross-platform mobile app development with VedTech Services, from app planning and design through deployment and maintenance."
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ]
+    },
+    {
+      "path": "/services/hardware-repair",
+      "metadata": {
+        "title": "Computer & Laptop Repair Services | Hardware Support | VedTech",
+        "description": "Arrange computer or laptop diagnostics, hardware repairs, upgrades, printer support, and data recovery with VedTech Services. Contact us about your device.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/services/hardware-repair"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "openGraph": {
+          "type": "website",
+          "url": "https://vedtechservices.in/services/hardware-repair",
+          "title": "Computer & Laptop Repair Services | Hardware Support | VedTech",
+          "description": "Arrange computer or laptop diagnostics, hardware repairs, upgrades, printer support, and data recovery with VedTech Services. Contact us about your device.",
+          "siteName": "VedTech Services",
+          "locale": "en_IN"
+        },
+        "twitter": {
+          "card": "summary",
+          "title": "Computer & Laptop Repair Services | Hardware Support | VedTech",
+          "description": "Arrange computer or laptop diagnostics, hardware repairs, upgrades, printer support, and data recovery with VedTech Services. Contact us about your device."
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ]
+    },
+    {
+      "path": "/services/networking-solutions",
+      "metadata": {
+        "title": "Business Networking Solutions | LAN, Wi-Fi & Network Security",
+        "description": "Plan office LAN and Wi-Fi setup, network security, VPN, and server connectivity with VedTech Services. Discuss your network requirements with our team.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/services/networking-solutions"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "openGraph": {
+          "type": "website",
+          "url": "https://vedtechservices.in/services/networking-solutions",
+          "title": "Business Networking Solutions | LAN, Wi-Fi & Network Security",
+          "description": "Plan office LAN and Wi-Fi setup, network security, VPN, and server connectivity with VedTech Services. Discuss your network requirements with our team.",
+          "siteName": "VedTech Services",
+          "locale": "en_IN"
+        },
+        "twitter": {
+          "card": "summary",
+          "title": "Business Networking Solutions | LAN, Wi-Fi & Network Security",
+          "description": "Plan office LAN and Wi-Fi setup, network security, VPN, and server connectivity with VedTech Services. Discuss your network requirements with our team."
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ]
+    },
+    {
+      "path": "/industries",
+      "metadata": {
+        "title": "Industry IT Solutions | Education, Corporate, Retail & More | VedTech",
+        "description": "Explore IT solutions for educational institutions, corporate offices, retail businesses, startups, healthcare providers, and manufacturers.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/industries"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "openGraph": {
+          "type": "website",
+          "url": "https://vedtechservices.in/industries",
+          "title": "Industry IT Solutions | Education, Corporate, Retail & More | VedTech",
+          "description": "Explore IT solutions for educational institutions, corporate offices, retail businesses, startups, healthcare providers, and manufacturers.",
+          "siteName": "VedTech Services",
+          "locale": "en_IN"
+        },
+        "twitter": {
+          "card": "summary",
+          "title": "Industry IT Solutions | Education, Corporate, Retail & More | VedTech",
+          "description": "Explore IT solutions for educational institutions, corporate offices, retail businesses, startups, healthcare providers, and manufacturers."
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "ItemList",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/industries/educational-institutions",
+      "metadata": {
+        "title": "IT Solutions for Educational Institutions | School Technology | VedTech",
+        "description": "Explore computer lab setup, smart classrooms, campus Wi-Fi, and student management software for schools, colleges, and coaching institutions.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/industries/educational-institutions"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "openGraph": {
+          "type": "website",
+          "url": "https://vedtechservices.in/industries/educational-institutions",
+          "title": "IT Solutions for Educational Institutions | School Technology | VedTech",
+          "description": "Explore computer lab setup, smart classrooms, campus Wi-Fi, and student management software for schools, colleges, and coaching institutions.",
+          "siteName": "VedTech Services",
+          "locale": "en_IN"
+        },
+        "twitter": {
+          "card": "summary",
+          "title": "IT Solutions for Educational Institutions | School Technology | VedTech",
+          "description": "Explore computer lab setup, smart classrooms, campus Wi-Fi, and student management software for schools, colleges, and coaching institutions."
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/industries/corporate-offices",
+      "metadata": {
+        "title": "IT Solutions for Corporate Offices | Networks & Cloud | VedTech",
+        "description": "Plan office IT infrastructure, server management, network security, cloud services, and ongoing technical support for corporate teams.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/industries/corporate-offices"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "openGraph": {
+          "type": "website",
+          "url": "https://vedtechservices.in/industries/corporate-offices",
+          "title": "IT Solutions for Corporate Offices | Networks & Cloud | VedTech",
+          "description": "Plan office IT infrastructure, server management, network security, cloud services, and ongoing technical support for corporate teams.",
+          "siteName": "VedTech Services",
+          "locale": "en_IN"
+        },
+        "twitter": {
+          "card": "summary",
+          "title": "IT Solutions for Corporate Offices | Networks & Cloud | VedTech",
+          "description": "Plan office IT infrastructure, server management, network security, cloud services, and ongoing technical support for corporate teams."
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/industries/retail-shops",
+      "metadata": {
+        "title": "Retail IT Solutions | POS, Billing & Inventory | VedTech",
+        "description": "Explore point-of-sale systems, billing software, inventory management, and CCTV solutions for retail shops and stores.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/industries/retail-shops"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "openGraph": {
+          "type": "website",
+          "url": "https://vedtechservices.in/industries/retail-shops",
+          "title": "Retail IT Solutions | POS, Billing & Inventory | VedTech",
+          "description": "Explore point-of-sale systems, billing software, inventory management, and CCTV solutions for retail shops and stores.",
+          "siteName": "VedTech Services",
+          "locale": "en_IN"
+        },
+        "twitter": {
+          "card": "summary",
+          "title": "Retail IT Solutions | POS, Billing & Inventory | VedTech",
+          "description": "Explore point-of-sale systems, billing software, inventory management, and CCTV solutions for retail shops and stores."
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/industries/startups-smes",
+      "metadata": {
+        "title": "IT Solutions for Startups & SMEs | Software & Support | VedTech",
+        "description": "Plan a business website, custom software, cloud setup, or IT support arrangement suited to a startup or small-to-medium enterprise.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/industries/startups-smes"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "openGraph": {
+          "type": "website",
+          "url": "https://vedtechservices.in/industries/startups-smes",
+          "title": "IT Solutions for Startups & SMEs | Software & Support | VedTech",
+          "description": "Plan a business website, custom software, cloud setup, or IT support arrangement suited to a startup or small-to-medium enterprise.",
+          "siteName": "VedTech Services",
+          "locale": "en_IN"
+        },
+        "twitter": {
+          "card": "summary",
+          "title": "IT Solutions for Startups & SMEs | Software & Support | VedTech",
+          "description": "Plan a business website, custom software, cloud setup, or IT support arrangement suited to a startup or small-to-medium enterprise."
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/industries/healthcare",
+      "metadata": {
+        "title": "Healthcare IT Solutions | Patient Systems & Data Security | VedTech",
+        "description": "Explore patient management software, appointment workflows, data protection, backup, and device integration for clinics and healthcare providers.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/industries/healthcare"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "openGraph": {
+          "type": "website",
+          "url": "https://vedtechservices.in/industries/healthcare",
+          "title": "Healthcare IT Solutions | Patient Systems & Data Security | VedTech",
+          "description": "Explore patient management software, appointment workflows, data protection, backup, and device integration for clinics and healthcare providers.",
+          "siteName": "VedTech Services",
+          "locale": "en_IN"
+        },
+        "twitter": {
+          "card": "summary",
+          "title": "Healthcare IT Solutions | Patient Systems & Data Security | VedTech",
+          "description": "Explore patient management software, appointment workflows, data protection, backup, and device integration for clinics and healthcare providers."
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/industries/manufacturing",
+      "metadata": {
+        "title": "Manufacturing IT Solutions | ERP & Industrial Networking | VedTech",
+        "description": "Explore ERP integration, inventory and warehouse systems, industrial networking, and automation support for manufacturing operations.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/industries/manufacturing"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "openGraph": {
+          "type": "website",
+          "url": "https://vedtechservices.in/industries/manufacturing",
+          "title": "Manufacturing IT Solutions | ERP & Industrial Networking | VedTech",
+          "description": "Explore ERP integration, inventory and warehouse systems, industrial networking, and automation support for manufacturing operations.",
+          "siteName": "VedTech Services",
+          "locale": "en_IN"
+        },
+        "twitter": {
+          "card": "summary",
+          "title": "Manufacturing IT Solutions | ERP & Industrial Networking | VedTech",
+          "description": "Explore ERP integration, inventory and warehouse systems, industrial networking, and automation support for manufacturing operations."
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/why-us",
+      "metadata": {
+        "title": "Why Choose VedTech Services — Fast, Reliable IT Support in Bihar",
+        "description": "Discover why businesses across Bihar trust VedTech Services for IT support. Fast response, certified engineers, transparent pricing, and 24/7 emergency assistance.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/why-us"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "openGraph": {
+          "type": "website",
+          "url": "https://vedtechservices.in/why-us",
+          "title": "Why Choose VedTech Services — Fast, Reliable IT Support in Bihar",
+          "description": "Discover why businesses across Bihar trust VedTech Services for IT support. Fast response, certified engineers, transparent pricing, and 24/7 emergency assistance.",
+          "siteName": "VedTech Services",
+          "locale": "en_IN"
+        },
+        "twitter": {
+          "card": "summary",
+          "title": "Why Choose VedTech Services — Fast, Reliable IT Support in Bihar",
+          "description": "Discover why businesses across Bihar trust VedTech Services for IT support. Fast response, certified engineers, transparent pricing, and 24/7 emergency assistance."
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/amc-plans",
+      "metadata": {
+        "title": "IT AMC Plans & Pricing — VedTech Services Annual Maintenance Contracts",
+        "description": "Explore VedTech Services' affordable Annual Maintenance Contract (AMC) plans for businesses. Comprehensive IT support, hardware maintenance, and SLA-backed service across Bihar.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/amc-plans"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "openGraph": {
+          "type": "website",
+          "url": "https://vedtechservices.in/amc-plans",
+          "title": "IT AMC Plans & Pricing — VedTech Services Annual Maintenance Contracts",
+          "description": "Explore VedTech Services' affordable Annual Maintenance Contract (AMC) plans for businesses. Comprehensive IT support, hardware maintenance, and SLA-backed service across Bihar.",
+          "siteName": "VedTech Services",
+          "locale": "en_IN"
+        },
+        "twitter": {
+          "card": "summary",
+          "title": "IT AMC Plans & Pricing — VedTech Services Annual Maintenance Contracts",
+          "description": "Explore VedTech Services' affordable Annual Maintenance Contract (AMC) plans for businesses. Comprehensive IT support, hardware maintenance, and SLA-backed service across Bihar."
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ]
+    },
+    {
+      "path": "/support",
+      "metadata": {
+        "title": "Customer Support Center | VedTech Services",
+        "description": "Contact VedTech Services for technical support, service requests, and help with an existing issue.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/support"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "openGraph": {
+          "type": "website",
+          "url": "https://vedtechservices.in/support",
+          "title": "Customer Support Center | VedTech Services",
+          "description": "Contact VedTech Services for technical support, service requests, and help with an existing issue.",
+          "siteName": "VedTech Services",
+          "locale": "en_IN"
+        },
+        "twitter": {
+          "card": "summary",
+          "title": "Customer Support Center | VedTech Services",
+          "description": "Contact VedTech Services for technical support, service requests, and help with an existing issue."
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/contact",
+      "metadata": {
+        "title": "Contact VedTech Services — Get Free IT Consultation | 24/7 Support",
+        "description": "Contact VedTech Services for professional IT support. Get free consultation, 24/7 emergency support, and expert solutions. Call, email, or WhatsApp us now for immediate assistance.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/contact"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "openGraph": {
+          "type": "website",
+          "url": "https://vedtechservices.in/contact",
+          "title": "Contact VedTech Services — Get Free IT Consultation | 24/7 Support",
+          "description": "Contact VedTech Services for professional IT support. Get free consultation, 24/7 emergency support, and expert solutions. Call, email, or WhatsApp us now for immediate assistance.",
+          "siteName": "VedTech Services",
+          "locale": "en_IN"
+        },
+        "twitter": {
+          "card": "summary",
+          "title": "Contact VedTech Services — Get Free IT Consultation | 24/7 Support",
+          "description": "Contact VedTech Services for professional IT support. Get free consultation, 24/7 emergency support, and expert solutions. Call, email, or WhatsApp us now for immediate assistance."
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/privacy",
+      "metadata": {
+        "title": "Privacy Policy — VedTech Services",
+        "description": "Learn how VedTech Services collects, uses, and protects your personal information. We are committed to safeguarding your privacy.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/privacy"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "openGraph": {
+          "type": "website",
+          "url": "https://vedtechservices.in/privacy",
+          "title": "Privacy Policy — VedTech Services",
+          "description": "Learn how VedTech Services collects, uses, and protects your personal information. We are committed to safeguarding your privacy.",
+          "siteName": "VedTech Services",
+          "locale": "en_IN"
+        },
+        "twitter": {
+          "card": "summary",
+          "title": "Privacy Policy — VedTech Services",
+          "description": "Learn how VedTech Services collects, uses, and protects your personal information. We are committed to safeguarding your privacy."
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/terms",
+      "metadata": {
+        "title": "Terms of Service — VedTech Services",
+        "description": "Read the terms and conditions governing your use of VedTech Services' website and IT services. Please read carefully before using our services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/terms"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "openGraph": {
+          "type": "website",
+          "url": "https://vedtechservices.in/terms",
+          "title": "Terms of Service — VedTech Services",
+          "description": "Read the terms and conditions governing your use of VedTech Services' website and IT services. Please read carefully before using our services.",
+          "siteName": "VedTech Services",
+          "locale": "en_IN"
+        },
+        "twitter": {
+          "card": "summary",
+          "title": "Terms of Service — VedTech Services",
+          "description": "Read the terms and conditions governing your use of VedTech Services' website and IT services. Please read carefully before using our services."
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/blog",
+      "metadata": {
+        "title": "VedTech Services Blog — IT Tips, Guides & Technology Insights",
+        "description": "Read expert articles on IT services, web development, cybersecurity, and business technology. Get practical tips and insights from VedTech Services professionals.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/blog"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "openGraph": {
+          "type": "website",
+          "url": "https://vedtechservices.in/blog",
+          "title": "VedTech Services Blog — IT Tips, Guides & Technology Insights",
+          "description": "Read expert articles on IT services, web development, cybersecurity, and business technology. Get practical tips and insights from VedTech Services professionals.",
+          "siteName": "VedTech Services",
+          "locale": "en_IN"
+        },
+        "twitter": {
+          "card": "summary",
+          "title": "VedTech Services Blog — IT Tips, Guides & Technology Insights",
+          "description": "Read expert articles on IT services, web development, cybersecurity, and business technology. Get practical tips and insights from VedTech Services professionals."
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/demo",
+      "metadata": {
+        "title": "Live Project Portfolio — VedTech Services | 17 Projects",
+        "description": "Explore 17 live projects built by VedTech Services — from e-commerce platforms and school management systems to hospital software and food delivery apps.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/demo"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "openGraph": {
+          "type": "website",
+          "url": "https://vedtechservices.in/demo",
+          "title": "Live Project Portfolio — VedTech Services | 17 Projects",
+          "description": "Explore 17 live projects built by VedTech Services — from e-commerce platforms and school management systems to hospital software and food delivery apps.",
+          "siteName": "VedTech Services",
+          "locale": "en_IN"
+        },
+        "twitter": {
+          "card": "summary",
+          "title": "Live Project Portfolio — VedTech Services | 17 Projects",
+          "description": "Explore 17 live projects built by VedTech Services — from e-commerce platforms and school management systems to hospital software and food delivery apps."
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/blog/1",
+      "metadata": {
+        "title": "10 Essential IT Security Tips for Small Businesses in 2026 - VedTech Blog",
+        "description": "Protect your business from cyber threats with these proven security strategies. Learn how to safeguard your data and maintain customer trust.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/blog/1"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "openGraph": {
+          "type": "article",
+          "url": "https://vedtechservices.in/blog/1",
+          "title": "10 Essential IT Security Tips for Small Businesses in 2026 - VedTech Blog",
+          "description": "Protect your business from cyber threats with these proven security strategies. Learn how to safeguard your data and maintain customer trust.",
+          "siteName": "VedTech Services",
+          "locale": "en_IN"
+        },
+        "twitter": {
+          "card": "summary",
+          "title": "10 Essential IT Security Tips for Small Businesses in 2026 - VedTech Blog",
+          "description": "Protect your business from cyber threats with these proven security strategies. Learn how to safeguard your data and maintain customer trust."
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "BlogPosting"
+      ]
+    },
+    {
+      "path": "/blog/2",
+      "metadata": {
+        "title": "Why Your Business Needs a Professional Website in 2026 - VedTech Blog",
+        "description": "Discover how a well-designed website can transform your business. From SEO benefits to customer engagement, learn why online presence matters.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/blog/2"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "openGraph": {
+          "type": "article",
+          "url": "https://vedtechservices.in/blog/2",
+          "title": "Why Your Business Needs a Professional Website in 2026 - VedTech Blog",
+          "description": "Discover how a well-designed website can transform your business. From SEO benefits to customer engagement, learn why online presence matters.",
+          "siteName": "VedTech Services",
+          "locale": "en_IN"
+        },
+        "twitter": {
+          "card": "summary",
+          "title": "Why Your Business Needs a Professional Website in 2026 - VedTech Blog",
+          "description": "Discover how a well-designed website can transform your business. From SEO benefits to customer engagement, learn why online presence matters."
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "BlogPosting"
+      ]
+    },
+    {
+      "path": "/blog/3",
+      "metadata": {
+        "title": "Complete Guide to IT AMC Plans: What You Need to Know - VedTech Blog",
+        "description": "Understanding Annual Maintenance Contracts for IT services. Learn how AMC plans can save costs and ensure smooth business operations.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/blog/3"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "openGraph": {
+          "type": "article",
+          "url": "https://vedtechservices.in/blog/3",
+          "title": "Complete Guide to IT AMC Plans: What You Need to Know - VedTech Blog",
+          "description": "Understanding Annual Maintenance Contracts for IT services. Learn how AMC plans can save costs and ensure smooth business operations.",
+          "siteName": "VedTech Services",
+          "locale": "en_IN"
+        },
+        "twitter": {
+          "card": "summary",
+          "title": "Complete Guide to IT AMC Plans: What You Need to Know - VedTech Blog",
+          "description": "Understanding Annual Maintenance Contracts for IT services. Learn how AMC plans can save costs and ensure smooth business operations."
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "BlogPosting"
+      ]
+    },
+    {
+      "path": "/blog/4",
+      "metadata": {
+        "title": "Mobile App vs Website: What's Right for Your Business? - VedTech Blog",
+        "description": "Choosing between a mobile app and website? We break down the pros, cons, and costs to help you make the right decision for your business.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/blog/4"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "openGraph": {
+          "type": "article",
+          "url": "https://vedtechservices.in/blog/4",
+          "title": "Mobile App vs Website: What's Right for Your Business? - VedTech Blog",
+          "description": "Choosing between a mobile app and website? We break down the pros, cons, and costs to help you make the right decision for your business.",
+          "siteName": "VedTech Services",
+          "locale": "en_IN"
+        },
+        "twitter": {
+          "card": "summary",
+          "title": "Mobile App vs Website: What's Right for Your Business? - VedTech Blog",
+          "description": "Choosing between a mobile app and website? We break down the pros, cons, and costs to help you make the right decision for your business."
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "BlogPosting"
+      ]
+    },
+    {
+      "path": "/blog/5",
+      "metadata": {
+        "title": "How to Choose the Right IT Service Provider for Your Business - VedTech Blog",
+        "description": "Key factors to consider when selecting an IT partner. From expertise to response time, learn what makes a great IT service provider.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/blog/5"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "openGraph": {
+          "type": "article",
+          "url": "https://vedtechservices.in/blog/5",
+          "title": "How to Choose the Right IT Service Provider for Your Business - VedTech Blog",
+          "description": "Key factors to consider when selecting an IT partner. From expertise to response time, learn what makes a great IT service provider.",
+          "siteName": "VedTech Services",
+          "locale": "en_IN"
+        },
+        "twitter": {
+          "card": "summary",
+          "title": "How to Choose the Right IT Service Provider for Your Business - VedTech Blog",
+          "description": "Key factors to consider when selecting an IT partner. From expertise to response time, learn what makes a great IT service provider."
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "BlogPosting"
+      ]
+    },
+    {
+      "path": "/blog/6",
+      "metadata": {
+        "title": "Top 5 Technology Trends for Indian SMEs in 2026 - VedTech Blog",
+        "description": "Stay ahead of the curve with these emerging tech trends. From AI to cloud computing, discover what's shaping the future of business.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/blog/6"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "openGraph": {
+          "type": "article",
+          "url": "https://vedtechservices.in/blog/6",
+          "title": "Top 5 Technology Trends for Indian SMEs in 2026 - VedTech Blog",
+          "description": "Stay ahead of the curve with these emerging tech trends. From AI to cloud computing, discover what's shaping the future of business.",
+          "siteName": "VedTech Services",
+          "locale": "en_IN"
+        },
+        "twitter": {
+          "card": "summary",
+          "title": "Top 5 Technology Trends for Indian SMEs in 2026 - VedTech Blog",
+          "description": "Stay ahead of the curve with these emerging tech trends. From AI to cloud computing, discover what's shaping the future of business."
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "BlogPosting"
+      ]
+    },
+    {
+      "path": "/blog/7",
+      "metadata": {
+        "title": "How to Troubleshoot Slow Internet on Windows 11 - VedTech Blog",
+        "description": "Is your internet crawling? Follow our step-by-step guide to identify and fix common connectivity issues on Windows 11.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/blog/7"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "openGraph": {
+          "type": "article",
+          "url": "https://vedtechservices.in/blog/7",
+          "title": "How to Troubleshoot Slow Internet on Windows 11 - VedTech Blog",
+          "description": "Is your internet crawling? Follow our step-by-step guide to identify and fix common connectivity issues on Windows 11.",
+          "siteName": "VedTech Services",
+          "locale": "en_IN"
+        },
+        "twitter": {
+          "card": "summary",
+          "title": "How to Troubleshoot Slow Internet on Windows 11 - VedTech Blog",
+          "description": "Is your internet crawling? Follow our step-by-step guide to identify and fix common connectivity issues on Windows 11."
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "BlogPosting"
+      ]
+    },
+    {
+      "path": "/blog/8",
+      "metadata": {
+        "title": "How-to: Set Up a Dual Monitor Workplace - VedTech Blog",
+        "description": "Boost your productivity by adding a second monitor. We show you exactly how to connect and configure your dual-screen setup.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/blog/8"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "openGraph": {
+          "type": "article",
+          "url": "https://vedtechservices.in/blog/8",
+          "title": "How-to: Set Up a Dual Monitor Workplace - VedTech Blog",
+          "description": "Boost your productivity by adding a second monitor. We show you exactly how to connect and configure your dual-screen setup.",
+          "siteName": "VedTech Services",
+          "locale": "en_IN"
+        },
+        "twitter": {
+          "card": "summary",
+          "title": "How-to: Set Up a Dual Monitor Workplace - VedTech Blog",
+          "description": "Boost your productivity by adding a second monitor. We show you exactly how to connect and configure your dual-screen setup."
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "BlogPosting"
+      ]
+    },
+    {
+      "path": "/locations/bengaluru",
+      "metadata": {
+        "title": "Software development company in Bengaluru | VedTech Services",
+        "description": "Bengaluru, Karnataka: Startups / IT / SaaS. Explore CRM, ERP, SaaS, AI automation and Corporate website, SaaS website, web app with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/bengaluru"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/chennai",
+      "metadata": {
+        "title": "Software development company in Chennai | VedTech Services",
+        "description": "Chennai, Tamil Nadu: Auto / Manufacturing / IT / Logistics. Explore ERP, SCM, CRM and Corporate, logistics, e-commerce with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/chennai"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/delhi",
+      "metadata": {
+        "title": "Software development company in Delhi | VedTech Services",
+        "description": "Delhi, Delhi: SMEs / Education / Healthcare / Services. Explore CRM, ERP, booking, LMS and Business, education, healthcare websites with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/delhi"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/gurugram",
+      "metadata": {
+        "title": "Software development company in Gurugram | VedTech Services",
+        "description": "Gurugram, Haryana: Corporate / Fintech / Startups. Explore CRM, HRMS, ERP, automation and Corporate, landing pages, portals with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/gurugram"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/hosur",
+      "metadata": {
+        "title": "Software development company in Hosur | VedTech Services",
+        "description": "Hosur, Tamil Nadu: Auto / Manufacturing. Explore ERP, production, SCM and B2B, corporate with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/hosur"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/hyderabad",
+      "metadata": {
+        "title": "Software development company in Hyderabad | VedTech Services",
+        "description": "Hyderabad, Telangana: IT / Pharma / Healthcare. Explore ERP, CRM, AI, healthcare software and Corporate, healthcare, web apps with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/hyderabad"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/kota",
+      "metadata": {
+        "title": "Software development company in Kota | VedTech Services",
+        "description": "Kota, Rajasthan: Coaching / Education / Hostels. Explore LMS, student management, CRM and Education, hostel, landing pages with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/kota"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/mumbai",
+      "metadata": {
+        "title": "Software development company in Mumbai | VedTech Services",
+        "description": "Mumbai, Maharashtra: Finance / Real Estate / Media / SMEs. Explore CRM, ERP, fintech, automation and Corporate, portals, e-commerce with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/mumbai"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/noida",
+      "metadata": {
+        "title": "Software development company in Noida | VedTech Services",
+        "description": "Noida, Uttar Pradesh: IT / E-commerce / Agencies. Explore CRM, ERP, e-commerce, web apps and E-commerce, corporate, portals with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/noida"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/pune",
+      "metadata": {
+        "title": "Software development company in Pune | VedTech Services",
+        "description": "Pune, Maharashtra: IT / Auto / Manufacturing / Education. Explore ERP, HRMS, manufacturing software and Corporate, education, e-commerce with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/pune"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/tiruppur",
+      "metadata": {
+        "title": "Software development company in Tiruppur | VedTech Services",
+        "description": "Tiruppur, Tamil Nadu: Garments / Textile / Export. Explore ERP, production, inventory and B2B, export, e-commerce with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/tiruppur"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/ahmedabad",
+      "metadata": {
+        "title": "Software development company in Ahmedabad | VedTech Services",
+        "description": "Ahmedabad, Gujarat: Manufacturing / Trading / Finance. Explore ERP, inventory, CRM and Corporate, e-commerce, B2B with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/ahmedabad"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/bhubaneswar",
+      "metadata": {
+        "title": "Software development company in Bhubaneswar | VedTech Services",
+        "description": "Bhubaneswar, Odisha: IT / Education / Healthcare. Explore ERP, CRM, portals and Education, healthcare, corporate with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/bhubaneswar"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/chandigarh",
+      "metadata": {
+        "title": "Software development company in Chandigarh | VedTech Services",
+        "description": "Chandigarh, Chandigarh: Healthcare / Education / Services. Explore CRM, ERP, appointment software and Corporate, healthcare, education with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/chandigarh"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/coimbatore",
+      "metadata": {
+        "title": "Software development company in Coimbatore | VedTech Services",
+        "description": "Coimbatore, Tamil Nadu: Manufacturing / Textile / Engineering. Explore ERP, production, inventory and B2B, corporate, e-commerce with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/coimbatore"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/durgapur",
+      "metadata": {
+        "title": "Software development company in Durgapur | VedTech Services",
+        "description": "Durgapur, West Bengal: Manufacturing / Engineering. Explore ERP, inventory, production and B2B, corporate with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/durgapur"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/faridabad",
+      "metadata": {
+        "title": "Software development company in Faridabad | VedTech Services",
+        "description": "Faridabad, Haryana: Manufacturing / Engineering. Explore ERP, production, inventory and B2B, corporate with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/faridabad"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/gandhinagar",
+      "metadata": {
+        "title": "Software development company in Gandhinagar | VedTech Services",
+        "description": "Gandhinagar, Gujarat: IT / Finance / Government Suppliers. Explore ERP, portals, CRM and Corporate, portals with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/gandhinagar"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/ghaziabad",
+      "metadata": {
+        "title": "Software development company in Ghaziabad | VedTech Services",
+        "description": "Ghaziabad, Uttar Pradesh: Manufacturing / Trading. Explore ERP, CRM, inventory and B2B, corporate with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/ghaziabad"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/greater-noida",
+      "metadata": {
+        "title": "Software development company in Greater Noida | VedTech Services",
+        "description": "Greater Noida, Uttar Pradesh: Manufacturing / Education / Real Estate. Explore ERP, CRM, lead management and Corporate, real estate, education with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/greater-noida"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/guwahati",
+      "metadata": {
+        "title": "Software development company in Guwahati | VedTech Services",
+        "description": "Guwahati, Assam: Logistics / Tourism / Healthcare. Explore ERP, logistics, hotel software and Logistics, hotel, healthcare with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/guwahati"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/haridwar",
+      "metadata": {
+        "title": "Software development company in Haridwar | VedTech Services",
+        "description": "Haridwar, Uttarakhand: Manufacturing / Pharma / Tourism. Explore ERP, CRM, hotel software and B2B, healthcare, hotel with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/haridwar"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/indore",
+      "metadata": {
+        "title": "Software development company in Indore | VedTech Services",
+        "description": "Indore, Madhya Pradesh: SMEs / Education / Manufacturing. Explore ERP, billing, CRM and Business, education, e-commerce with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/indore"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/jalandhar",
+      "metadata": {
+        "title": "Software development company in Jalandhar | VedTech Services",
+        "description": "Jalandhar, Punjab: Manufacturing / Sports Goods / Retail. Explore ERP, inventory, e-commerce and B2B, e-commerce with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/jalandhar"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/jamnagar",
+      "metadata": {
+        "title": "Software development company in Jamnagar | VedTech Services",
+        "description": "Jamnagar, Gujarat: Engineering / Brass / Manufacturing. Explore ERP, production, inventory and B2B, export with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/jamnagar"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/jamshedpur",
+      "metadata": {
+        "title": "Software development company in Jamshedpur | VedTech Services",
+        "description": "Jamshedpur, Jharkhand: Manufacturing / Engineering. Explore ERP, production, SCM and B2B, corporate with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/jamshedpur"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/kanpur",
+      "metadata": {
+        "title": "Software development company in Kanpur | VedTech Services",
+        "description": "Kanpur, Uttar Pradesh: Manufacturing / Leather / Trading. Explore ERP, inventory, accounting and B2B, e-commerce with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/kanpur"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/karnal",
+      "metadata": {
+        "title": "Software development company in Karnal | VedTech Services",
+        "description": "Karnal, Haryana: Agriculture / Food Processing. Explore ERP, inventory, agri software and B2B, agriculture with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/karnal"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/kochi",
+      "metadata": {
+        "title": "Software development company in Kochi | VedTech Services",
+        "description": "Kochi, Kerala: Tourism / Healthcare / IT. Explore Booking, CRM, hospital, SaaS and Hotel, travel, healthcare with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/kochi"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/kolkata",
+      "metadata": {
+        "title": "Software development company in Kolkata | VedTech Services",
+        "description": "Kolkata, West Bengal: Trading / Logistics / Education / SMEs. Explore ERP, CRM, e-commerce and Business, education, portals with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/kolkata"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/lucknow",
+      "metadata": {
+        "title": "Software development company in Lucknow | VedTech Services",
+        "description": "Lucknow, Uttar Pradesh: Healthcare / Education / SMEs. Explore ERP, CRM, LMS and Healthcare, education, business with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/lucknow"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/ludhiana",
+      "metadata": {
+        "title": "Software development company in Ludhiana | VedTech Services",
+        "description": "Ludhiana, Punjab: Manufacturing / Textile / Engineering. Explore ERP, production, inventory and B2B, e-commerce with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/ludhiana"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/mangaluru",
+      "metadata": {
+        "title": "Software development company in Mangaluru | VedTech Services",
+        "description": "Mangaluru, Karnataka: Healthcare / Education / Tourism. Explore Hospital, hotel, CRM and Healthcare, hotel, corporate with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/mangaluru"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/meerut",
+      "metadata": {
+        "title": "Software development company in Meerut | VedTech Services",
+        "description": "Meerut, Uttar Pradesh: Manufacturing / Sports Goods. Explore ERP, production, e-commerce and B2B, e-commerce with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/meerut"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/mohali",
+      "metadata": {
+        "title": "Software development company in Mohali | VedTech Services",
+        "description": "Mohali, Punjab: IT / Startups / Healthcare. Explore SaaS, CRM, websites and Corporate, healthcare with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/mohali"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/moradabad",
+      "metadata": {
+        "title": "Software development company in Moradabad | VedTech Services",
+        "description": "Moradabad, Uttar Pradesh: Handicraft / Metal / Export. Explore ERP, inventory, e-commerce and B2B, export, e-commerce with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/moradabad"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/nagpur",
+      "metadata": {
+        "title": "Software development company in Nagpur | VedTech Services",
+        "description": "Nagpur, Maharashtra: Logistics / Healthcare / Education. Explore Logistics, ERP, CRM and Logistics, healthcare, education with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/nagpur"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/nashik",
+      "metadata": {
+        "title": "Software development company in Nashik | VedTech Services",
+        "description": "Nashik, Maharashtra: Manufacturing / Agriculture / Food. Explore ERP, inventory, CRM and B2B, e-commerce with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/nashik"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/navi-mumbai",
+      "metadata": {
+        "title": "Software development company in Navi Mumbai | VedTech Services",
+        "description": "Navi Mumbai, Maharashtra: Logistics / Corporate / Healthcare. Explore Logistics, ERP, CRM and Logistics, corporate, healthcare with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/navi-mumbai"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/panaji",
+      "metadata": {
+        "title": "Software development company in Panaji | VedTech Services",
+        "description": "Panaji, Goa: Hotels / Tourism / Restaurants. Explore Hotel, booking, restaurant software and Hotel, restaurant, travel with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/panaji"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/panipat",
+      "metadata": {
+        "title": "Software development company in Panipat | VedTech Services",
+        "description": "Panipat, Haryana: Textile / Manufacturing. Explore ERP, production, inventory and B2B, e-commerce with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/panipat"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/patna",
+      "metadata": {
+        "title": "Software development company in Patna | VedTech Services",
+        "description": "Patna, Bihar: Education / Healthcare / SMEs. Explore LMS, CRM, ERP and Education, healthcare, business with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/patna"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/raipur",
+      "metadata": {
+        "title": "Software development company in Raipur | VedTech Services",
+        "description": "Raipur, Chhattisgarh: Steel / Mining / Trading. Explore ERP, manufacturing, inventory and B2B, corporate with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/raipur"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/rajkot",
+      "metadata": {
+        "title": "Software development company in Rajkot | VedTech Services",
+        "description": "Rajkot, Gujarat: Engineering / Auto / Manufacturing. Explore ERP, production, inventory and B2B, corporate with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/rajkot"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/rourkela",
+      "metadata": {
+        "title": "Software development company in Rourkela | VedTech Services",
+        "description": "Rourkela, Odisha: Steel / Engineering. Explore ERP, production and B2B, corporate with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/rourkela"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/siliguri",
+      "metadata": {
+        "title": "Software development company in Siliguri | VedTech Services",
+        "description": "Siliguri, West Bengal: Logistics / Tourism / Trading. Explore Logistics, CRM, websites and Logistics, hotel, B2B with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/siliguri"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/surat",
+      "metadata": {
+        "title": "Software development company in Surat | VedTech Services",
+        "description": "Surat, Gujarat: Textile / Diamond / Trading. Explore Textile ERP, inventory, CRM and E-commerce, B2B, corporate with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/surat"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/thane",
+      "metadata": {
+        "title": "Software development company in Thane | VedTech Services",
+        "description": "Thane, Maharashtra: SMEs / Finance / Services. Explore CRM, ERP, websites and Corporate, service, e-commerce with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/thane"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/thiruvananthapuram",
+      "metadata": {
+        "title": "Software development company in Thiruvananthapuram | VedTech Services",
+        "description": "Thiruvananthapuram, Kerala: IT / Healthcare / Education. Explore SaaS, CRM, hospital software and Healthcare, education, corporate with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/thiruvananthapuram"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/thrissur",
+      "metadata": {
+        "title": "Software development company in Thrissur | VedTech Services",
+        "description": "Thrissur, Kerala: Retail / Jewellery / Finance. Explore ERP, CRM, e-commerce and Retail, jewellery, finance with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/thrissur"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/udaipur",
+      "metadata": {
+        "title": "Software development company in Udaipur | VedTech Services",
+        "description": "Udaipur, Rajasthan: Hotels / Tourism / Weddings. Explore Hotel, booking, CRM and Hotel, travel, events with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/udaipur"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/vadodara",
+      "metadata": {
+        "title": "Software development company in Vadodara | VedTech Services",
+        "description": "Vadodara, Gujarat: Engineering / Pharma / Manufacturing. Explore ERP, production, CRM and Corporate, B2B with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/vadodara"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/vapi",
+      "metadata": {
+        "title": "Software development company in Vapi | VedTech Services",
+        "description": "Vapi, Gujarat: Chemical / Manufacturing. Explore ERP, inventory, production and B2B, corporate with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/vapi"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/varanasi",
+      "metadata": {
+        "title": "Software development company in Varanasi | VedTech Services",
+        "description": "Varanasi, Uttar Pradesh: Tourism / Handicraft / Retail. Explore Booking, e-commerce, CRM and Tourism, retail, hotel with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/varanasi"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/vellore",
+      "metadata": {
+        "title": "Software development company in Vellore | VedTech Services",
+        "description": "Vellore, Tamil Nadu: Healthcare / Education. Explore Hospital software, CRM, LMS and Healthcare, education with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/vellore"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/visakhapatnam",
+      "metadata": {
+        "title": "Software development company in Visakhapatnam | VedTech Services",
+        "description": "Visakhapatnam, Andhra Pradesh: Port / Logistics / Manufacturing. Explore Logistics, ERP, CRM and Logistics, B2B, corporate with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/visakhapatnam"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/chhatrapati-sambhajinagar",
+      "metadata": {
+        "title": "Software development company in Chhatrapati Sambhajinagar | VedTech Services",
+        "description": "Chhatrapati Sambhajinagar, Maharashtra: Auto / Manufacturing. Explore ERP, production, inventory and B2B, corporate with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/chhatrapati-sambhajinagar"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/hubballi-dharwad",
+      "metadata": {
+        "title": "Software development company in Hubballi-Dharwad | VedTech Services",
+        "description": "Hubballi-Dharwad, Karnataka: Logistics / SMEs / Manufacturing. Explore ERP, CRM, logistics and B2B, logistics with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/hubballi-dharwad"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/kolhapur",
+      "metadata": {
+        "title": "Software development company in Kolhapur | VedTech Services",
+        "description": "Kolhapur, Maharashtra: Engineering / Manufacturing. Explore ERP, production, inventory and B2B, corporate with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/kolhapur"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/ajmer",
+      "metadata": {
+        "title": "Software development company in Ajmer | VedTech Services",
+        "description": "Ajmer, Rajasthan: Tourism / Education / Hotels. Explore Booking, CRM, LMS and Hotel, education, travel with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/ajmer"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/bikaner",
+      "metadata": {
+        "title": "Software development company in Bikaner | VedTech Services",
+        "description": "Bikaner, Rajasthan: Food / Tourism / Trading. Explore ERP, e-commerce, hotel software and B2B, hotel, retail with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/bikaner"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/gwalior",
+      "metadata": {
+        "title": "Software development company in Gwalior | VedTech Services",
+        "description": "Gwalior, Madhya Pradesh: Education / Healthcare / Retail. Explore CRM, ERP, websites and Education, healthcare, retail with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/gwalior"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/kollam",
+      "metadata": {
+        "title": "Software development company in Kollam | VedTech Services",
+        "description": "Kollam, Kerala: Trading / Tourism / Healthcare. Explore ERP, hotel, CRM and Business, hotel, healthcare with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/kollam"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/kottayam",
+      "metadata": {
+        "title": "Software development company in Kottayam | VedTech Services",
+        "description": "Kottayam, Kerala: Healthcare / Education / SMEs. Explore CRM, ERP and Healthcare, education, business with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/kottayam"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/alwar",
+      "metadata": {
+        "title": "Software development company in Alwar | VedTech Services",
+        "description": "Alwar, Rajasthan: Manufacturing / SMEs. Explore ERP, inventory, CRM and B2B, corporate with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/alwar"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/amritsar",
+      "metadata": {
+        "title": "Software development company in Amritsar | VedTech Services",
+        "description": "Amritsar, Punjab: Tourism / Hotels / Retail. Explore Hotel, booking, e-commerce and Hotel, travel, retail with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/amritsar"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/anand",
+      "metadata": {
+        "title": "Software development company in Anand | VedTech Services",
+        "description": "Anand, Gujarat: Dairy / Agriculture / Education. Explore ERP, inventory, agri software and B2B, education with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/anand"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/bareilly",
+      "metadata": {
+        "title": "Software development company in Bareilly | VedTech Services",
+        "description": "Bareilly, Uttar Pradesh: Retail / Manufacturing / Healthcare. Explore ERP, CRM, websites and Retail, healthcare, business with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/bareilly"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/belagavi",
+      "metadata": {
+        "title": "Software development company in Belagavi | VedTech Services",
+        "description": "Belagavi, Karnataka: Manufacturing / Engineering. Explore ERP, inventory and B2B, corporate with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/belagavi"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/bhavnagar",
+      "metadata": {
+        "title": "Software development company in Bhavnagar | VedTech Services",
+        "description": "Bhavnagar, Gujarat: Shipbuilding / Manufacturing / Trading. Explore ERP, inventory and B2B, corporate with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/bhavnagar"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/bhopal",
+      "metadata": {
+        "title": "Software development company in Bhopal | VedTech Services",
+        "description": "Bhopal, Madhya Pradesh: Education / Healthcare / Services. Explore ERP, CRM, LMS and Education, healthcare, corporate with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/bhopal"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/cuttack",
+      "metadata": {
+        "title": "Software development company in Cuttack | VedTech Services",
+        "description": "Cuttack, Odisha: Healthcare / Education / SMEs. Explore CRM, ERP, websites and Healthcare, education, business with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/cuttack"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/dehradun",
+      "metadata": {
+        "title": "Software development company in Dehradun | VedTech Services",
+        "description": "Dehradun, Uttarakhand: Education / Tourism / Healthcare. Explore LMS, CRM, hotel software and Education, hotel, healthcare with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/dehradun"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/dhanbad",
+      "metadata": {
+        "title": "Software development company in Dhanbad | VedTech Services",
+        "description": "Dhanbad, Jharkhand: Mining / Industry / Education / SMEs. Explore ERP, inventory, CRM, HRMS and Corporate, education, B2B websites with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/dhanbad"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/gorakhpur",
+      "metadata": {
+        "title": "Software development company in Gorakhpur | VedTech Services",
+        "description": "Gorakhpur, Uttar Pradesh: Healthcare / Education / Retail. Explore CRM, ERP, websites and Healthcare, education, retail with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/gorakhpur"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/hisar",
+      "metadata": {
+        "title": "Software development company in Hisar | VedTech Services",
+        "description": "Hisar, Haryana: Agriculture / Education / Healthcare. Explore Agri software, CRM, ERP and Agriculture, education, healthcare with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/hisar"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/jodhpur",
+      "metadata": {
+        "title": "Software development company in Jodhpur | VedTech Services",
+        "description": "Jodhpur, Rajasthan: Furniture / Handicraft / Tourism. Explore E-commerce, ERP, CRM and E-commerce, B2B, hotel with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/jodhpur"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/kakinada",
+      "metadata": {
+        "title": "Software development company in Kakinada | VedTech Services",
+        "description": "Kakinada, Andhra Pradesh: Port / Logistics / Agriculture. Explore Logistics, ERP, inventory and Logistics, B2B with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/kakinada"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/kozhikode",
+      "metadata": {
+        "title": "Software development company in Kozhikode | VedTech Services",
+        "description": "Kozhikode, Kerala: Retail / Healthcare / Tourism. Explore CRM, e-commerce, websites and Retail, hotel, healthcare with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/kozhikode"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/madurai",
+      "metadata": {
+        "title": "Software development company in Madurai | VedTech Services",
+        "description": "Madurai, Tamil Nadu: Healthcare / Education / Tourism. Explore Hospital, LMS, hotel software and Healthcare, education, hotel with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/madurai"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/mysuru",
+      "metadata": {
+        "title": "Software development company in Mysuru | VedTech Services",
+        "description": "Mysuru, Karnataka: IT / Education / Tourism. Explore SaaS, LMS, CRM and Education, hotel, corporate with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/mysuru"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/nellore",
+      "metadata": {
+        "title": "Software development company in Nellore | VedTech Services",
+        "description": "Nellore, Andhra Pradesh: Agriculture / Aquaculture / Education. Explore ERP, inventory, agri software and B2B, education with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/nellore"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/prayagraj",
+      "metadata": {
+        "title": "Software development company in Prayagraj | VedTech Services",
+        "description": "Prayagraj, Uttar Pradesh: Education / Healthcare / Services. Explore LMS, CRM, appointment software and Education, healthcare with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/prayagraj"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/puducherry",
+      "metadata": {
+        "title": "Software development company in Puducherry | VedTech Services",
+        "description": "Puducherry, Puducherry: Tourism / Hotels / Education. Explore Booking, hotel, LMS and Hotel, travel, education with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/puducherry"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/ranchi",
+      "metadata": {
+        "title": "Software development company in Ranchi | VedTech Services",
+        "description": "Ranchi, Jharkhand: Mining / Education / Healthcare. Explore ERP, inventory, CRM and B2B, education, healthcare with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/ranchi"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/salem",
+      "metadata": {
+        "title": "Software development company in Salem | VedTech Services",
+        "description": "Salem, Tamil Nadu: Steel / Textile / Manufacturing. Explore ERP, inventory and B2B, corporate with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/salem"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/solapur",
+      "metadata": {
+        "title": "Software development company in Solapur | VedTech Services",
+        "description": "Solapur, Maharashtra: Textile / Manufacturing. Explore ERP, inventory and B2B, corporate with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/solapur"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/sonipat",
+      "metadata": {
+        "title": "Software development company in Sonipat | VedTech Services",
+        "description": "Sonipat, Haryana: Manufacturing / Education. Explore ERP, CRM, LMS and B2B, education with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/sonipat"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/tiruchirappalli",
+      "metadata": {
+        "title": "Software development company in Tiruchirappalli | VedTech Services",
+        "description": "Tiruchirappalli, Tamil Nadu: Engineering / Education. Explore ERP, CRM, LMS and B2B, education with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/tiruchirappalli"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/vijayawada",
+      "metadata": {
+        "title": "Software development company in Vijayawada | VedTech Services",
+        "description": "Vijayawada, Andhra Pradesh: Trading / Education / Healthcare. Explore ERP, CRM, LMS and Business, education, healthcare with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/vijayawada"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/jaipur",
+      "metadata": {
+        "title": "Software development company in Jaipur | VedTech Services",
+        "description": "Jaipur, Rajasthan: Tourism / Education / Jewellery / SMEs. Explore Hotel, CRM, ERP, LMS and Hotel, travel, e-commerce, education with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/jaipur"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/ambala",
+      "metadata": {
+        "title": "Software development company in Ambala | VedTech Services",
+        "description": "Ambala, Haryana: Healthcare / Trading / Education. Explore CRM, ERP, websites and Healthcare, business, education with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/ambala"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/jabalpur",
+      "metadata": {
+        "title": "Software development company in Jabalpur | VedTech Services",
+        "description": "Jabalpur, Madhya Pradesh: Education / Healthcare / Services. Explore CRM, ERP and Education, healthcare, business with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/jabalpur"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/kannur",
+      "metadata": {
+        "title": "Software development company in Kannur | VedTech Services",
+        "description": "Kannur, Kerala: Tourism / Retail / SMEs. Explore Websites, CRM, e-commerce and Tourism, retail, business with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/kannur"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/mathura",
+      "metadata": {
+        "title": "Software development company in Mathura | VedTech Services",
+        "description": "Mathura, Uttar Pradesh: Tourism / Hotels / Religious Travel. Explore Booking, hotel, travel CRM and Hotel, travel, booking with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/mathura"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/nainital",
+      "metadata": {
+        "title": "Software development company in Nainital | VedTech Services",
+        "description": "Nainital, Uttarakhand: Tourism / Hotels. Explore Hotel, booking, websites and Hotel, travel with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/nainital"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/shillong",
+      "metadata": {
+        "title": "Software development company in Shillong | VedTech Services",
+        "description": "Shillong, Meghalaya: Tourism / Hospitality / Services. Explore Hotel, booking, websites and Hotel, travel, services with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/shillong"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/ujjain",
+      "metadata": {
+        "title": "Software development company in Ujjain | VedTech Services",
+        "description": "Ujjain, Madhya Pradesh: Tourism / Hotels / Retail. Explore Booking, hotel, websites and Hotel, tourism, retail with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/ujjain"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/agra",
+      "metadata": {
+        "title": "Software development company in Agra | VedTech Services",
+        "description": "Agra, Uttar Pradesh: Tourism / Hotels / Footwear / Retail. Explore Hotel, CRM, e-commerce and Hotel, travel, retail with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/agra"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations/bokaro",
+      "metadata": {
+        "title": "Software development company in Bokaro | VedTech Services",
+        "description": "Bokaro, Jharkhand: Steel / Manufacturing. Explore ERP, production and B2B, corporate with VedTech Services.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations/bokaro"
+        },
+        "robots": {
+          "index": false,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "Organization",
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/locations",
+      "metadata": {
+        "title": "Software & Website Projects by City | VedTech Services",
+        "description": "Explore business software and website development topics for companies in VedTech Services city markets.",
+        "alternates": {
+          "canonical": "https://vedtechservices.in/locations"
+        },
+        "robots": {
+          "index": true,
+          "follow": true
+        }
+      },
+      "schemaTypes": [
+        "WebPage",
+        "BreadcrumbList",
+        "ItemList"
+      ]
+    }
+  ],
+  "headingSource": {
+    "About.tsx": [
+      {
+        "level": "h1",
+        "sourceText": "About VedTech Services"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Our Story"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Empowering Businesses Through Technology"
+      },
+      {
+        "level": "h2",
+        "sourceText": "India's Most Trusted IT Partner"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Our Core Values"
+      },
+      {
+        "level": "h3",
+        "sourceText": "{value.title}"
+      },
+      {
+        "level": "h2",
+        "sourceText": "What Makes Us Different"
+      },
+      {
+        "level": "h3",
+        "sourceText": "{item.title}"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Our Leadership Team"
+      },
+      {
+        "level": "h3",
+        "sourceText": "Chandan Kumar Yajee"
+      },
+      {
+        "level": "h3",
+        "sourceText": "Arpit Singh Parihar"
+      },
+      {
+        "level": "h3",
+        "sourceText": "Aasita Sarathe"
+      },
+      {
+        "level": "h3",
+        "sourceText": "Muskan Dubey"
+      },
+      {
+        "level": "h3",
+        "sourceText": "Prasun Prakash"
+      },
+      {
+        "level": "h3",
+        "sourceText": "Sundaram Prince"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Our Growth Journey"
+      }
+    ],
+    "ActivityLogs.tsx": [
+      {
+        "level": "h1",
+        "sourceText": "System Activity Logs"
+      },
+      {
+        "level": "h3",
+        "sourceText": "No logs found"
+      }
+    ],
+    "AMCPlans.tsx": [
+      {
+        "level": "h1",
+        "sourceText": "Premium AMC Packages"
+      },
+      {
+        "level": "h3",
+        "sourceText": "{benefit.title}"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Choose Your Plan"
+      },
+      {
+        "level": "h2",
+        "sourceText": "The AMC Advantage"
+      },
+      {
+        "level": "h3",
+        "sourceText": "{item.title}"
+      },
+      {
+        "level": "h3",
+        "sourceText": "Service Tier Estimates"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Ready to Get Started?"
+      }
+    ],
+    "Blog.tsx": [
+      {
+        "level": "h1",
+        "sourceText": "VedTech Blog"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Articles and practical guides"
+      },
+      {
+        "level": "h3",
+        "sourceText": "{post.title}"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Stay Updated"
+      }
+    ],
+    "BlogDetail.tsx": [
+      {
+        "level": "h1",
+        "sourceText": "{post.title}"
+      },
+      {
+        "level": "h3",
+        "sourceText": "Related Articles"
+      },
+      {
+        "level": "h3",
+        "sourceText": "Need Custom Solutions?"
+      }
+    ],
+    "Contact.tsx": [
+      {
+        "level": "h1",
+        "sourceText": "Start Your Project Today"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Contact Information"
+      },
+      {
+        "level": "h3",
+        "sourceText": "Business Hours"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Send us a Message"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Find the Nearest VedTech Office"
+      },
+      {
+        "level": "h3",
+        "sourceText": "{o.name}"
+      }
+    ],
+    "CorporateOffices.tsx": [
+      {
+        "level": "h1",
+        "sourceText": "IT Infrastructure and Support for Corporate Offices"
+      },
+      {
+        "level": "h2",
+        "sourceText": "IT Solutions for Corporate Offices"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Corporate Clients in Bihar"
+      },
+      {
+        "level": "h2",
+        "sourceText": "We Serve All Types of Offices"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Why Corporate Offices Choose Us"
+      },
+      {
+        "level": "h3",
+        "sourceText": "{item.title}"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Ready to Upgrade Your Office IT?"
+      }
+    ],
+    "CRMAuditLogs.tsx": [
+      {
+        "level": "h1",
+        "sourceText": "CRM Audit Logs"
+      }
+    ],
+    "Demo.tsx": [
+      {
+        "level": "h1",
+        "sourceText": "Our Project Portfolio"
+      },
+      {
+        "level": "h3",
+        "sourceText": "No projects match your search"
+      },
+      {
+        "level": "h3",
+        "sourceText": "{demo.name}"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Ready to Start Your Project?"
+      }
+    ],
+    "EducationalInstitutions.tsx": [
+      {
+        "level": "h1",
+        "sourceText": "Education IT Solutions for Schools and Colleges"
+      },
+      {
+        "level": "h2",
+        "sourceText": "IT Solutions for Education"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Success Stories in Bihar"
+      },
+      {
+        "level": "h2",
+        "sourceText": "We Serve All Educational Institutions"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Why Educational Institutions Choose Us"
+      },
+      {
+        "level": "h3",
+        "sourceText": "{item.title}"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Ready to Modernize Your Institution?"
+      }
+    ],
+    "HardwareRepair.tsx": [
+      {
+        "level": "h1",
+        "sourceText": "Professional Hardware Repair Services in Bihar"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Hardware Repair Services"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Common Issues We Fix"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Brands We Service"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Why Choose VedTech for Hardware Repair?"
+      },
+      {
+        "level": "h3",
+        "sourceText": "{item.title}"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Repair and Support Options"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Need Hardware Repair?"
+      }
+    ],
+    "HardwareServices.tsx": [
+      {
+        "level": "h1",
+        "sourceText": "Complete Hardware Solutions for Your Business"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Our Hardware Services"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Why Choose Our Hardware Services"
+      },
+      {
+        "level": "h3",
+        "sourceText": "{benefit.title}"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Common Issues We Fix"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Brands We Service"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Need Hardware Support?"
+      }
+    ],
+    "Healthcare.tsx": [
+      {
+        "level": "h1",
+        "sourceText": "Healthcare IT Solutions for Clinics and Providers"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Specialized Healthcare Solutions"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Why Healthcare Providers Choose VedTech"
+      },
+      {
+        "level": "h3",
+        "sourceText": "Unmatched Security"
+      },
+      {
+        "level": "h3",
+        "sourceText": "24/7 Availability"
+      },
+      {
+        "level": "h3",
+        "sourceText": "Process Efficiency"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Partner with Healthcare IT Experts"
+      }
+    ],
+    "Home.tsx": [
+      {
+        "level": "h1",
+        "sourceText": "Business IT Solutions for Software, Web & Support"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Complete IT Solutions Under One Roof"
+      },
+      {
+        "level": "h3",
+        "sourceText": "{service.title}"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Why Businesses Trust VedTech Services"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Projects Delivered"
+      },
+      {
+        "level": "h3",
+        "sourceText": "{project.name}"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Trusted by 50+ Happy Clients"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Industries We Serve"
+      },
+      {
+        "level": "h2",
+        "sourceText": "From Our Blog"
+      },
+      {
+        "level": "h3",
+        "sourceText": "{post.title}"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Start Your Project Today"
+      }
+    ],
+    "Industries.tsx": [
+      {
+        "level": "h1",
+        "sourceText": "Industries We Serve"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Explore IT solutions by industry"
+      },
+      {
+        "level": "h3",
+        "sourceText": "{industry.title}"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Don't See Your Industry?"
+      }
+    ],
+    "ITSupportServices.tsx": [
+      {
+        "level": "h1",
+        "sourceText": "24/7 IT Support for Your Business"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Our IT Support Services"
+      },
+      {
+        "level": "h2",
+        "sourceText": "AMC Plans"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Support for Every Business"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Our Response Time Commitment"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Get Support Now"
+      },
+      {
+        "level": "h3",
+        "sourceText": "Call Us"
+      },
+      {
+        "level": "h3",
+        "sourceText": "Email Us"
+      },
+      {
+        "level": "h3",
+        "sourceText": "Raise a Ticket"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Ready for Reliable IT Support?"
+      }
+    ],
+    "Manufacturing.tsx": [
+      {
+        "level": "h1",
+        "sourceText": "IT Solutions for Manufacturing Operations"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Smart Manufacturing Solutions"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Why Industry Leaders Trust VedTech"
+      },
+      {
+        "level": "h3",
+        "sourceText": "Reduced Downtime"
+      },
+      {
+        "level": "h3",
+        "sourceText": "Process Optimization"
+      },
+      {
+        "level": "h3",
+        "sourceText": "Inventory Accuracy"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Scale Your Production with Modern IT"
+      }
+    ],
+    "MobileAppDevelopment.tsx": [
+      {
+        "level": "h1",
+        "sourceText": "Mobile App Development for Your Business"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Mobile App Development Services"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Types of Apps We Develop"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Selected Mobile App Projects"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Why Choose Us for Mobile App Development?"
+      },
+      {
+        "level": "h3",
+        "sourceText": "{item.title}"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Ready to Build Your Mobile App?"
+      }
+    ],
+    "NetworkingSolutions.tsx": [
+      {
+        "level": "h1",
+        "sourceText": "Networking Solutions for Business"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Networking Services"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Network Solutions We Provide"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Why Choose Our Networking Services?"
+      },
+      {
+        "level": "h3",
+        "sourceText": "{item.title}"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Network Support for Different Environments"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Need Networking Solutions?"
+      }
+    ],
+    "NotFound.tsx": [
+      {
+        "level": "h1",
+        "sourceText": "ERROR"
+      }
+    ],
+    "Portfolio.tsx": [
+      {
+        "level": "h1",
+        "sourceText": "Portfolio &{' '} Case Studies"
+      },
+      {
+        "level": "h3",
+        "sourceText": "{project.title}"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Ready to Be Our Next Success Story?"
+      }
+    ],
+    "PrivacyPolicy.tsx": [
+      {
+        "level": "h2",
+        "sourceText": "{title}"
+      },
+      {
+        "level": "h1",
+        "sourceText": "Privacy Policy"
+      }
+    ],
+    "RetailShops.tsx": [
+      {
+        "level": "h1",
+        "sourceText": "Retail IT Solutions for Shops and Stores"
+      },
+      {
+        "level": "h2",
+        "sourceText": "IT Solutions for Retail"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Ready to Modernize Your Shop?"
+      }
+    ],
+    "Services.tsx": [
+      {
+        "level": "h1",
+        "sourceText": "Our IT Services"
+      },
+      {
+        "level": "h2",
+        "sourceText": "{category.title}"
+      },
+      {
+        "level": "h2",
+        "sourceText": "How We Work"
+      },
+      {
+        "level": "h3",
+        "sourceText": "{item.title}"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Need a Custom Solution?"
+      }
+    ],
+    "SoftwareServices.tsx": [
+      {
+        "level": "h1",
+        "sourceText": "Transform Your Business with Custom Software Solutions"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Our Software Services"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Our Portfolio"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Our Development Process"
+      },
+      {
+        "level": "h3",
+        "sourceText": "{item.title}"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Technologies We Use"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Ready to Build Your Software Solution?"
+      }
+    ],
+    "StartupsSMEs.tsx": [
+      {
+        "level": "h1",
+        "sourceText": "Scalable IT Solutions for Startups and SMEs"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Solutions for Growing Businesses"
+      },
+      {
+        "level": "h3",
+        "sourceText": "Budget Friendly"
+      },
+      {
+        "level": "h3",
+        "sourceText": "Rapid Deployment"
+      },
+      {
+        "level": "h3",
+        "sourceText": "Reliable Partner"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Ready to Launch Your Digital Transformation?"
+      }
+    ],
+    "Support.tsx": [
+      {
+        "level": "h1",
+        "sourceText": "Customer Support Center"
+      },
+      {
+        "level": "h3",
+        "sourceText": "Track Your Request"
+      },
+      {
+        "level": "h3",
+        "sourceText": "Local FAQ Help"
+      },
+      {
+        "level": "h3",
+        "sourceText": "New Service Request"
+      }
+    ],
+    "SupportInbox.tsx": [
+      {
+        "level": "h1",
+        "sourceText": "Support Inbox"
+      }
+    ],
+    "TermsOfService.tsx": [
+      {
+        "level": "h2",
+        "sourceText": "{title}"
+      },
+      {
+        "level": "h1",
+        "sourceText": "Terms of Service"
+      }
+    ],
+    "WebDevelopment.tsx": [
+      {
+        "level": "h1",
+        "sourceText": "Professional{' '} Website Development {' '} for Your Business"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Web Development Services"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Frontend · Backend · Database · API"
+      },
+      {
+        "level": "h2",
+        "sourceText": "End-to-End Development & Maintenance"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Collaborative Delivery You Can Count On"
+      },
+      {
+        "level": "h3",
+        "sourceText": "{item.title}"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Optimized for Speed, SEO & Scale"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Technologies We Use"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Selected Website Projects"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Why Choose VedTech for Web Development?"
+      },
+      {
+        "level": "h3",
+        "sourceText": "{item.title}"
+      },
+      {
+        "level": "h2",
+        "sourceText": "How We Work With Clients"
+      },
+      {
+        "level": "h2",
+        "sourceText": "Ready to Build Your Website?"
+      }
+    ],
+    "WhyUs.tsx": [
+      {
+        "level": "h1",
+        "sourceText": "Why Choose VedTech?"
+      },
+      {
+        "level": "h3",
+        "sourceText": "{reason.title}"
+      }
+    ]
+  },
+  "sourceHashes": {
+    "src/lib/seo.ts": "53d4c49e216fac580137d2a019e9f805d796b4174482fb1decbe295420535c95",
+    "src/lib/citySeo.ts": "fa950ef6a68a3b5e973e301d3b88bdf7abee7ad333a7ae76eaaae3749d8fb9db",
+    "src/data/citySeo.json": "4b696b8a5e2e64b7e55882ea0b594bb4f2de46237d8552b1a8a5322eaf884c7b",
+    "src/routes.tsx": "c759c5ddacf6f9a2f0ad365c5da19f551c0f2addc1622043762f8bb015cee4b2",
+    "app/RouterView.tsx": "7d89d4c6ffcbd1674ae440288e92e2c7ed60719ac36b7ef5cca93954383b01b1",
+    "app/[...slug]/page.tsx": "3289db492a8fe11a52138b6848ed6193f0883e7c9c547e30eb383bae668bec90",
+    "app/locations/page.tsx": "cfd7bed13e16caaf0b31171b5e5220372d13b1dd0825fd4ac1c4b679a9129531",
+    "app/locations/[city]/page.tsx": "f26d9416dfbd7aeb89f43e001674e0d7486f2c1533d50382fcdb09ba0d10cb0f",
+    "app/sitemap.ts": "cb1a11252c2031f1765d2d7a2ed1debe6992b8e89b8ba0c0ed3f0543c2c50966",
+    "app/robots.ts": "8e8e8449ad1896da7bfe861cdbce4f79c818e927435ec90d6e118d3ba05814e7",
+    "src/components/layouts/Footer.tsx": "d24ad898d788aaa02c4a1edfc5bddae9ccea6ad2e17f182a2ff9b9fd68a54fb8",
+    "tsconfig.json": "3660f9cfba8cf4a821a1581d24a02d9cec3f4da23024b5c264a418be1c84c41c",
+    "next-env.d.ts": "6c426d6cc7e6332944fae9cebd3636e4aff8417c3d389c3d487fcbf4155c2433"
+  },
+  "sitemapPaths": [
+    "/",
+    "/about",
+    "/services",
+    "/services/software",
+    "/services/hardware",
+    "/services/it-support",
+    "/services/web-development",
+    "/services/mobile-app-development",
+    "/services/hardware-repair",
+    "/services/networking-solutions",
+    "/industries",
+    "/industries/educational-institutions",
+    "/industries/corporate-offices",
+    "/industries/retail-shops",
+    "/industries/startups-smes",
+    "/industries/healthcare",
+    "/industries/manufacturing",
+    "/why-us",
+    "/amc-plans",
+    "/support",
+    "/contact",
+    "/privacy",
+    "/terms",
+    "/blog",
+    "/demo",
+    "/locations",
+    "/locations/bengaluru",
+    "/locations/chennai",
+    "/locations/delhi",
+    "/locations/gurugram",
+    "/locations/hosur",
+    "/locations/hyderabad",
+    "/locations/kota",
+    "/locations/mumbai",
+    "/locations/noida",
+    "/locations/pune",
+    "/locations/tiruppur",
+    "/blog/1",
+    "/blog/2",
+    "/blog/3",
+    "/blog/4",
+    "/blog/5",
+    "/blog/6",
+    "/blog/7",
+    "/blog/8"
+  ],
+  "notes": [
+    "Source baseline, not proof of Google index/rankings.",
+    "Full audit report absent; read docs/FULL_AUDIT_VERIFICATION.md and docs/PAGESPEED_REVIEW.md instead.",
+    "No Search Console connection/export available."
+  ]
+}

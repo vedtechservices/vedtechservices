@@ -7,6 +7,8 @@ import { PageLoader } from '@/components/common/Loader';
 import MainLayout from '@/components/layouts/MainLayout';
 import { Toaster } from '@/components/ui/toaster';
 import routes from '@/routes';
+import ServiceGuidance, { ServiceBreadcrumbs } from '@/components/seo/ServiceGuidance';
+import { PublishedLocations } from '@/components/seo/LocationGuidance';
 
 function matchesRoute(pattern: string, pathname: string) {
   if (pattern === pathname) return true;
@@ -35,7 +37,10 @@ export default function RouterView() {
     <>
       <IntersectObserver />
       <MainLayout>
+        <ServiceBreadcrumbs pathname={pathname} />
         <Suspense fallback={<PageLoader />}>{route?.element ?? <PageLoader />}</Suspense>
+        <ServiceGuidance pathname={pathname} />
+        {pathname === '/contact' && <PublishedLocations />}
       </MainLayout>
       <Toaster />
     </>
