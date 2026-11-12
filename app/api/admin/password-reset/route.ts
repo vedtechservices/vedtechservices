@@ -159,7 +159,11 @@ export async function POST(request: Request) {
     if (body.action === 'request') return await requestReset(request, body);
     if (body.action === 'reset') return await resetPassword(body);
     return json({ error: 'Invalid password reset action.' }, 400);
-  } catch {
-    return json({ error: 'Password recovery is temporarily unavailable.' }, 503);
-  }
+  } catch (error) {
+  console.error('[admin-password-reset] error:', error);
+  return json(
+    { error: 'Password recovery is temporarily unavailable.' },
+    503
+  );
+}
 }
