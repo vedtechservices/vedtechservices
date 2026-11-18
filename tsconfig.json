@@ -32,11 +32,10 @@
   "include": [
     "**/*.ts",
     "**/*.tsx",
-    ".next-pagespeed-build/types/**/*.ts",
     ".next-support-build/types/**/*.ts",
-    ".next-vedbot-final-qa-dev/types/**/*.ts",
     ".next/types/**/*.ts",
-    "next-env.d.ts"
+    "next-env.d.ts",
+    ".next-pagespeed-build/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",

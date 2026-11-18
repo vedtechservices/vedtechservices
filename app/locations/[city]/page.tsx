@@ -3,8 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import LocationSiteShell from '../LocationSiteShell';
 import { citySeoEntries, citySeoEntry, cityServiceLinks, industryPageForCity, isCityReadyForIndexing } from '@/lib/citySeo';
-import { VerifiedLocationGuidance } from '@/components/seo/LocationGuidance';
-import { SITE_URL, getOrganizationSchema } from '@/lib/seo';
+import { SITE_URL } from '@/lib/seo';
 
 type Props = { params: Promise<{ city: string }> };
 
@@ -39,7 +38,7 @@ export default async function CityLandingPage({ params }: Props) {
     const relatedIndustry = industryPageForCity(city.targetIndustry);
     const serviceLinks = cityServiceLinks(city);
     const jsonLd = [
-        getOrganizationSchema(),
+        { '@context': 'https://schema.org', '@type': 'Organization', '@id': `${SITE_URL}/#organization`, name: 'VedTech Services', url: SITE_URL },
         {
             '@context': 'https://schema.org',
             '@type': 'WebPage',
@@ -122,7 +121,6 @@ export default async function CityLandingPage({ params }: Props) {
                     {relatedIndustry ? <p className="mt-5"><Link href={relatedIndustry.url} className="font-semibold text-primary hover:underline">Explore IT solutions for {relatedIndustry.name}</Link></p> : <p className="mt-5 text-sm text-slate-500">Contact us to discuss technology needs for your industry.</p>}
                 </section>
 
-                <VerifiedLocationGuidance slug={city.slug} />
                 <section className="bg-slate-900 text-white py-12">
                     <div className="container flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
                         <div><h2 className="text-2xl font-bold">Planning a project in {city.city}?</h2><p className="text-slate-300 mt-2">Contact us to discuss fit, scope, and delivery arrangements.</p></div>

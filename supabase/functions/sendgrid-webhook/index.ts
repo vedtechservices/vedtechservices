@@ -56,7 +56,6 @@ Deno.serve(async (req) => {
     
     console.log(`Received ${events.length} SendGrid webhook events`);
 
-    let failed = 0;
     // Process each event
     for (const event of events) {
       try {
@@ -106,28 +105,26 @@ Deno.serve(async (req) => {
           });
 
         if (insertError) {
-          failed++;
-          console.error('SendGrid event persistence failed.');
+          console.error('Error inserting email delivery log:', insertError);
         } else {
-          console.log('SendGrid event persisted.');
+          console.log(`Logged ${eventType} event for ${event.email}`);
         }
       } catch (eventError) {
-        failed++;
-        console.error('SendGrid event processing failed.');
+        console.error('Error processing event:', eventError);
         // Continue processing other events
       }
     }
 
     // Return success response
     return new Response(
-      JSON.stringify({ success: failed === 0, processed: events.length - failed, failed }),
+      JSON.stringify({ success: true, processed: events.length }),
       {
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-        status: failed ? 503 : 200,
+        status: 200,
       }
     );
   } catch (error: any) {
-    console.error('SendGrid webhook processing failed.');
+    console.error('SendGrid webhook error:', error);
     
     return new Response(
       JSON.stringify({ error: 'Webhook processing failed.' }),
